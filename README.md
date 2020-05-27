@@ -1,6 +1,4 @@
-<p align="center">
-  <h1 align="center">Gwen</h1>
-</p>
+<h1 align="center">Gwen</h1>
 
 <div style="display:flex;flex-direction:column;align-content:center;flex-wrap:wrap;">
 
@@ -9,13 +7,13 @@
 [![stars](https://img.shields.io/github/stars/vriad/gwen)](https://img.shields.io/github/stars/vriad/gwen)
 [![coverage](./coverage.svg)](./src/__tests__)
 
-<p style="text-align:center;">
+</div>
+
+<p align="center">
 🎉⭐️ If you're happy and you know it, star this repo ⭐️🎉
 <br/>
 created by <a href="https://twitter.com/vriad" target="_blank">@vriad</a>
 </p>
-
-</div>
 
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/github/license/vriad/gwen
