@@ -8,6 +8,8 @@
 [![npm](https://img.shields.io/npm/dw/gwen.svg)](https://www.npmjs.com/package/gwen)
 [![stars](https://img.shields.io/github/stars/vriad/gwen)](https://img.shields.io/github/stars/vriad/gwen)
 [![coverage](./coverage.svg)](./src/__tests__)
+<br/>
+🎉⭐️ If you're happy and you know it, star this repo ⭐️🎉
 
 </div>
 
@@ -17,8 +19,6 @@
 <br/>
 
 Created by [@vriad](https://twitter.com/vriad). Follow me to hear when I publish other open-source projects.
-
-🎉⭐️If you're happy and you know it, star this repo⭐️🎉
 
 #### Table of contents
 
