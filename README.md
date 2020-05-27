@@ -2,14 +2,18 @@
   <h1 align="center">Gwen</h1>
 </p>
 
-<div style="display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;">
+<div style="display:flex;flex-direction:column;align-content:center;flex-wrap:wrap;">
 
 [![License][license-image]][license-url]
 [![npm](https://img.shields.io/npm/dw/gwen.svg)](https://www.npmjs.com/package/gwen)
 [![stars](https://img.shields.io/github/stars/vriad/gwen)](https://img.shields.io/github/stars/vriad/gwen)
 [![coverage](./coverage.svg)](./src/__tests__)
-<br/>
+
+<p style="text-align:center;">
 🎉⭐️ If you're happy and you know it, star this repo ⭐️🎉
+<br/>
+created by <a href="https://twitter.com/vriad" target="_blank">@vriad</a>
+</p>
 
 </div>
 
@@ -17,8 +21,6 @@
 [license-image]: https://img.shields.io/github/license/vriad/gwen
 
 <br/>
-
-Created by [@vriad](https://twitter.com/vriad). Follow me to hear when I publish other open-source projects.
 
 #### Table of contents
 
