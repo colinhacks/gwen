@@ -1,22 +1,24 @@
 <p align="center">
-  <img src="logo.svg" width="200px" align="center" />
-  <h1 align="center">Sample NPM Package</h1>
+  <h1 align="center">Gwen</h1>
 </p>
+
 <div style="display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;">
 
 [![License][license-image]][license-url]
-[![npm](https://img.shields.io/npm/dw/pkgname.svg)](https://www.npmjs.com/package/pkgname)
-[![stars](https://img.shields.io/github/stars/vriad/pkgname)](https://img.shields.io/github/stars/vriad/pkgname)
+[![npm](https://img.shields.io/npm/dw/gwen.svg)](https://www.npmjs.com/package/gwen)
+[![stars](https://img.shields.io/github/stars/vriad/gwen)](https://img.shields.io/github/stars/vriad/gwen)
 [![coverage](./coverage.svg)](./src/__tests__)
 
 </div>
 
 [license-url]: https://opensource.org/licenses/MIT
-[license-image]: https://img.shields.io/github/license/vriad/pkgname
+[license-image]: https://img.shields.io/github/license/vriad/gwen
 
 <br/>
 
-Created and maintained by [@vriad](https://twitter.com/vriad). If you find this package useful, toss it a star: 👉⭐️🎉
+Created by [@vriad](https://twitter.com/vriad). Follow me to hear when I publish other open-source projects.
+
+🎉⭐️If you're happy and you know it, star this repo⭐️🎉
 
 #### Table of contents
 
@@ -27,25 +29,23 @@ Created and maintained by [@vriad](https://twitter.com/vriad). If you find this 
 To install the latest version:
 
 ```sh
-npm install --save pkgname
+npm install --save gwen
 ```
 
 ```sh
-yarn add pkgname
+yarn add gwen
 ```
 
 #### TypeScript versions
 
-Zod 1.0.x is compatible with TypeScript 3.2+.
+gwen@0.x is compatible with TypeScript 3.7+.
 
 You must use `"strict": true` in your `tsconfig.json`! Otherwise you may get unexpected type errors.
 
 # Usage
 
-Write stuff here
-
 # Changelog
 
-| version     | release notes   |
-| ----------- | --------------- |
-| pkgname@1.0 | Initial release |
+| version  | release notes   |
+| -------- | --------------- |
+| gwen@1.0 | Initial release |
