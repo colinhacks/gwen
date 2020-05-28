@@ -1,20 +1,20 @@
 <h1 align="center">Gwen</h1>
 
 <p align="center">
-🎉⭐️ If you're happy and you know it, star this repo ⭐️🎉
+if you're happy and you know it, star this repo ⭐
 <br/>
-created by <a href="https://twitter.com/vriad" target="_blank">@vriad</a>
+created by <a href="https://twitter.com/vriad" target="_blank">@vriad</a> 👋
 </p>
 
 <br/>
+<p align="center">
+  
+  <a href="https://opensource.org/licenses/MIT" rel="nofollow"><img src="https://img.shields.io/github/license/vriad/gwen" alt="License"></a>
+  <a href="https://www.npmjs.com/package/gwen" rel="nofollow"><img src="https://img.shields.io/npm/dw/gwen.svg" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/gwen" rel="nofollow"><img src="https://img.shields.io/github/stars/vriad/gwen" alt="stars"></a>
+  <a href="./src/__tests__" rel="nofollow"><img src="./coverage.svg" alt="coverage"></a>
 
-[license-url]: https://opensource.org/licenses/MIT
-[license-image]: https://img.shields.io/github/license/vriad/gwen
-
-[![License][license-image]][license-url]
-[![npm](https://img.shields.io/npm/dw/gwen.svg)](https://www.npmjs.com/package/gwen)
-[![stars](https://img.shields.io/github/stars/vriad/gwen)](https://img.shields.io/github/stars/vriad/gwen)
-[![coverage](./coverage.svg)](./src/__tests__)
+</p>
 
 <br/>
 

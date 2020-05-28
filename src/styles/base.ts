@@ -59,10 +59,43 @@ export const label = css({
   fontWeight: 800,
 });
 
+export const cw = css({ color: gray(0) });
+export const cg0 = css({ color: gray(0) });
+export const cg1 = css({ color: gray(10) });
+export const cg2 = css({ color: gray(20) });
+export const cg3 = css({ color: gray(30) });
+export const cg4 = css({ color: gray(40) });
+export const cg5 = css({ color: gray(50) });
+export const cg6 = css({ color: gray(60) });
+export const cg7 = css({ color: gray(70) });
+export const cg8 = css({ color: gray(80) });
+export const cg9 = css({ color: gray(90) });
+export const cg10 = css({ color: gray(100) });
+export const cb = css({ color: gray(100) });
+
 export const color = (color: string) =>
   css({
     color,
   });
+
+export const h = (height: string) => css({ height });
+export const w = (width: string) => css({ width });
+export const bg = (background: string) => css({ background });
+export const td = (textDecoration: string) => css({ textDecoration });
+
+export const p = (padding: string) => css({ padding });
+export const pt = (paddingTop: string) => css({ paddingTop });
+export const pr = (paddingRight: string) => css({ paddingRight });
+export const pb = (paddingBottom: string) => css({ paddingBottom });
+export const pl = (paddingLeft: string) => css({ paddingLeft });
+
+export const m = (margin: string) => css({ margin });
+export const mt = (marginTop: string) => css({ marginTop });
+export const mr = (marginRight: string) => css({ marginRight });
+export const mb = (marginBottom: string) => css({ marginBottom });
+export const ml = (marginLeft: string) => css({ marginLeft });
+
+export const op = (opacity: number) => css({ opacity });
 
 export const fs1 = css({ fontSize: '1pt' });
 export const fs2 = css({ fontSize: '2pt' });
@@ -108,3 +141,15 @@ export const fill = cx(wide, tall);
 export const tal = css({ textAlign: 'left' });
 export const tac = css({ textAlign: 'center' });
 export const tar = css({ textAlign: 'right' });
+
+// minh
+// maxh
+// minw
+// maxw
+// color modification functions
+
+type CxArgs = Parameters<typeof cx>;
+export const hov = (...args: CxArgs) =>
+  css({
+    [`&:hover`]: cx(...args),
+  });
