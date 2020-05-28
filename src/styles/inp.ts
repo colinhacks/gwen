@@ -1,16 +1,16 @@
 import { css } from 'emotion';
 
-import { theme } from '../internal';
+import { gray } from '../internal';
 
 export const base = css({
   fontSize: '16px',
-  backgroundColor: theme.gray(4),
+  backgroundColor: gray(4),
   borderRadius: '4px',
-  border: `2px solid ${theme.gray(20)}`,
+  border: `2px solid ${gray(20)}`,
   position: 'relative',
   transition: '0.1s',
   [`&:focus-within`]: {
-    border: `2px solid ${theme.gray(40)}`,
+    border: `2px solid ${gray(40)}`,
   },
 
   [`& input`]: {
@@ -27,7 +27,7 @@ export const base = css({
 
   [`& p`]: {
     transition: '0.1s',
-    color: theme.gray(40),
+    color: gray(40),
     textTransform: 'uppercase',
     fontWeight: 800,
     fontSize: '13px',

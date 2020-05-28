@@ -1,6 +1,5 @@
 import Color from 'color';
 import { css, cx } from 'emotion';
-import { theme } from '../internal';
 
 export const base = css({
   border: 'none',
@@ -79,7 +78,7 @@ export const solid = (color: string) =>
     bgColor(color),
     shadowColor(color),
     css({
-      color: theme.white,
+      color: 'white',
     }),
   );
 

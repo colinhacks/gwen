@@ -1,28 +1,29 @@
 import { css, cx } from 'emotion';
 import Color from 'color';
 
-export const theme = {
-  teal: '#078399',
-  red: '#86151b',
-  green: '#027a42',
-  blue: '#0d93ad',
-  yellow: '#c5b503',
-  pink: `#FC0077`,
-  primary: `#FC0077`,
-  secondary: `#FC0077`,
-  black: '#000',
-  gray: (factor: number) =>
-    Color('#ffffff')
-      .darken(factor / 100)
-      .hex(),
-  white: '#fff',
-  sans: 'Merriweather Sans',
-  serif: 'EB Garamond',
-};
+export const gray = (factor: number) =>
+  Color('#ffffff')
+    .darken(factor / 100)
+    .hex();
 
-export const smallBreak = '500px';
-export const mediumBreak = '900px';
-export const largeBreak = '2000px';
+// export const theme = {
+//   teal: '#078399',
+//   red: '#86151b',
+//   green: '#027a42',
+//   blue: '#0d93ad',
+//   yellow: '#c5b503',
+//   pink: `#FC0077`,
+//   primary: `#FC0077`,
+//   secondary: `#FC0077`,
+//   black: '#000',
+//   gray,
+//   white: '#fff',
+//   sans: `'Helvetica', 'Arial', sans-serif`,
+//   serif: `"Times New Roman", Times, serif`,
+//   smallBreak: '500px',
+//   mediumBreak: '900px',
+//   largeBreak: '2000px',
+// };
 
 export const row = css({
   display: 'flex',
@@ -53,7 +54,7 @@ export const full = cx(css({ top: 0, left: 0 }), fw, fh);
 export const center = cx(col, ac, jc);
 
 export const label = css({
-  color: theme.gray(40),
+  color: gray(40),
   textTransform: 'uppercase',
   fontWeight: 800,
 });
@@ -63,6 +64,13 @@ export const color = (color: string) =>
     color,
   });
 
+export const fs1 = css({ fontSize: '1pt' });
+export const fs2 = css({ fontSize: '2pt' });
+export const fs3 = css({ fontSize: '3pt' });
+export const fs4 = css({ fontSize: '4pt' });
+export const fs5 = css({ fontSize: '5pt' });
+export const fs6 = css({ fontSize: '6pt' });
+export const fs7 = css({ fontSize: '7pt' });
 export const fs8 = css({ fontSize: '8pt' });
 export const fs9 = css({ fontSize: '9pt' });
 export const fs10 = css({ fontSize: '10pt' });
@@ -97,19 +105,6 @@ export const wide = css({ width: '100%' });
 export const tall = css({ height: '100%' });
 export const fill = cx(wide, tall);
 
-export const sans = css({
-  fontFamily: `"${theme.sans}", 'Helvetica', 'Arial',
-    sans-serif`,
-});
-
-export const serif = css({
-  fontFamily: `"${theme.serif}", "Times New Roman", Times, serif`,
-});
-
-export const app = cx(
-  full,
-  css({
-    fontFamily: `"${theme.sans}", 'Helvetica', 'Arial',
-    sans-serif`,
-  }),
-);
+export const tal = css({ textAlign: 'left' });
+export const tac = css({ textAlign: 'center' });
+export const tar = css({ textAlign: 'right' });
