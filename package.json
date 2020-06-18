@@ -1,7 +1,7 @@
 {
   "name": "gwen",
   "version": "0.0.5",
-  "description": "A styling utility designed for brevity",
+  "description": "A utility-first CSS library designed for brevity",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
   "files": [

@@ -6,33 +6,52 @@ export const gray = (factor: number) =>
     .darken(factor / 100)
     .hex();
 
-// export const theme = {
-//   teal: '#078399',
-//   red: '#86151b',
-//   green: '#027a42',
-//   blue: '#0d93ad',
-//   yellow: '#c5b503',
-//   pink: `#FC0077`,
-//   primary: `#FC0077`,
-//   secondary: `#FC0077`,
-//   black: '#000',
-//   gray,
-//   white: '#fff',
-//   sans: `'Helvetica', 'Arial', sans-serif`,
-//   serif: `"Times New Roman", Times, serif`,
-//   smallBreak: '500px',
-//   mediumBreak: '900px',
-//   largeBreak: '2000px',
-// };
+export const darken = (color: string, factor: number) =>
+  Color(color)
+    .darken(factor)
+    .hex();
+
+export const lighten = (color: string, factor: number) =>
+  Color(color)
+    .lighten(factor)
+    .hex();
+export const whiten = (color: string, factor: number) =>
+  Color(color)
+    .whiten(factor)
+    .hex();
+
+export const blacken = (color: string, factor: number) =>
+  Color(color)
+    .whiten(factor)
+    .hex();
+
+export const alpha = (color: string, factor: number) =>
+  Color(color)
+    .alpha(factor)
+    .hex();
 
 export const row = css({
   display: 'flex',
   flexDirection: 'row',
 });
 
+export const rowr = css({
+  display: 'flex',
+  flexDirection: 'row-reverse',
+});
+
 export const col = css({
   display: 'flex',
   flexDirection: 'column',
+});
+
+export const colr = css({
+  display: 'flex',
+  flexDirection: 'column-reverse',
+});
+
+export const fw = css({
+  flexWrap: 'wrap',
 });
 
 export const ac = css({ alignItems: 'center' });
@@ -41,6 +60,12 @@ export const as = css({ alignItems: 'flex-start' });
 export const ae = css({ alignItems: 'flex-end' });
 export const ab = css({ alignItems: 'baseline' });
 
+export const asc = css({ alignSelf: 'center' });
+export const asstr = css({ alignSelf: 'stretch' });
+export const ass = css({ alignSelf: 'flex-start' });
+export const ase = css({ alignSelf: 'flex-end' });
+export const asb = css({ alignSelf: 'baseline' });
+
 export const jc = css({ justifyContent: 'center' });
 export const js = css({ justifyContent: 'flex-start' });
 export const je = css({ justifyContent: 'flex-end' });
@@ -48,16 +73,8 @@ export const jb = css({ justifyContent: 'space-between' });
 export const ja = css({ justifyContent: 'space-around' });
 export const jev = css({ justifyContent: 'space-evenly' });
 
-export const fw = css({ width: '100vw' });
-export const fh = css({ height: '100vh' });
-export const full = cx(css({ top: 0, left: 0 }), fw, fh);
+export const fullpage = cx(css({ top: 0, left: 0, width: '100vw', height: '100vh' }));
 export const center = cx(col, ac, jc);
-
-export const label = css({
-  color: gray(40),
-  textTransform: 'uppercase',
-  fontWeight: 800,
-});
 
 export const cw = css({ color: gray(0) });
 export const cg0 = css({ color: gray(0) });
@@ -84,12 +101,14 @@ export const bg = (background: string) => css({ background });
 export const td = (textDecoration: string) => css({ textDecoration });
 
 export const p = (padding: string) => css({ padding });
+export const pad = (padding: string) => css({ padding });
 export const pt = (paddingTop: string) => css({ paddingTop });
 export const pr = (paddingRight: string) => css({ paddingRight });
 export const pb = (paddingBottom: string) => css({ paddingBottom });
 export const pl = (paddingLeft: string) => css({ paddingLeft });
 
 export const m = (margin: string) => css({ margin });
+export const mgn = (margin: string) => css({ margin });
 export const mt = (marginTop: string) => css({ marginTop });
 export const mr = (marginRight: string) => css({ marginRight });
 export const mb = (marginBottom: string) => css({ marginBottom });
@@ -138,15 +157,21 @@ export const wide = css({ width: '100%' });
 export const tall = css({ height: '100%' });
 export const fill = cx(wide, tall);
 
+export const ul = css({ textDecoration: 'underline' });
+export const upper = css({ textTransform: 'uppercase' });
+export const lower = css({ textTransform: 'lowercase' });
+export const caps = css({ textTransform: 'capitalize' });
+
 export const tal = css({ textAlign: 'left' });
 export const tac = css({ textAlign: 'center' });
 export const tar = css({ textAlign: 'right' });
 
-// minh
-// maxh
-// minw
-// maxw
-// color modification functions
+export const mh = (minHeight: string) => css({ minHeight });
+export const mw = (minWidth: string) => css({ minWidth });
+export const mxh = (maxHeight: string) => css({ maxHeight });
+export const mxw = (maxWidth: string) => css({ maxWidth });
+
+export const bgc = (backgroundColor: string) => css({ backgroundColor });
 
 type CxArgs = Parameters<typeof cx>;
 export const hov = (...args: CxArgs) =>
