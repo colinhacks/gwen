@@ -1,11 +1,11 @@
 // import { cx, css } from 'emotion';
 
-import { G } from './styles/Gwen';
+import { Gwen } from './Gwen';
 
 // import * as btn from './styles/btn';
 // import * as inp from './styles/inp';
 
 // export * from './styles/base';
 // export { cx as merge, css, btn, inp };
-
-export { G };
+const gwen = () => new Gwen();
+export { Gwen, gwen };

@@ -40,10 +40,12 @@
     "test": "jest --config jestconfig.json --coverage && yarn run badge",
     "badge": "make-coverage-badge --output-path ./coverage.svg",
     "prepare": "npm run build",
-    "play": "nodemon -e ts -w . -x ts-node src/playground.ts"
+    "play": "nodemon -e ts -w . -x ts-node playground.ts",
+    "generate": "ts-node generate.ts"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
+    "@types/node": "^14.0.13",
     "jest": "^25.1.0",
     "make-coverage-badge": "^1.2.0",
     "nodemon": "^2.0.2",
