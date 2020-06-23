@@ -314,6 +314,10 @@ export class GwenBase {
   firstChild = (delta: (t: this) => this) => this.pseudo(`&:first-child`, delta);
   lastChild = (delta: (t: this) => this) => this.pseudo(`&:last-child`, delta);
   nthChild = (n: number | string, delta: (t: this) => this) => this.pseudo(`&:nth-child(${n})`, delta);
+  if = (condition: any, delta: (t: this) => this) => {
+    if (condition) return delta(this);
+    return this;
+  };
 }
 
 // const b = 'asdf'; // background
