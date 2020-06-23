@@ -1,5 +1,5 @@
 import { GwenBase } from './GwenBase';
-export class G extends GwenBase {
+export class Gwen extends GwenBase {
 
   get f0() { return this.css({ flex: 0 })}
   get f1() { return this.css({ flex: 1 })}

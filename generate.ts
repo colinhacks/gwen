@@ -17,7 +17,7 @@ const list256 = range(0, 255);
 
 const Gwen: string[] = [];
 Gwen.push(`import { GwenBase } from './GwenBase';`);
-Gwen.push('export class G extends GwenBase {\n');
+Gwen.push('export class Gwen extends GwenBase {\n');
 
 // const myArr = new Array(100);
 

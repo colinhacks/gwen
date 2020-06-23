@@ -42,7 +42,7 @@ export class GwenBase {
     };
   }
 
-  get end() {
+  get stop() {
     return this.className;
   }
 
@@ -260,7 +260,7 @@ export class GwenBase {
     const newInst: this = new (this as any).constructor();
     console.log(newInst);
     return this.css({
-      [cond]: delta(newInst).end,
+      [cond]: delta(newInst).stop,
     });
   };
 
@@ -268,7 +268,7 @@ export class GwenBase {
     const newInst: this = new (this as any).constructor();
     console.log(newInst);
     return this.css({
-      [cond]: delta(newInst).end,
+      [cond]: delta(newInst).stop,
     });
   };
 
