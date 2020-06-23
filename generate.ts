@@ -13,7 +13,7 @@ const range = (start: number, end: number) => {
 const weights = range(1, 9);
 const list20 = range(0, 20);
 const list100 = range(0, 100);
-const list256 = range(0, 255);
+// const list256 = range(0, 255);
 
 const Gwen: string[] = [];
 Gwen.push(`import { GwenBase } from './GwenBase';`);
@@ -30,11 +30,11 @@ Gwen.push(wpcts);
 const hpcts = list20.map(k => `  get h${k * 5}pct() { return this.css({ height: "${5 * k}%" })}`).join('\n');
 Gwen.push(hpcts);
 
-const cgs = list256
+const cgs = list100
   .map(
     k =>
       `  get cg${k}() { return this.css({ color: "${Color('#ffffff')
-        .darken(k / 256)
+        .darken(k / 100)
         .hex()}" }); }`,
   )
   .join('\n');
