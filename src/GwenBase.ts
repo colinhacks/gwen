@@ -10,6 +10,9 @@ type GwenTheme = {
   md: string;
   lg: string;
   xl: string;
+  sansFont: string;
+  serifFont: string;
+
   // primary: string;
   // accent: string;
 };
@@ -21,6 +24,8 @@ export class GwenBase {
     md: '768px',
     lg: '1024px',
     xl: '1280px',
+    sansFont: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+    serifFont: `Georgia, Cambria, "Times New Roman", Times, serif`,
     //  primary: '#4BBAAB',
     //  accent: '#302E2E',
   };
@@ -42,13 +47,14 @@ export class GwenBase {
   }
 
   static css = css;
+  static cx = cx;
 
   protected _update = (...args: CxArgs) => {
     this.className = cx(this.className, ...args);
     return this;
   };
 
-  css = (...args: CssArgs) => {
+  css = (...args: CssArgs): this => {
     return this._update(css(...args));
   };
 
@@ -57,304 +63,214 @@ export class GwenBase {
   };
 
   get row() {
-    return this._update(
-      css({
-        display: 'flex',
-        flexDirection: 'row',
-      }),
-    );
+    return this.css({
+      display: 'flex',
+      flexDirection: 'row',
+    });
   }
 
   get rowr() {
-    return this._update(
-      css({
-        display: 'flex',
-        flexDirection: 'row-reverse',
-      }),
-    );
+    return this.css({
+      display: 'flex',
+      flexDirection: 'row-reverse',
+    });
   }
 
   get col() {
-    return this._update(
-      css({
-        display: 'flex',
-        flexDirection: 'column',
-      }),
-    );
+    return this.css({
+      display: 'flex',
+      flexDirection: 'column',
+    });
   }
 
   get colr() {
-    return this._update(
-      css({
-        display: 'flex',
-        flexDirection: 'column-reverse',
-      }),
-    );
+    return this.css({
+      display: 'flex',
+      flexDirection: 'column-reverse',
+    });
   }
 
   get wrap() {
-    return this._update(css({ flexWrap: 'wrap' }));
+    return this.css({ flexWrap: 'wrap' });
   }
   get wrapr() {
-    return this._update(css({ flexWrap: 'wrap-reverse' }));
+    return this.css({ flexWrap: 'wrap-reverse' });
   }
   get nw() {
-    return this._update(css({ flexWrap: 'nowrap' }));
+    return this.css({ flexWrap: 'nowrap' });
   }
 
   // get aic() {
-  //   return this._update(css({ alignItems: 'center' }));
+  //   return this.css({ alignItems: 'center' });
   // }
   // get ais() {
-  //   return this._update(css({ alignItems: 'stretch' }));
+  //   return this.css({ alignItems: 'stretch' });
   // }
   // get aifs() {
-  //   return this._update(css({ alignItems: 'flex-start' }));
+  //   return this.css({ alignItems: 'flex-start' });
   // }
   // get aife() {
-  //   return this._update(css({ alignItems: 'flex-end' }));
+  //   return this.css({ alignItems: 'flex-end' });
   // }
   // get aib() {
-  //   return this._update(css({ alignItems: 'baseline' }));
+  //   return this.css({ alignItems: 'baseline' });
   // }
 
   get ac() {
-    return this._update(css({ alignItems: 'center' }));
+    return this.css({ alignItems: 'center' });
   }
   get ast() {
-    return this._update(css({ alignItems: 'stretch' }));
+    return this.css({ alignItems: 'stretch' });
   }
   get as() {
-    return this._update(css({ alignItems: 'flex-start' }));
+    return this.css({ alignItems: 'flex-start' });
   }
   get ae() {
-    return this._update(css({ alignItems: 'flex-end' }));
+    return this.css({ alignItems: 'flex-end' });
   }
   get ab() {
-    return this._update(css({ alignItems: 'baseline' }));
+    return this.css({ alignItems: 'baseline' });
   }
 
   // get asc() {
-  //   return this._update(css({ alignSelf: 'center' }));
+  //   return this.css({ alignSelf: 'center' });
   // }
   // get asst() {
-  //   return this._update(css({ alignSelf: 'stretch' }));
+  //   return this.css({ alignSelf: 'stretch' });
   // }
   // get asfs() {
-  //   return this._update(css({ alignSelf: 'flex-start' }));
+  //   return this.css({ alignSelf: 'flex-start' });
   // }
   // get asfe() {
-  //   return this._update(css({ alignSelf: 'flex-end' }));
+  //   return this.css({ alignSelf: 'flex-end' });
   // }
   // get asb() {
-  //   return this._update(css({ alignSelf: 'baseline' }));
+  //   return this.css({ alignSelf: 'baseline' });
   // }
 
   // get jcc() {
-  //   return this._update(css({ justifyContent: 'center' }));
+  //   return this.css({ justifyContent: 'center' });
   // }
   // get jcfs() {
-  //   return this._update(css({ justifyContent: 'flex-start' }));
+  //   return this.css({ justifyContent: 'flex-start' });
   // }
   // get jcfe() {
-  //   return this._update(css({ justifyContent: 'flex-end' }));
+  //   return this.css({ justifyContent: 'flex-end' });
   // }
   // get jcsb() {
-  //   return this._update(css({ justifyContent: 'space-between' }));
+  //   return this.css({ justifyContent: 'space-between' });
   // }
   // get jcsa() {
-  //   return this._update(css({ justifyContent: 'space-around' }));
+  //   return this.css({ justifyContent: 'space-around' });
   // }
   // get jcse() {
-  //   return this._update(css({ justifyContent: 'space-evenly' }));
+  //   return this.css({ justifyContent: 'space-evenly' });
   // }
 
   get jc() {
-    return this._update(css({ justifyContent: 'center' }));
+    return this.css({ justifyContent: 'center' });
   }
   get js() {
-    return this._update(css({ justifyContent: 'flex-start' }));
+    return this.css({ justifyContent: 'flex-start' });
   }
   get je() {
-    return this._update(css({ justifyContent: 'flex-end' }));
+    return this.css({ justifyContent: 'flex-end' });
   }
   //  get jsb() {
-  //    return this._update(css({ justifyContent: 'space-between' }));
+  //    return this.css({ justifyContent: 'space-between' });
   //  }
   //  get jsa() {
-  //    return this._update(css({ justifyContent: 'space-around' }));
+  //    return this.css({ justifyContent: 'space-around' });
   //  }
   //  get jse() {
-  //    return this._update(css({ justifyContent: 'space-evenly' }));
+  //    return this.css({ justifyContent: 'space-evenly' });
   //  }
 
   get white() {
-    return this._update(css({ color: '#FFFFFF' }));
+    return this.css({ color: '#FFFFFF' });
   }
 
   get black() {
-    return this._update(css({ color: `#000000` }));
+    return this.css({ color: `#000000` });
   }
 
   get underline() {
-    return this._update(css({ textDecoration: 'underline' }));
+    return this.css({ textDecoration: 'underline' });
   }
 
   get overline() {
-    return this._update(css({ textDecoration: 'underline' }));
+    return this.css({ textDecoration: 'underline' });
   }
-
-  //  c = (val: CSS['color']) => {
-  //    return this._update(css({ color: val }));
-  //  };
-
-  //  h = (val: CSS['height']) => {
-  //    return this._update(css({ height: val }));
-  //  };
-  //  w = (val: CSS['width']) => {
-  //    return this._update(css({ width: val }));
-  //  };
-  //  l = (val: CSS['left']) => {
-  //    return this._update(css({ left: val }));
-  //  };
-  //  r = (val: CSS['right']) => {
-  //    return this._update(css({ right: val }));
-  //  };
-  //  t = (val: CSS['top']) => {
-  //    return this._update(css({ top: val }));
-  //  };
-  //  b = (val: CSS['bottom']) => {
-  //    return this._update(css({ bottom: val }));
-  //  };
-  //  bg = (val: CSS['background']) => {
-  //    return this._update(css({ background: val }));
-  //  };
-  //  td = (val: CSS['textDecoration']) => {
-  //    return this._update(css({ textDecoration: val }));
-  //  };
-
-  //  p = (val: CSS['padding']) => {
-  //    return this._update(css({ padding: val }));
-  //  };
-  //  pad = (val: CSS['padding']) => {
-  //    return this._update(css({ padding: val }));
-  //  };
-  //  pt = (val: CSS['paddingTop']) => {
-  //    return this._update(css({ paddingTop: val }));
-  //  };
-  //  pr = (val: CSS['paddingRight']) => {
-  //    return this._update(css({ paddingRight: val }));
-  //  };
-  //  pb = (val: CSS['paddingBottom']) => {
-  //    return this._update(css({ paddingBottom: val }));
-  //  };
-  //  pl = (val: CSS['paddingLeft']) => {
-  //    return this._update(css({ paddingLeft: val }));
-  //  };
-
-  //  m = (val: CSS['margin']) => {
-  //    return this._update(css({ margin: val }));
-  //  };
-  //  mgn = (val: CSS['margin']) => {
-  //    return this._update(css({ margin: val }));
-  //  };
-  //  mt = (val: CSS['marginTop']) => {
-  //    return this._update(css({ marginTop: val }));
-  //  };
-  //  mr = (val: CSS['marginRight']) => {
-  //    return this._update(css({ marginRight: val }));
-  //  };
-  //  mb = (val: CSS['marginBottom']) => {
-  //    return this._update(css({ marginBottom: val }));
-  //  };
-  //  ml = (val: CSS['marginLeft']) => {
-  //    return this._update(css({ marginLeft: val }));
-  //  };
-  //  mv = (val: CSS['marginTop']) => {
-  //    return this._update(css({ marginTop: val, marginBottom: val }));
-  //  };
-  //  mh = (val: CSS['marginTop']) => {
-  //    return this._update(css({ marginLeft: val, marginRight: val }));
-  //  };
-
-  //  op = (opacity: number) => {
-  //    return this._update(css({ opacity }));
-  //  };
 
   get bold() {
-    return this._update(css({ fontWeight: 'bold' }));
+    return this.css({ fontWeight: 'bold' });
   }
   get bolder() {
-    return this._update(css({ fontWeight: 'bolder' }));
+    return this.css({ fontWeight: 'bolder' });
   }
   get lighter() {
-    return this._update(css({ fontWeight: 'lighter' }));
+    return this.css({ fontWeight: 'lighter' });
   }
 
   get wide() {
-    return this._update(css({ width: '100%' }));
+    return this.css({ width: '100%' });
   }
   get tall() {
-    return this._update(css({ height: '100%' }));
+    return this.css({ height: '100%' });
   }
   get fill() {
     return this.wide.tall;
   }
 
   get upper() {
-    return this._update(css({ textTransform: 'uppercase' }));
+    return this.css({ textTransform: 'uppercase' });
   }
   get lower() {
-    return this._update(css({ textTransform: 'lowercase' }));
+    return this.css({ textTransform: 'lowercase' });
   }
   get caps() {
-    return this._update(css({ textTransform: 'capitalize' }));
+    return this.css({ textTransform: 'capitalize' });
   }
 
   get tal() {
-    return this._update(css({ textAlign: 'left' }));
+    return this.css({ textAlign: 'left' });
   }
   get tac() {
-    return this._update(css({ textAlign: 'center' }));
+    return this.css({ textAlign: 'center' });
   }
   get tar() {
-    return this._update(css({ textAlign: 'right' }));
+    return this.css({ textAlign: 'right' });
   }
 
-  //  mnh = (val: CSS['minHeight']) => {
-  //    return this._update(css({ minHeight: val }));
-  //  };
-  //  mnw = (val: CSS['minWidth']) => {
-  //    return this._update(css({ minWidth: val }));
-  //  };
-  //  mxh = (val: CSS['maxHeight']) => {
-  //    return this._update(css({ maxHeight: val }));
-  //  };
-  //  mxw = (val: CSS['maxWidth']) => {
-  //    return this._update(css({ maxWidth: val }));
-  //  };
-
-  //  bgc = (val: CSS['backgroundColor']) => {
-  //    return this._update(css({ backgroundColor: val }));
-  //  };
+  get vw100() {
+    return this.css({ width: '100vw' });
+  }
+  get vh100() {
+    return this.css({ height: '100vh' });
+  }
+  get fullpage() {
+    return this.vw100.vh100;
+  }
 
   hover = (...args: CxArgs) => {
-    return this._update(css({ [`&:hover`]: cx(...args) }));
+    return this.css({ [`&:hover`]: cx(...args) });
+  };
+
+  selector = (cond: string, delta: (t: this) => this) => {
+    const newInst: this = new (this as any).constructor();
+    console.log(newInst);
+    return this.css({
+      [cond]: delta(newInst).end,
+    });
   };
 
   pseudo = (cond: string, delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();
     console.log(newInst);
-    return this._update(
-      css({
-        [cond]: delta(newInst).end,
-      }),
-    );
+    return this.css({
+      [cond]: delta(newInst).end,
+    });
   };
-
-  // media = (cond: string, ...args: CxArgs) => {
-  //   return this.pseudo(`@media(${cond})`, cx(...args));
-  // };
 
   xs = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xs})`, delta);
   sm = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.sm})`, delta);
@@ -385,25 +301,19 @@ export class GwenBase {
   xlonly = (delta: (t: this) => this) =>
     this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xl}px )`, delta);
 
-  checked = (...args: CxArgs) => {
-    return this._update(css({ [`&:checked`]: cx(...args) }));
-  };
-
-  focus = (...args: CxArgs) => {
-    return this._update(css({ [`&:focus`]: cx(...args) }));
-  };
-
-  focuswithin = (...args: CxArgs) => {
-    return this._update(css({ [`&:focus-within`]: cx(...args) }));
-  };
-
-  visited = (...args: CxArgs) => {
-    return this._update(css({ [`&:visited`]: cx(...args) }));
-  };
-
-  active = (...args: CxArgs) => {
-    return this._update(css({ [`&:active`]: cx(...args) }));
-  };
+  link = (delta: (t: this) => this) => this.pseudo(`&:link`, delta);
+  checked = (delta: (t: this) => this) => this.pseudo(`&:checked`, delta);
+  focus = (delta: (t: this) => this) => this.pseudo(`&:focus`, delta);
+  focusWithin = (delta: (t: this) => this) => this.pseudo(`&:focus-within`, delta);
+  visited = (delta: (t: this) => this) => this.pseudo(`&:visited`, delta);
+  active = (delta: (t: this) => this) => this.pseudo(`&:active`, delta);
+  empty = (delta: (t: this) => this) => this.pseudo(`&:empty`, delta);
+  enabled = (delta: (t: this) => this) => this.pseudo(`&:enabled`, delta);
+  firstOfType = (delta: (t: this) => this) => this.pseudo(`&:first-of-type`, delta);
+  lastOfType = (delta: (t: this) => this) => this.pseudo(`&:last-of-type`, delta);
+  firstChild = (delta: (t: this) => this) => this.pseudo(`&:first-child`, delta);
+  lastChild = (delta: (t: this) => this) => this.pseudo(`&:last-child`, delta);
+  nthChild = (n: number | string, delta: (t: this) => this) => this.pseudo(`&:nth-child(${n})`, delta);
 }
 
 // const b = 'asdf'; // background
