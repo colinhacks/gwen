@@ -301,7 +301,7 @@ export class GwenBase {
   xlonly = (delta: (t: this) => this) =>
     this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xl}px )`, delta);
 
-  link = (delta: (t: this) => this) => this.pseudo(`&:link`, delta);
+  // link = (delta: (t: this) => this) => this.pseudo(`&:link`, delta);
   checked = (delta: (t: this) => this) => this.pseudo(`&:checked`, delta);
   focus = (delta: (t: this) => this) => this.pseudo(`&:focus`, delta);
   focusWithin = (delta: (t: this) => this) => this.pseudo(`&:focus-within`, delta);
