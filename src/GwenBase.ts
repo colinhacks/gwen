@@ -272,11 +272,21 @@ export class GwenBase {
     });
   };
 
-  xs = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xs})`, delta);
-  sm = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.sm})`, delta);
-  md = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.md})`, delta);
-  lg = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.lg})`, delta);
-  xl = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xl})`, delta);
+  //  xsup = (delta: (t: this) => this) =>
+  //    this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xs})`, delta);
+  smup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.sm})`, delta);
+  mdup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.md})`, delta);
+  lgup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.lg})`, delta);
+  xlup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xl})`, delta);
+
+  xsdown = (delta: (t: this) => this) =>
+    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.sm})`, delta);
+  smdown = (delta: (t: this) => this) =>
+    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.md})`, delta);
+  mddown = (delta: (t: this) => this) =>
+    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.lg})`, delta);
+  lgdown = (delta: (t: this) => this) =>
+    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.xl})`, delta);
 
   xsonly = (delta: (t: this) => this) =>
     this.pseudo(
