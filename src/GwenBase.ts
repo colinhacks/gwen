@@ -1,67 +1,6 @@
-import { css, cx } from 'emotion';
+import { GwenBaseBase } from './GwenBaseBase';
 
-type CssArgs = Parameters<typeof css>;
-// type CSS = ObjectInterpolation<undefined>;
-type CxArgs = Parameters<typeof cx>;
-
-type GwenTheme = {
-  xs: string;
-  sm: string;
-  md: string;
-  lg: string;
-  xl: string;
-  sansFont: string;
-  serifFont: string;
-
-  // primary: string;
-  // accent: string;
-};
-
-export class GwenBase {
-  protected defaultTheme: GwenTheme = {
-    xs: '400px',
-    sm: '640px',
-    md: '768px',
-    lg: '1024px',
-    xl: '1280px',
-    sansFont: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
-    serifFont: `Georgia, Cambria, "Times New Roman", Times, serif`,
-    //  primary: '#4BBAAB',
-    //  accent: '#302E2E',
-  };
-  theme: Partial<GwenTheme> = {};
-  protected finalTheme: GwenTheme;
-
-  protected className: string;
-
-  constructor() {
-    this.className = css({});
-    this.finalTheme = {
-      ...this.defaultTheme,
-      ...this.theme,
-    };
-  }
-
-  get stop() {
-    return this.className;
-  }
-
-  static css = css;
-  static cx = cx;
-
-  protected _update = (...args: CxArgs) => {
-    this.className = cx(this.className, ...args);
-    return this;
-  };
-
-  css = (...args: CssArgs): this => {
-    return this._update(css(...args));
-  };
-
-  cx = (...args: CxArgs) => {
-    return this._update(cx(...args));
-  };
-
+export class GwenBase extends GwenBaseBase {
   get row() {
     return this.css({
       display: 'flex',
@@ -69,122 +8,124 @@ export class GwenBase {
     });
   }
 
-  get rowr() {
+  get fdr() {
+    return this.css({
+      display: 'flex',
+      flexDirection: 'row',
+    });
+  }
+
+  get fdrr() {
     return this.css({
       display: 'flex',
       flexDirection: 'row-reverse',
     });
   }
 
-  get col() {
+  get fdc() {
     return this.css({
       display: 'flex',
       flexDirection: 'column',
     });
   }
 
-  get colr() {
+  get column() {
+    return this.css({
+      display: 'flex',
+      flexDirection: 'column',
+    });
+  }
+
+  get fdcr() {
     return this.css({
       display: 'flex',
       flexDirection: 'column-reverse',
     });
   }
 
-  get wrap() {
+  get fww() {
     return this.css({ flexWrap: 'wrap' });
   }
-  get wrapr() {
+  get fwwr() {
     return this.css({ flexWrap: 'wrap-reverse' });
   }
-  get nw() {
+  get fwn() {
     return this.css({ flexWrap: 'nowrap' });
   }
 
-  // get aic() {
-  //   return this.css({ alignItems: 'center' });
-  // }
-  // get ais() {
-  //   return this.css({ alignItems: 'stretch' });
-  // }
-  // get aifs() {
-  //   return this.css({ alignItems: 'flex-start' });
-  // }
-  // get aife() {
-  //   return this.css({ alignItems: 'flex-end' });
-  // }
-  // get aib() {
-  //   return this.css({ alignItems: 'baseline' });
-  // }
-
-  get ac() {
+  get aic() {
     return this.css({ alignItems: 'center' });
   }
-  get ast() {
+  get aist() {
     return this.css({ alignItems: 'stretch' });
   }
-  get as() {
+  get aifs() {
     return this.css({ alignItems: 'flex-start' });
   }
-  get ae() {
+  get aife() {
     return this.css({ alignItems: 'flex-end' });
   }
-  get ab() {
+  get aib() {
     return this.css({ alignItems: 'baseline' });
   }
 
-  // get asc() {
-  //   return this.css({ alignSelf: 'center' });
-  // }
-  // get asst() {
-  //   return this.css({ alignSelf: 'stretch' });
-  // }
-  // get asfs() {
-  //   return this.css({ alignSelf: 'flex-start' });
-  // }
-  // get asfe() {
-  //   return this.css({ alignSelf: 'flex-end' });
-  // }
-  // get asb() {
-  //   return this.css({ alignSelf: 'baseline' });
-  // }
+  get asc() {
+    return this.css({ alignSelf: 'center' });
+  }
+  get ass() {
+    return this.css({ alignSelf: 'stretch' });
+  }
+  get asfs() {
+    return this.css({ alignSelf: 'flex-start' });
+  }
+  get asfe() {
+    return this.css({ alignSelf: 'flex-end' });
+  }
+  get asb() {
+    return this.css({ alignSelf: 'baseline' });
+  }
 
-  // get jcc() {
-  //   return this.css({ justifyContent: 'center' });
-  // }
-  // get jcfs() {
-  //   return this.css({ justifyContent: 'flex-start' });
-  // }
-  // get jcfe() {
-  //   return this.css({ justifyContent: 'flex-end' });
-  // }
-  // get jcsb() {
-  //   return this.css({ justifyContent: 'space-between' });
-  // }
-  // get jcsa() {
-  //   return this.css({ justifyContent: 'space-around' });
-  // }
-  // get jcse() {
-  //   return this.css({ justifyContent: 'space-evenly' });
-  // }
-
-  get jc() {
+  get jcc() {
     return this.css({ justifyContent: 'center' });
   }
-  get js() {
+  get jcfs() {
     return this.css({ justifyContent: 'flex-start' });
   }
-  get je() {
+  get jcfe() {
     return this.css({ justifyContent: 'flex-end' });
   }
-  //  get jsb() {
-  //    return this.css({ justifyContent: 'space-between' });
-  //  }
-  //  get jsa() {
-  //    return this.css({ justifyContent: 'space-around' });
-  //  }
-  //  get jse() {
-  //    return this.css({ justifyContent: 'space-evenly' });
-  //  }
+  get jcsb() {
+    return this.css({ justifyContent: 'space-between' });
+  }
+  get jcsa() {
+    return this.css({ justifyContent: 'space-around' });
+  }
+  get jcse() {
+    return this.css({ justifyContent: 'space-evenly' });
+  }
+
+  get jic() {
+    return this.css({ justifyItems: 'center' });
+  }
+  get jis() {
+    return this.css({ justifyItems: 'start' });
+  }
+  get jie() {
+    return this.css({ justifyItems: 'end' });
+  }
+  get jist() {
+    return this.css({ justifyItems: 'stretch' });
+  }
+
+  get jib() {
+    return this.css({ justifyItems: 'baseline' });
+  }
+  get jifb() {
+    return this.css({ justifyItems: 'first baseline' });
+  }
+  get jilb() {
+    return this.css({ justifyItems: 'last baseline' });
+  }
 
   get white() {
     return this.css({ color: '#FFFFFF' });
@@ -198,8 +139,32 @@ export class GwenBase {
     return this.css({ textDecoration: 'underline' });
   }
 
-  get overline() {
-    return this.css({ textDecoration: 'underline' });
+  get visible() {
+    return this.css({ visibility: 'visible' });
+  }
+  get hidden() {
+    return this.css({ visibility: 'hidden' });
+  }
+
+  get wbn() {
+    return this.css({ wordBreak: 'normal' });
+  }
+  get wbba() {
+    return this.css({ wordBreak: 'break-all' });
+  }
+  get wbka() {
+    return this.css({ wordBreak: 'keep-all' });
+  }
+  get wbbw() {
+    return this.css({ wordBreak: 'break-word' });
+  }
+
+  get toc() {
+    return this.css({ textOverflow: 'clip' });
+  }
+
+  get toe() {
+    return this.css({ textOverflow: 'ellipsis' });
   }
 
   get bold() {
@@ -241,19 +206,57 @@ export class GwenBase {
   get tar() {
     return this.css({ textAlign: 'right' });
   }
+  get taj() {
+    return this.css({ textAlign: 'justify' });
+  }
 
-  get vw100() {
+  // get w100vw() {
+  //   return this.css({ width: '100vw' });
+  // }
+  // get h100vh() {
+  //   return this.css({ height: '100vh' });
+  // }
+  get fullw() {
     return this.css({ width: '100vw' });
   }
-  get vh100() {
+  get fullh() {
     return this.css({ height: '100vh' });
   }
-  get fullpage() {
-    return this.vw100.vh100;
+  get full() {
+    return this.css({ height: '100vh', width: '100vw' });
   }
 
-  hover = (...args: CxArgs) => {
-    return this.css({ [`&:hover`]: cx(...args) });
+  get ofh() {
+    return this.css({ overflow: 'hidden' });
+  }
+
+  get ofv() {
+    return this.css({ overflow: 'visible' });
+  }
+
+  get ofs() {
+    return this.css({ overflow: 'scroll' });
+  }
+
+  get ofa() {
+    return this.css({ overflow: 'auto' });
+  }
+
+  get smallcaps() {
+    return this.css({ fontVariant: 'small-caps' });
+  }
+
+  /**
+   * @property allsmallcaps
+   * @description { fontVariant: "all-small-caps" }
+   */
+  get allsmallcaps() {
+    return this.css({ fontVariant: 'all-small-caps' });
+  }
+
+  hover = (delta: (t: this) => this) => {
+    const newInst: this = new (this as any).constructor();
+    return this.css({ [`&:hover`]: delta(newInst).stop });
   };
 
   selector = (cond: string, delta: (t: this) => this) => {
@@ -264,66 +267,70 @@ export class GwenBase {
     });
   };
 
-  pseudo = (cond: string, delta: (t: this) => this) => {
-    const newInst: this = new (this as any).constructor();
-    console.log(newInst);
-    return this.css({
-      [cond]: delta(newInst).stop,
-    });
-  };
+  //  pseudo = (cond: string, delta: (t: this) => this) => {
+  //    const newInst: this = new (this as any).constructor();
+  //    console.log(newInst);
+  //    return this.css({
+  //      [cond]: delta(newInst).stop,
+  //    });
+  //  };
 
   //  xsup = (delta: (t: this) => this) =>
-  //    this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xs})`, delta);
-  smup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.sm})`, delta);
-  mdup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.md})`, delta);
-  lgup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.lg})`, delta);
-  xlup = (delta: (t: this) => this) => this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xl})`, delta);
+  //    this.selector(`@media only screen and (min-width: ${this.finalTheme.xs})`, delta);
+  smup = (delta: (t: this) => this) =>
+    this.selector(`@media only screen and (min-width: ${this.finalTheme.sm})`, delta);
+  mdup = (delta: (t: this) => this) =>
+    this.selector(`@media only screen and (min-width: ${this.finalTheme.md})`, delta);
+  lgup = (delta: (t: this) => this) =>
+    this.selector(`@media only screen and (min-width: ${this.finalTheme.lg})`, delta);
+  xlup = (delta: (t: this) => this) =>
+    this.selector(`@media only screen and (min-width: ${this.finalTheme.xl})`, delta);
 
   xsdown = (delta: (t: this) => this) =>
-    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.sm})`, delta);
+    this.selector(`@media only screen and (max-width: ${this.finalTheme.sm})`, delta);
   smdown = (delta: (t: this) => this) =>
-    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.md})`, delta);
+    this.selector(`@media only screen and (max-width: ${this.finalTheme.md})`, delta);
   mddown = (delta: (t: this) => this) =>
-    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.lg})`, delta);
+    this.selector(`@media only screen and (max-width: ${this.finalTheme.lg})`, delta);
   lgdown = (delta: (t: this) => this) =>
-    this.pseudo(`@media only screen and (max-width: ${this.finalTheme.xl})`, delta);
+    this.selector(`@media only screen and (max-width: ${this.finalTheme.xl})`, delta);
 
   xsonly = (delta: (t: this) => this) =>
-    this.pseudo(
+    this.selector(
       `@media only screen and (min-width: ${this.finalTheme.xs}px ) and (max-width: ${this.finalTheme.sm}px)`,
       delta,
     );
   smonly = (delta: (t: this) => this) =>
-    this.pseudo(
+    this.selector(
       `@media only screen and (min-width: ${this.finalTheme.sm}px ) and (max-width: ${this.finalTheme.md}px)`,
       delta,
     );
   mdonly = (delta: (t: this) => this) =>
-    this.pseudo(
+    this.selector(
       `@media only screen and (min-width: ${this.finalTheme.md}px ) and (max-width: ${this.finalTheme.lg}px)`,
       delta,
     );
   lgonly = (delta: (t: this) => this) =>
-    this.pseudo(
+    this.selector(
       `@media only screen and (min-width: ${this.finalTheme.lg}px ) and (max-width: ${this.finalTheme.xl}px)`,
       delta,
     );
   xlonly = (delta: (t: this) => this) =>
-    this.pseudo(`@media only screen and (min-width: ${this.finalTheme.xl}px )`, delta);
+    this.selector(`@media only screen and (min-width: ${this.finalTheme.xl}px )`, delta);
 
-  // link = (delta: (t: this) => this) => this.pseudo(`&:link`, delta);
-  checked = (delta: (t: this) => this) => this.pseudo(`&:checked`, delta);
-  focus = (delta: (t: this) => this) => this.pseudo(`&:focus`, delta);
-  focusWithin = (delta: (t: this) => this) => this.pseudo(`&:focus-within`, delta);
-  visited = (delta: (t: this) => this) => this.pseudo(`&:visited`, delta);
-  active = (delta: (t: this) => this) => this.pseudo(`&:active`, delta);
-  empty = (delta: (t: this) => this) => this.pseudo(`&:empty`, delta);
-  enabled = (delta: (t: this) => this) => this.pseudo(`&:enabled`, delta);
-  firstOfType = (delta: (t: this) => this) => this.pseudo(`&:first-of-type`, delta);
-  lastOfType = (delta: (t: this) => this) => this.pseudo(`&:last-of-type`, delta);
-  firstChild = (delta: (t: this) => this) => this.pseudo(`&:first-child`, delta);
-  lastChild = (delta: (t: this) => this) => this.pseudo(`&:last-child`, delta);
-  nthChild = (n: number | string, delta: (t: this) => this) => this.pseudo(`&:nth-child(${n})`, delta);
+  // link = (delta: (t: this) => this) => this.selector(`&:link`, delta);
+  checked = (delta: (t: this) => this) => this.selector(`&:checked`, delta);
+  focus = (delta: (t: this) => this) => this.selector(`&:focus`, delta);
+  focusWithin = (delta: (t: this) => this) => this.selector(`&:focus-within`, delta);
+  visited = (delta: (t: this) => this) => this.selector(`&:visited`, delta);
+  active = (delta: (t: this) => this) => this.selector(`&:active`, delta);
+  empty = (delta: (t: this) => this) => this.selector(`&:empty`, delta);
+  enabled = (delta: (t: this) => this) => this.selector(`&:enabled`, delta);
+  firstOfType = (delta: (t: this) => this) => this.selector(`&:first-of-type`, delta);
+  lastOfType = (delta: (t: this) => this) => this.selector(`&:last-of-type`, delta);
+  firstChild = (delta: (t: this) => this) => this.selector(`&:first-child`, delta);
+  lastChild = (delta: (t: this) => this) => this.selector(`&:last-child`, delta);
+  nthChild = (n: number | string, delta: (t: this) => this) => this.selector(`&:nth-child(${n})`, delta);
   if = (condition: any, delta: (t: this) => this) => {
     if (condition) return delta(this);
     return this;
