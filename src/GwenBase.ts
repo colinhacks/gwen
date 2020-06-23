@@ -219,12 +219,12 @@ export class GwenBase extends GwenBaseBase {
   }
   hover = (delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();
-    return this.css({ [`&:hover`]: delta(newInst).stop });
+    return this.css({ [`&:hover`]: delta(newInst).class });
   };
   selector = (cond: string, delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();
     return this.css({
-      [cond]: delta(newInst).stop,
+      [cond]: delta(newInst).class,
     });
   };
   smup = (delta: (t: this) => this) =>
