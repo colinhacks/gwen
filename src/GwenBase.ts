@@ -1,4 +1,5 @@
 import { GwenBaseBase } from './GwenBaseBase';
+import { Gwen } from './external';
 export class GwenBase extends GwenBaseBase {
   get row() {
     return this.css({
@@ -221,62 +222,53 @@ export class GwenBase extends GwenBaseBase {
     const newInst: this = new (this as any).constructor();
     return this.css({ [`&:hover`]: delta(newInst).class });
   };
-  selector = (cond: string, delta: (t: this) => this) => {
+
+  pseudo = (cond: string, delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();
+    return this.css({
+      [`&${cond}`]: delta(newInst).class,
+    });
+  };
+
+  media = (conditions: { min?: string; max?: string }, delta: (t: this) => this) => {
+    const newInst: this = new (this as any).constructor();
+    return this.css({
+      [`@media only screen ${conditions.min ? ` and (min-width: ${conditions.min})` : ``} ${
+        conditions.max ? ` and (max-width: ${conditions.max})` : ''
+      }`]: delta(newInst).class,
+    });
+  };
+  selector = (cond: string, delta: (t: Gwen) => Gwen) => {
+    const newInst: Gwen = new (this as any).constructor();
     return this.css({
       [cond]: delta(newInst).class,
     });
   };
-  smup = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (min-width: ${this.finalTheme.sm})`, delta);
-  mdup = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (min-width: ${this.finalTheme.md})`, delta);
-  lgup = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (min-width: ${this.finalTheme.lg})`, delta);
-  xlup = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (min-width: ${this.finalTheme.xl})`, delta);
-  xsdown = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (max-width: ${this.finalTheme.sm})`, delta);
-  smdown = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (max-width: ${this.finalTheme.md})`, delta);
-  mddown = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (max-width: ${this.finalTheme.lg})`, delta);
-  lgdown = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (max-width: ${this.finalTheme.xl})`, delta);
-  xsonly = (delta: (t: this) => this) =>
-    this.selector(
-      `@media only screen and (min-width: ${this.finalTheme.xs}px ) and (max-width: ${this.finalTheme.sm}px)`,
-      delta,
-    );
-  smonly = (delta: (t: this) => this) =>
-    this.selector(
-      `@media only screen and (min-width: ${this.finalTheme.sm}px ) and (max-width: ${this.finalTheme.md}px)`,
-      delta,
-    );
-  mdonly = (delta: (t: this) => this) =>
-    this.selector(
-      `@media only screen and (min-width: ${this.finalTheme.md}px ) and (max-width: ${this.finalTheme.lg}px)`,
-      delta,
-    );
-  lgonly = (delta: (t: this) => this) =>
-    this.selector(
-      `@media only screen and (min-width: ${this.finalTheme.lg}px ) and (max-width: ${this.finalTheme.xl}px)`,
-      delta,
-    );
-  xlonly = (delta: (t: this) => this) =>
-    this.selector(`@media only screen and (min-width: ${this.finalTheme.xl}px )`, delta);
-  checked = (delta: (t: this) => this) => this.selector(`&:checked`, delta);
-  focus = (delta: (t: this) => this) => this.selector(`&:focus`, delta);
-  focusWithin = (delta: (t: this) => this) => this.selector(`&:focus-within`, delta);
-  visited = (delta: (t: this) => this) => this.selector(`&:visited`, delta);
-  active = (delta: (t: this) => this) => this.selector(`&:active`, delta);
-  empty = (delta: (t: this) => this) => this.selector(`&:empty`, delta);
-  enabled = (delta: (t: this) => this) => this.selector(`&:enabled`, delta);
-  firstOfType = (delta: (t: this) => this) => this.selector(`&:first-of-type`, delta);
-  lastOfType = (delta: (t: this) => this) => this.selector(`&:last-of-type`, delta);
-  firstChild = (delta: (t: this) => this) => this.selector(`&:first-child`, delta);
-  lastChild = (delta: (t: this) => this) => this.selector(`&:last-child`, delta);
-  nthChild = (n: number | string, delta: (t: this) => this) => this.selector(`&:nth-child(${n})`, delta);
+  smup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.sm }, delta);
+  mdup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.md }, delta);
+  lgup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.lg }, delta);
+  xlup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.xl }, delta);
+  xsdown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.sm }, delta);
+  smdown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.md }, delta);
+  mddown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.lg }, delta);
+  lgdown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.xl }, delta);
+  xsonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.xs, max: this.finalTheme.sm }, delta);
+  smonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.sm, max: this.finalTheme.md }, delta);
+  mdonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.md, max: this.finalTheme.lg }, delta);
+  lgonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.lg, max: this.finalTheme.xl }, delta);
+  xlonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.xl }, delta);
+  checked = (delta: (t: this) => this) => this.pseudo(`:checked`, delta);
+  focus = (delta: (t: this) => this) => this.pseudo(`:focus`, delta);
+  focusWithin = (delta: (t: this) => this) => this.pseudo(`:focus-within`, delta);
+  visited = (delta: (t: this) => this) => this.pseudo(`:visited`, delta);
+  active = (delta: (t: this) => this) => this.pseudo(`:active`, delta);
+  empty = (delta: (t: this) => this) => this.pseudo(`:empty`, delta);
+  enabled = (delta: (t: this) => this) => this.pseudo(`:enabled`, delta);
+  firstOfType = (delta: (t: this) => this) => this.pseudo(`:first-of-type`, delta);
+  lastOfType = (delta: (t: this) => this) => this.pseudo(`:last-of-type`, delta);
+  firstChild = (delta: (t: this) => this) => this.pseudo(`:first-child`, delta);
+  lastChild = (delta: (t: this) => this) => this.pseudo(`:last-child`, delta);
+  nthChild = (n: number | string, delta: (t: this) => this) => this.pseudo(`:nth-child(${n})`, delta);
   if = (condition: any, delta: (t: this) => this) => {
     if (condition) return delta(this);
     return this;
