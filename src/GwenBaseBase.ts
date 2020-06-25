@@ -28,8 +28,8 @@ export class GwenBaseBase {
     serifFont: `Georgia, Cambria, "Times New Roman", Times, serif`,
   };
   theme: Partial<GwenTheme> = {};
-  protected finalTheme: GwenTheme;
 
+  protected finalTheme: GwenTheme;
   protected params: GwenParams;
 
   constructor(params: GwenParams = { cxArray: [] }) {
