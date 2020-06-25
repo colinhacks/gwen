@@ -18,6 +18,9 @@ const list100 = range(0, 100);
 const Gwen: string[] = [];
 Gwen.push(`import { GwenBase } from './GwenBase';`);
 Gwen.push('export class Gwen extends GwenBase {\n');
+Gwen.push(`  static from = (...args:Gwen[])=>{
+    return new Gwen().add(...args);
+  }`);
 
 // const myArr = new Array(100);
 
