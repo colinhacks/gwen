@@ -67,6 +67,10 @@ export class GwenBaseBase {
     // return this._update(cx(...args));
   };
 
+  add = (...args: this[]) => {
+    return this.cx(args.map(arg => arg.class));
+  };
+
   alignContent = (arg: CSS['alignContent']) => this.css({ alignContent: arg });
   alignItems = (arg: CSS['alignItems']) => this.css({ alignItems: arg });
   alignSelf = (arg: CSS['alignSelf']) => this.css({ alignSelf: arg });
