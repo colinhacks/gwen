@@ -1,4 +1,4 @@
 import { Gwen } from './Gwen';
-const gwen = Gwen.from;
+const gwen = Gwen.make;
 
 export { Gwen, gwen };

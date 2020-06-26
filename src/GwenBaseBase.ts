@@ -59,7 +59,7 @@ export class GwenBaseBase {
     });
   };
 
-  cx = (...args: CxArgs) => {
+  cx = (...args: CxArgs): this => {
     return new (this as any).constructor({
       ...this.params,
       cxArray: [...this.params.cxArray, ...args],
