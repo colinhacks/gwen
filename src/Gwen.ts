@@ -177,6 +177,7 @@ export class Gwen extends GwenBase {
   get fw700() { return this.css({ fontWeight: 700 })}
   get fw800() { return this.css({ fontWeight: 800 })}
   get fw900() { return this.css({ fontWeight: 900 })}
+  get fs0() { return this.css({ fontSize: "0pt" })}
   get fs1() { return this.css({ fontSize: "1pt" })}
   get fs2() { return this.css({ fontSize: "2pt" })}
   get fs3() { return this.css({ fontSize: "3pt" })}
@@ -216,7 +217,7 @@ export class Gwen extends GwenBase {
   get fs104() { return this.css({ fontSize: "104pt" })}
   get fs112() { return this.css({ fontSize: "112pt" })}
   get fs120() { return this.css({ fontSize: "120pt" })}
-  get fs128() { return this.css({ fontSize: "128pt" })}
+  get h0() { return this.css({ height: "0px" })}
   get h1() { return this.css({ height: "1px" })}
   get h2() { return this.css({ height: "2px" })}
   get h3() { return this.css({ height: "3px" })}
@@ -281,6 +282,7 @@ export class Gwen extends GwenBase {
   get h896() { return this.css({ height: "896px" })}
   get h960() { return this.css({ height: "960px" })}
   get h1024() { return this.css({ height: "1024px" })}
+  get w0() { return this.css({ width: "0px" })}
   get w1() { return this.css({ width: "1px" })}
   get w2() { return this.css({ width: "2px" })}
   get w3() { return this.css({ width: "3px" })}
@@ -345,6 +347,7 @@ export class Gwen extends GwenBase {
   get w896() { return this.css({ width: "896px" })}
   get w960() { return this.css({ width: "960px" })}
   get w1024() { return this.css({ width: "1024px" })}
+  get l0() { return this.css({ left: "0px" })}
   get l1() { return this.css({ left: "1px" })}
   get l2() { return this.css({ left: "2px" })}
   get l3() { return this.css({ left: "3px" })}
@@ -409,6 +412,7 @@ export class Gwen extends GwenBase {
   get l896() { return this.css({ left: "896px" })}
   get l960() { return this.css({ left: "960px" })}
   get l1024() { return this.css({ left: "1024px" })}
+  get r0() { return this.css({ right: "0px" })}
   get r1() { return this.css({ right: "1px" })}
   get r2() { return this.css({ right: "2px" })}
   get r3() { return this.css({ right: "3px" })}
@@ -473,6 +477,7 @@ export class Gwen extends GwenBase {
   get r896() { return this.css({ right: "896px" })}
   get r960() { return this.css({ right: "960px" })}
   get r1024() { return this.css({ right: "1024px" })}
+  get t0() { return this.css({ top: "0px" })}
   get t1() { return this.css({ top: "1px" })}
   get t2() { return this.css({ top: "2px" })}
   get t3() { return this.css({ top: "3px" })}
@@ -537,6 +542,7 @@ export class Gwen extends GwenBase {
   get t896() { return this.css({ top: "896px" })}
   get t960() { return this.css({ top: "960px" })}
   get t1024() { return this.css({ top: "1024px" })}
+  get b0() { return this.css({ bottom: "0px" })}
   get b1() { return this.css({ bottom: "1px" })}
   get b2() { return this.css({ bottom: "2px" })}
   get b3() { return this.css({ bottom: "3px" })}
@@ -601,6 +607,7 @@ export class Gwen extends GwenBase {
   get b896() { return this.css({ bottom: "896px" })}
   get b960() { return this.css({ bottom: "960px" })}
   get b1024() { return this.css({ bottom: "1024px" })}
+  get p0() { return this.css({ padding: "0px" })}
   get p1() { return this.css({ padding: "1px" })}
   get p2() { return this.css({ padding: "2px" })}
   get p3() { return this.css({ padding: "3px" })}
@@ -665,6 +672,7 @@ export class Gwen extends GwenBase {
   get p896() { return this.css({ padding: "896px" })}
   get p960() { return this.css({ padding: "960px" })}
   get p1024() { return this.css({ padding: "1024px" })}
+  get pt0() { return this.css({ paddingTop: "0px" })}
   get pt1() { return this.css({ paddingTop: "1px" })}
   get pt2() { return this.css({ paddingTop: "2px" })}
   get pt3() { return this.css({ paddingTop: "3px" })}
@@ -729,6 +737,7 @@ export class Gwen extends GwenBase {
   get pt896() { return this.css({ paddingTop: "896px" })}
   get pt960() { return this.css({ paddingTop: "960px" })}
   get pt1024() { return this.css({ paddingTop: "1024px" })}
+  get pr0() { return this.css({ paddingRight: "0px" })}
   get pr1() { return this.css({ paddingRight: "1px" })}
   get pr2() { return this.css({ paddingRight: "2px" })}
   get pr3() { return this.css({ paddingRight: "3px" })}
@@ -793,6 +802,7 @@ export class Gwen extends GwenBase {
   get pr896() { return this.css({ paddingRight: "896px" })}
   get pr960() { return this.css({ paddingRight: "960px" })}
   get pr1024() { return this.css({ paddingRight: "1024px" })}
+  get pb0() { return this.css({ paddingBottom: "0px" })}
   get pb1() { return this.css({ paddingBottom: "1px" })}
   get pb2() { return this.css({ paddingBottom: "2px" })}
   get pb3() { return this.css({ paddingBottom: "3px" })}
@@ -857,6 +867,7 @@ export class Gwen extends GwenBase {
   get pb896() { return this.css({ paddingBottom: "896px" })}
   get pb960() { return this.css({ paddingBottom: "960px" })}
   get pb1024() { return this.css({ paddingBottom: "1024px" })}
+  get pl0() { return this.css({ paddingLeft: "0px" })}
   get pl1() { return this.css({ paddingLeft: "1px" })}
   get pl2() { return this.css({ paddingLeft: "2px" })}
   get pl3() { return this.css({ paddingLeft: "3px" })}
@@ -921,6 +932,7 @@ export class Gwen extends GwenBase {
   get pl896() { return this.css({ paddingLeft: "896px" })}
   get pl960() { return this.css({ paddingLeft: "960px" })}
   get pl1024() { return this.css({ paddingLeft: "1024px" })}
+  get pv0() { return this.css({ paddingTop: "0px", paddingBottom: "0px" })}
   get pv1() { return this.css({ paddingTop: "1px", paddingBottom: "1px" })}
   get pv2() { return this.css({ paddingTop: "2px", paddingBottom: "2px" })}
   get pv3() { return this.css({ paddingTop: "3px", paddingBottom: "3px" })}
@@ -985,6 +997,7 @@ export class Gwen extends GwenBase {
   get pv896() { return this.css({ paddingTop: "896px", paddingBottom: "896px" })}
   get pv960() { return this.css({ paddingTop: "960px", paddingBottom: "960px" })}
   get pv1024() { return this.css({ paddingTop: "1024px", paddingBottom: "1024px" })}
+  get ph0() { return this.css({ paddingLeft: "0px", paddingRight: "0px" })}
   get ph1() { return this.css({ paddingLeft: "1px", paddingRight: "1px" })}
   get ph2() { return this.css({ paddingLeft: "2px", paddingRight: "2px" })}
   get ph3() { return this.css({ paddingLeft: "3px", paddingRight: "3px" })}
@@ -1049,6 +1062,7 @@ export class Gwen extends GwenBase {
   get ph896() { return this.css({ paddingLeft: "896px", paddingRight: "896px" })}
   get ph960() { return this.css({ paddingLeft: "960px", paddingRight: "960px" })}
   get ph1024() { return this.css({ paddingLeft: "1024px", paddingRight: "1024px" })}
+  get m0() { return this.css({ margin: "0px" })}
   get m1() { return this.css({ margin: "1px" })}
   get m2() { return this.css({ margin: "2px" })}
   get m3() { return this.css({ margin: "3px" })}
@@ -1113,6 +1127,7 @@ export class Gwen extends GwenBase {
   get m896() { return this.css({ margin: "896px" })}
   get m960() { return this.css({ margin: "960px" })}
   get m1024() { return this.css({ margin: "1024px" })}
+  get mt0() { return this.css({ marginTop: "0px" })}
   get mt1() { return this.css({ marginTop: "1px" })}
   get mt2() { return this.css({ marginTop: "2px" })}
   get mt3() { return this.css({ marginTop: "3px" })}
@@ -1177,6 +1192,7 @@ export class Gwen extends GwenBase {
   get mt896() { return this.css({ marginTop: "896px" })}
   get mt960() { return this.css({ marginTop: "960px" })}
   get mt1024() { return this.css({ marginTop: "1024px" })}
+  get mr0() { return this.css({ marginRight: "0px" })}
   get mr1() { return this.css({ marginRight: "1px" })}
   get mr2() { return this.css({ marginRight: "2px" })}
   get mr3() { return this.css({ marginRight: "3px" })}
@@ -1241,6 +1257,7 @@ export class Gwen extends GwenBase {
   get mr896() { return this.css({ marginRight: "896px" })}
   get mr960() { return this.css({ marginRight: "960px" })}
   get mr1024() { return this.css({ marginRight: "1024px" })}
+  get mb0() { return this.css({ marginBottom: "0px" })}
   get mb1() { return this.css({ marginBottom: "1px" })}
   get mb2() { return this.css({ marginBottom: "2px" })}
   get mb3() { return this.css({ marginBottom: "3px" })}
@@ -1305,6 +1322,7 @@ export class Gwen extends GwenBase {
   get mb896() { return this.css({ marginBottom: "896px" })}
   get mb960() { return this.css({ marginBottom: "960px" })}
   get mb1024() { return this.css({ marginBottom: "1024px" })}
+  get ml0() { return this.css({ marginLeft: "0px" })}
   get ml1() { return this.css({ marginLeft: "1px" })}
   get ml2() { return this.css({ marginLeft: "2px" })}
   get ml3() { return this.css({ marginLeft: "3px" })}
@@ -1369,6 +1387,7 @@ export class Gwen extends GwenBase {
   get ml896() { return this.css({ marginLeft: "896px" })}
   get ml960() { return this.css({ marginLeft: "960px" })}
   get ml1024() { return this.css({ marginLeft: "1024px" })}
+  get mv0() { return this.css({ marginTop: "0px", marginBottom: "0px" })}
   get mv1() { return this.css({ marginTop: "1px", marginBottom: "1px" })}
   get mv2() { return this.css({ marginTop: "2px", marginBottom: "2px" })}
   get mv3() { return this.css({ marginTop: "3px", marginBottom: "3px" })}
@@ -1433,6 +1452,7 @@ export class Gwen extends GwenBase {
   get mv896() { return this.css({ marginTop: "896px", marginBottom: "896px" })}
   get mv960() { return this.css({ marginTop: "960px", marginBottom: "960px" })}
   get mv1024() { return this.css({ marginTop: "1024px", marginBottom: "1024px" })}
+  get mh0() { return this.css({ marginLeft: "0px", marginRight: "0px" })}
   get mh1() { return this.css({ marginLeft: "1px", marginRight: "1px" })}
   get mh2() { return this.css({ marginLeft: "2px", marginRight: "2px" })}
   get mh3() { return this.css({ marginLeft: "3px", marginRight: "3px" })}
@@ -1497,6 +1517,7 @@ export class Gwen extends GwenBase {
   get mh896() { return this.css({ marginLeft: "896px", marginRight: "896px" })}
   get mh960() { return this.css({ marginLeft: "960px", marginRight: "960px" })}
   get mh1024() { return this.css({ marginLeft: "1024px", marginRight: "1024px" })}
+  get mnh0() { return this.css({ minHeight: "0px" })}
   get mnh1() { return this.css({ minHeight: "1px" })}
   get mnh2() { return this.css({ minHeight: "2px" })}
   get mnh3() { return this.css({ minHeight: "3px" })}
@@ -1561,6 +1582,7 @@ export class Gwen extends GwenBase {
   get mnh896() { return this.css({ minHeight: "896px" })}
   get mnh960() { return this.css({ minHeight: "960px" })}
   get mnh1024() { return this.css({ minHeight: "1024px" })}
+  get mnw0() { return this.css({ minWidth: "0px" })}
   get mnw1() { return this.css({ minWidth: "1px" })}
   get mnw2() { return this.css({ minWidth: "2px" })}
   get mnw3() { return this.css({ minWidth: "3px" })}
@@ -1625,6 +1647,7 @@ export class Gwen extends GwenBase {
   get mnw896() { return this.css({ minWidth: "896px" })}
   get mnw960() { return this.css({ minWidth: "960px" })}
   get mnw1024() { return this.css({ minWidth: "1024px" })}
+  get mxh0() { return this.css({ maxHeight: "0px" })}
   get mxh1() { return this.css({ maxHeight: "1px" })}
   get mxh2() { return this.css({ maxHeight: "2px" })}
   get mxh3() { return this.css({ maxHeight: "3px" })}
@@ -1689,6 +1712,7 @@ export class Gwen extends GwenBase {
   get mxh896() { return this.css({ maxHeight: "896px" })}
   get mxh960() { return this.css({ maxHeight: "960px" })}
   get mxh1024() { return this.css({ maxHeight: "1024px" })}
+  get mxw0() { return this.css({ maxWidth: "0px" })}
   get mxw1() { return this.css({ maxWidth: "1px" })}
   get mxw2() { return this.css({ maxWidth: "2px" })}
   get mxw3() { return this.css({ maxWidth: "3px" })}
@@ -1753,17 +1777,17 @@ export class Gwen extends GwenBase {
   get mxw896() { return this.css({ maxWidth: "896px" })}
   get mxw960() { return this.css({ maxWidth: "960px" })}
   get mxw1024() { return this.css({ maxWidth: "1024px" })}
-  get op0() { return this.css({ opacity: 0.0 }) }
-  get op1() { return this.css({ opacity: 0.1 }) }
-  get op2() { return this.css({ opacity: 0.2 }) }
-  get op3() { return this.css({ opacity: 0.3 }) }
-  get op4() { return this.css({ opacity: 0.4 }) }
-  get op5() { return this.css({ opacity: 0.5 }) }
-  get op6() { return this.css({ opacity: 0.6 }) }
-  get op7() { return this.css({ opacity: 0.7 }) }
-  get op8() { return this.css({ opacity: 0.8 }) }
-  get op9() { return this.css({ opacity: 0.9 }) }
-  get op10() { return this.css({ opacity: 0.10 }) }
+  get op0() { return this.css({ opacity: 0 }) }
+  get op1() { return this.css({ opacity: 0.01 }) }
+  get op2() { return this.css({ opacity: 0.02 }) }
+  get op3() { return this.css({ opacity: 0.03 }) }
+  get op4() { return this.css({ opacity: 0.04 }) }
+  get op5() { return this.css({ opacity: 0.05 }) }
+  get op6() { return this.css({ opacity: 0.06 }) }
+  get op7() { return this.css({ opacity: 0.07 }) }
+  get op8() { return this.css({ opacity: 0.08 }) }
+  get op9() { return this.css({ opacity: 0.09 }) }
+  get op10() { return this.css({ opacity: 0.1 }) }
   get op11() { return this.css({ opacity: 0.11 }) }
   get op12() { return this.css({ opacity: 0.12 }) }
   get op13() { return this.css({ opacity: 0.13 }) }
@@ -1773,7 +1797,7 @@ export class Gwen extends GwenBase {
   get op17() { return this.css({ opacity: 0.17 }) }
   get op18() { return this.css({ opacity: 0.18 }) }
   get op19() { return this.css({ opacity: 0.19 }) }
-  get op20() { return this.css({ opacity: 0.20 }) }
+  get op20() { return this.css({ opacity: 0.2 }) }
   get op21() { return this.css({ opacity: 0.21 }) }
   get op22() { return this.css({ opacity: 0.22 }) }
   get op23() { return this.css({ opacity: 0.23 }) }
@@ -1783,7 +1807,7 @@ export class Gwen extends GwenBase {
   get op27() { return this.css({ opacity: 0.27 }) }
   get op28() { return this.css({ opacity: 0.28 }) }
   get op29() { return this.css({ opacity: 0.29 }) }
-  get op30() { return this.css({ opacity: 0.30 }) }
+  get op30() { return this.css({ opacity: 0.3 }) }
   get op31() { return this.css({ opacity: 0.31 }) }
   get op32() { return this.css({ opacity: 0.32 }) }
   get op33() { return this.css({ opacity: 0.33 }) }
@@ -1793,7 +1817,7 @@ export class Gwen extends GwenBase {
   get op37() { return this.css({ opacity: 0.37 }) }
   get op38() { return this.css({ opacity: 0.38 }) }
   get op39() { return this.css({ opacity: 0.39 }) }
-  get op40() { return this.css({ opacity: 0.40 }) }
+  get op40() { return this.css({ opacity: 0.4 }) }
   get op41() { return this.css({ opacity: 0.41 }) }
   get op42() { return this.css({ opacity: 0.42 }) }
   get op43() { return this.css({ opacity: 0.43 }) }
@@ -1803,7 +1827,7 @@ export class Gwen extends GwenBase {
   get op47() { return this.css({ opacity: 0.47 }) }
   get op48() { return this.css({ opacity: 0.48 }) }
   get op49() { return this.css({ opacity: 0.49 }) }
-  get op50() { return this.css({ opacity: 0.50 }) }
+  get op50() { return this.css({ opacity: 0.5 }) }
   get op51() { return this.css({ opacity: 0.51 }) }
   get op52() { return this.css({ opacity: 0.52 }) }
   get op53() { return this.css({ opacity: 0.53 }) }
@@ -1813,7 +1837,7 @@ export class Gwen extends GwenBase {
   get op57() { return this.css({ opacity: 0.57 }) }
   get op58() { return this.css({ opacity: 0.58 }) }
   get op59() { return this.css({ opacity: 0.59 }) }
-  get op60() { return this.css({ opacity: 0.60 }) }
+  get op60() { return this.css({ opacity: 0.6 }) }
   get op61() { return this.css({ opacity: 0.61 }) }
   get op62() { return this.css({ opacity: 0.62 }) }
   get op63() { return this.css({ opacity: 0.63 }) }
@@ -1823,7 +1847,7 @@ export class Gwen extends GwenBase {
   get op67() { return this.css({ opacity: 0.67 }) }
   get op68() { return this.css({ opacity: 0.68 }) }
   get op69() { return this.css({ opacity: 0.69 }) }
-  get op70() { return this.css({ opacity: 0.70 }) }
+  get op70() { return this.css({ opacity: 0.7 }) }
   get op71() { return this.css({ opacity: 0.71 }) }
   get op72() { return this.css({ opacity: 0.72 }) }
   get op73() { return this.css({ opacity: 0.73 }) }
@@ -1833,7 +1857,7 @@ export class Gwen extends GwenBase {
   get op77() { return this.css({ opacity: 0.77 }) }
   get op78() { return this.css({ opacity: 0.78 }) }
   get op79() { return this.css({ opacity: 0.79 }) }
-  get op80() { return this.css({ opacity: 0.80 }) }
+  get op80() { return this.css({ opacity: 0.8 }) }
   get op81() { return this.css({ opacity: 0.81 }) }
   get op82() { return this.css({ opacity: 0.82 }) }
   get op83() { return this.css({ opacity: 0.83 }) }
@@ -1843,7 +1867,7 @@ export class Gwen extends GwenBase {
   get op87() { return this.css({ opacity: 0.87 }) }
   get op88() { return this.css({ opacity: 0.88 }) }
   get op89() { return this.css({ opacity: 0.89 }) }
-  get op90() { return this.css({ opacity: 0.90 }) }
+  get op90() { return this.css({ opacity: 0.9 }) }
   get op91() { return this.css({ opacity: 0.91 }) }
   get op92() { return this.css({ opacity: 0.92 }) }
   get op93() { return this.css({ opacity: 0.93 }) }
@@ -1853,6 +1877,6 @@ export class Gwen extends GwenBase {
   get op97() { return this.css({ opacity: 0.97 }) }
   get op98() { return this.css({ opacity: 0.98 }) }
   get op99() { return this.css({ opacity: 0.99 }) }
-  get op100() { return this.css({ opacity: 0.100 }) }
+  get op100() { return this.css({ opacity: 1 }) }
 
 }

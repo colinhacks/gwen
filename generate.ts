@@ -159,7 +159,7 @@ const mxws = skip17.map(k => `  get mxw${k}() { return this.css({ maxWidth: "${k
 Gwen.push(mxws);
 
 // op: opacity
-const ops = list100.map(k => `  get op${k}() { return this.css({ opacity: 0.${k} }) }`).join('\n');
+const ops = list100.map(k => `  get op${k}() { return this.css({ opacity: ${k / 100} }) }`).join('\n');
 Gwen.push(ops);
 
 Gwen.push(`\n}`);
