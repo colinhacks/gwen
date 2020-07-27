@@ -43,6 +43,8 @@ const base25 = [
   30,
   35,
   40,
+  45,
+  50,
   55,
   60,
   65,
@@ -56,10 +58,6 @@ const base25 = [
   125,
   150,
   175,
-  200,
-  225,
-  250,
-  275,
   200,
   225,
   250,
@@ -255,7 +253,7 @@ Gwen.push(alphas);
 
 // TODO: border radius
 // op: opacity
-const brs = list100.map(k => `  get br${k}() { return this.css({ borderRadius: ${k}px }) }`).join('\n');
+const brs = list100.map(k => `  get br${k}() { return this.css({ borderRadius: "${k}px" }) }`).join('\n');
 Gwen.push(brs);
 
 Gwen.push(`\n}`);
