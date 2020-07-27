@@ -218,10 +218,43 @@ export class GwenBase extends GwenBaseBase {
   get allsmallcaps() {
     return this.css({ fontVariant: 'all-small-caps' });
   }
+  get bn() {
+    return this.css({ border: 'none' });
+  }
+
   hover = (delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();
     return this.css({ [`&:hover`]: delta(newInst).class });
   };
+
+  get db() {
+    return this.css({ display: 'block' });
+  }
+  get di() {
+    return this.css({ display: 'inline' });
+  }
+  get df() {
+    return this.css({ display: 'flex' });
+  }
+  get dg() {
+    return this.css({ display: 'grid' });
+  }
+  get dib() {
+    return this.css({ display: 'inline-block' });
+  }
+  get dif() {
+    return this.css({ display: 'inline-flex' });
+  }
+  get dig() {
+    return this.css({ display: 'inline-grid' });
+  }
+
+  get vam() {
+    return this.css({ verticalAlign: 'middle' });
+  }
+  get ma() {
+    return this.css({ margin: 'auto' });
+  }
 
   pseudo = (cond: string, delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();

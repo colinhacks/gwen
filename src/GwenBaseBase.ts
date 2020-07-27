@@ -17,6 +17,26 @@ type GwenTheme = {
 type GwenParams = {
   cxArray: CxArgs;
 };
+
+const flattenArg = (arg: any) => {
+  let allArgs: GwenBaseBase[] = [];
+
+  if (arg instanceof GwenBaseBase) {
+    allArgs.push(arg);
+  } else if (Array.isArray(arg)) {
+    for (const item of arg) {
+      allArgs = [...allArgs, ...flattenArg(item)];
+    }
+    // allArgs = [...allArgs, ...flattenArgs(arg)];
+  } else if (typeof arg === 'object') {
+    for (const k in arg) {
+      allArgs = [...allArgs, ...flattenArg(arg[k])];
+    }
+  }
+
+  return allArgs;
+};
+
 export class GwenBaseBase {
   protected defaultTheme: GwenTheme = {
     xs: '420px',
@@ -40,6 +60,9 @@ export class GwenBaseBase {
     };
   }
 
+  get name() {
+    return cx(...this.params.cxArray);
+  }
   get class() {
     return cx(...this.params.cxArray);
   }
@@ -67,8 +90,16 @@ export class GwenBaseBase {
     // return this._update(cx(...args));
   };
 
-  add = (...args: this[]) => {
-    return this.cx(args.map(arg => arg.class));
+  mix = (...args: any[]): this => {
+    let allArgs: any = [];
+    for (const arg of args) {
+      if (arg instanceof GwenBaseBase) {
+        allArgs.push(arg);
+      } else if (Array.isArray(arg)) {
+        allArgs = [...allArgs];
+      }
+    }
+    return this.cx(flattenArg(args).map(x => x.name));
   };
 
   alignContent = (arg: CSS['alignContent']) => this.css({ alignContent: arg });
@@ -281,4 +312,6 @@ export class GwenBaseBase {
   wordWrap = (arg: CSS['wordWrap']) => this.css({ wordWrap: arg });
   writingMode = (arg: CSS['writingMode']) => this.css({ writingMode: arg });
   zIndex = (arg: CSS['zIndex']) => this.css({ zIndex: arg });
+
+  bgc = (arg: CSS['backgroundColor']) => this.css({ backgroundColor: arg });
 }
