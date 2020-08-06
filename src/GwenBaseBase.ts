@@ -99,7 +99,7 @@ export class GwenBaseBase {
         allArgs = [...allArgs];
       }
     }
-    return this.cx(flattenArg(args).map(x => x.name));
+    return this.cx(...flattenArg(args).map(x => x.name));
   };
 
   alignContent = (arg: CSS['alignContent']) => this.css({ alignContent: arg });

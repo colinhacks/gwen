@@ -7,19 +7,13 @@ export class GwenBase extends GwenBaseBase {
       flexDirection: 'row',
     });
   }
-  get fdr() {
-    return this.css({
-      display: 'flex',
-      flexDirection: 'row',
-    });
-  }
-  get fdrr() {
+  get rowr() {
     return this.css({
       display: 'flex',
       flexDirection: 'row-reverse',
     });
   }
-  get fdc() {
+  get col() {
     return this.css({
       display: 'flex',
       flexDirection: 'column',
@@ -31,89 +25,53 @@ export class GwenBase extends GwenBaseBase {
       flexDirection: 'column',
     });
   }
-  get fdcr() {
+  get colr() {
     return this.css({
       display: 'flex',
       flexDirection: 'column-reverse',
     });
   }
-  get fww() {
+  get wrap() {
     return this.css({ flexWrap: 'wrap' });
   }
-  get fwwr() {
+  get wrapr() {
     return this.css({ flexWrap: 'wrap-reverse' });
   }
-  get fwnw() {
+  get nowrap() {
     return this.css({ flexWrap: 'nowrap' });
   }
-  get aic() {
+  get ac() {
     return this.css({ alignItems: 'center' });
   }
-  get aist() {
+  get ast() {
     return this.css({ alignItems: 'stretch' });
   }
-  get aifs() {
+  get as() {
     return this.css({ alignItems: 'flex-start' });
   }
-  get aife() {
+  get ae() {
     return this.css({ alignItems: 'flex-end' });
   }
-  get aib() {
+  get ab() {
     return this.css({ alignItems: 'baseline' });
   }
-  get asc() {
-    return this.css({ alignSelf: 'center' });
-  }
-  get ass() {
-    return this.css({ alignSelf: 'stretch' });
-  }
-  get asfs() {
-    return this.css({ alignSelf: 'flex-start' });
-  }
-  get asfe() {
-    return this.css({ alignSelf: 'flex-end' });
-  }
-  get asb() {
-    return this.css({ alignSelf: 'baseline' });
-  }
-  get jcc() {
+  get jc() {
     return this.css({ justifyContent: 'center' });
   }
-  get jcfs() {
+  get js() {
     return this.css({ justifyContent: 'flex-start' });
   }
-  get jcfe() {
+  get je() {
     return this.css({ justifyContent: 'flex-end' });
   }
-  get jcsb() {
+  get jsb() {
     return this.css({ justifyContent: 'space-between' });
   }
-  get jcsa() {
+  get jsa() {
     return this.css({ justifyContent: 'space-around' });
   }
-  get jcse() {
+  get jse() {
     return this.css({ justifyContent: 'space-evenly' });
-  }
-  get jic() {
-    return this.css({ justifyItems: 'center' });
-  }
-  get jis() {
-    return this.css({ justifyItems: 'start' });
-  }
-  get jie() {
-    return this.css({ justifyItems: 'end' });
-  }
-  get jist() {
-    return this.css({ justifyItems: 'stretch' });
-  }
-  get jib() {
-    return this.css({ justifyItems: 'baseline' });
-  }
-  get jifb() {
-    return this.css({ justifyItems: 'first baseline' });
-  }
-  get jilb() {
-    return this.css({ justifyItems: 'last baseline' });
   }
   get white() {
     return this.css({ color: '#FFFFFF' });
@@ -124,28 +82,28 @@ export class GwenBase extends GwenBaseBase {
   get underline() {
     return this.css({ textDecoration: 'underline' });
   }
+  get tdn() {
+    return this.css({ textDecoration: 'none' });
+  }
   get visible() {
     return this.css({ visibility: 'visible' });
   }
   get hidden() {
     return this.css({ visibility: 'hidden' });
   }
-  get wbn() {
-    return this.css({ wordBreak: 'normal' });
+  get scroll() {
+    return this.css({ overflow: 'scroll' });
   }
-  get wbba() {
-    return this.css({ wordBreak: 'break-all' });
+  get scrollx() {
+    return this.css({ overflowX: 'scroll' });
   }
-  get wbka() {
-    return this.css({ wordBreak: 'keep-all' });
+  get scrolly() {
+    return this.css({ overflowY: 'scroll' });
   }
-  get wbbw() {
-    return this.css({ wordBreak: 'break-word' });
+  get pointer() {
+    return this.css({ cursor: 'pointer' });
   }
-  get toc() {
-    return this.css({ textOverflow: 'clip' });
-  }
-  get toe() {
+  get ellipsis() {
     return this.css({ textOverflow: 'ellipsis' });
   }
   get bold() {
@@ -166,10 +124,10 @@ export class GwenBase extends GwenBaseBase {
   get fill() {
     return this.wide.tall;
   }
-  get upper() {
+  get uppercase() {
     return this.css({ textTransform: 'uppercase' });
   }
-  get lower() {
+  get lowercase() {
     return this.css({ textTransform: 'lowercase' });
   }
   get caps() {
@@ -196,16 +154,16 @@ export class GwenBase extends GwenBaseBase {
   get full() {
     return this.css({ height: '100vh', width: '100vw' });
   }
-  get ofh() {
+  get oh() {
     return this.css({ overflow: 'hidden' });
   }
-  get ofv() {
+  get ov() {
     return this.css({ overflow: 'visible' });
   }
-  get ofs() {
+  get os() {
     return this.css({ overflow: 'scroll' });
   }
-  get ofa() {
+  get oa() {
     return this.css({ overflow: 'auto' });
   }
   get smallcaps() {
@@ -222,39 +180,12 @@ export class GwenBase extends GwenBaseBase {
     return this.css({ border: 'none' });
   }
 
+  // TODO: cursors
+
   hover = (delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();
     return this.css({ [`&:hover`]: delta(newInst).class });
   };
-
-  get db() {
-    return this.css({ display: 'block' });
-  }
-  get di() {
-    return this.css({ display: 'inline' });
-  }
-  get df() {
-    return this.css({ display: 'flex' });
-  }
-  get dg() {
-    return this.css({ display: 'grid' });
-  }
-  get dib() {
-    return this.css({ display: 'inline-block' });
-  }
-  get dif() {
-    return this.css({ display: 'inline-flex' });
-  }
-  get dig() {
-    return this.css({ display: 'inline-grid' });
-  }
-
-  get vam() {
-    return this.css({ verticalAlign: 'middle' });
-  }
-  get ma() {
-    return this.css({ margin: 'auto' });
-  }
 
   pseudo = (cond: string, delta: (t: this) => this) => {
     const newInst: this = new (this as any).constructor();

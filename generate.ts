@@ -105,8 +105,8 @@ const base25 = [
 // const list256 = range(0, 255);
 
 const Gwen: string[] = [];
-Gwen.push(`import { GwenBaseSimplified } from './GwenBaseSimplified';`);
-Gwen.push('export class Gwen extends GwenBaseSimplified {\n');
+Gwen.push(`import { GwenBase } from './GwenBase';`);
+Gwen.push('export class Gwen extends GwenBase {\n');
 Gwen.push(`  static make = (...args:Gwen[])=>{
     return new Gwen().mix(...args);
   }`);
@@ -132,7 +132,7 @@ const grays = list100
   .join('\n');
 Gwen.push(grays);
 
-const fws = weights.map(k => `  get fw${k}00() { return this.css({ fontWeight: ${k}00 })}`).join('\n');
+const fws = weights.map(k => `  get fw${k}00() { return this.css({ fontWeight: ${k} })}`).join('\n');
 Gwen.push(fws);
 
 const fss = base25
