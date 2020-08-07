@@ -154,16 +154,16 @@ export class GwenBase extends GwenBaseBase {
   get full() {
     return this.css({ height: '100vh', width: '100vw' });
   }
-  get oh() {
+  get ofh() {
     return this.css({ overflow: 'hidden' });
   }
-  get ov() {
+  get ofv() {
     return this.css({ overflow: 'visible' });
   }
-  get os() {
+  get ofs() {
     return this.css({ overflow: 'scroll' });
   }
-  get oa() {
+  get ofa() {
     return this.css({ overflow: 'auto' });
   }
   get smallcaps() {
