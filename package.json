@@ -20,8 +20,7 @@
   "homepage": "https://github.com/vriad/gwen",
   "dependencies": {
     "@types/color": "^3.0.1",
-    "color": "^3.1.2",
-    "emotion": "^10.0.27"
+    "color": "^3.1.2"
   },
   "tags": [],
   "keywords": [],
@@ -39,13 +38,14 @@
     "lint": "tslint -p tsconfig.json",
     "test": "jest --config jestconfig.json --coverage && yarn run badge",
     "badge": "make-coverage-badge --output-path ./coverage.svg",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "play": "nodemon -e ts -w . -x ts-node playground.ts",
     "generate": "ts-node generate.ts"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
     "@types/node": "^14.0.13",
+    "emotion": "^10.0.27",
     "jest": "^25.1.0",
     "make-coverage-badge": "^1.2.0",
     "nodemon": "^2.0.2",
@@ -54,5 +54,8 @@
     "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "3.7"
+  },
+  "peerDependencies": {
+    "emotion": "^10.0.27"
   }
 }
