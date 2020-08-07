@@ -1,8 +1,8 @@
-import { css, cx, ObjectInterpolation } from 'emotion';
+import { css, ObjectInterpolation } from 'emotion';
 
 type CssArgs = Parameters<typeof css>;
 type CSS = ObjectInterpolation<undefined>;
-type CxArgs = Parameters<typeof cx>;
+// type CxArgs = Parameters<typeof cx>;
 
 export type GwenTheme = {
   xs: string;
@@ -16,7 +16,7 @@ export type GwenTheme = {
 
 type GwenParams = {
   theme: GwenTheme;
-  cxArray: CxArgs;
+  cssArray: CssArgs;
 };
 
 const flattenArg = (arg: any) => {
@@ -67,17 +67,17 @@ export class GwenBaseBase {
     }
 
     this.params = {
-      cxArray: params.cxArray || [],
+      cssArray: params.cssArray || [],
       theme: finalTheme,
     };
   }
 
   get class() {
-    return cx(...this.params.cxArray);
+    return css(...this.params.cssArray);
   }
 
   static css = css;
-  static cx = cx;
+  // static cx = cx;
 
   // protected _update = (...args: CxArgs) => {
   //   this.className = cx(this.className, ...args);
@@ -87,28 +87,30 @@ export class GwenBaseBase {
   css = (...args: CssArgs): this => {
     return new (this as any).constructor(this.theme, {
       ...this.params,
-      cxArray: [...this.params.cxArray, css(...args)],
+      cssArray: [...this.params.cssArray, ...args],
     });
   };
 
-  cx = (...args: CxArgs): this => {
-    return new (this as any).constructor(this.theme, {
-      ...this.params,
-      cxArray: [...this.params.cxArray, ...args],
-    });
-    // return this._update(cx(...args));
-  };
+  // cx = (...args: CxArgs): this => {
+  //   return new (this as any).constructor(this.theme, {
+  //     ...this.params,
+  //     cxArray: [...this.params.cxArray, ...args],
+  //   });
+  //   // return this._update(cx(...args));
+  // };
 
-  mix = (...args: (GwenBaseBase | GwenBaseBase[])[]): this => {
-    let allArgs: any = [];
+  mix = (...args: GwenBaseBase[]): this => {
+    let mixedCss: CssArgs = [];
     for (const arg of args) {
-      if (arg instanceof GwenBaseBase) {
-        allArgs.push(arg);
-      } else if (Array.isArray(arg)) {
-        allArgs = [...allArgs, ...arg];
-      }
+      mixedCss = [...mixedCss, ...arg.params.cssArray];
+      // if (arg instanceof GwenBaseBase) {
+      //   allArgs.push(arg);
+      // } else if (Array.isArray(arg)) {
+      //   allArgs = [...allArgs, ...arg];
+      // }
     }
-    return this.cx(...flattenArg(args).map(x => x.class));
+    return this.css(mixedCss);
+    // return this.cx(...flattenArg(args).map(x => x.class));
   };
 
   alignContent = (arg: CSS['alignContent']) => this.css({ alignContent: arg });
