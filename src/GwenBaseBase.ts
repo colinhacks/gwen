@@ -314,4 +314,8 @@ export class GwenBaseBase {
   zIndex = (arg: CSS['zIndex']) => this.css({ zIndex: arg });
 
   bgc = (arg: CSS['backgroundColor']) => this.css({ backgroundColor: arg });
+  bb = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
+  bt = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
+  bl = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
+  br = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
 }

@@ -11,6 +11,7 @@ const range = (start: number, end: number) => {
 };
 
 const weights = range(1, 9);
+const list10 = range(0, 10);
 const list25 = range(0, 25);
 const list100 = range(0, 100);
 const base25 = [
@@ -122,15 +123,37 @@ Gwen.push(wpcts);
 const hpcts = list25.map(k => `  get h${k * 5}pct() { return this.css({ height: "${5 * k}%" })}`).join('\n');
 Gwen.push(hpcts);
 
-const grays = list100
+const cgs = list100
   .map(
     k =>
-      `  get gray${k}() { return this.css({ color: "${Color('#ffffff')
+      `  get cg${k}() { return this.css({ color: "${Color('#ffffff')
         .darken(k / 100)
         .hex()}" }); }`,
   )
   .join('\n');
-Gwen.push(grays);
+Gwen.push(cgs);
+
+const cgos = list100
+  .map(
+    k =>
+      `  get cgo${k}() { return this.css({ color: "${Color(`#000000`)
+        .fade(k / 100)
+        .hex()}" }); }`,
+  )
+  .join('\n');
+Gwen.push(cgos);
+
+const shadows = list10
+  .map(k => {
+    const prev = Math.round(Math.pow(1.5, k - 1));
+    const curr = Math.round(Math.pow(1.5, k));
+    const next = Math.round(Math.pow(1.5, k + 1));
+    const shadow1 = `0 ${curr}px ${next}px 0 rgba(0, 0, 0, 0.1)`;
+    const shadow2 = `0 ${prev}px ${prev}px 0 rgba(0, 0, 0, 0.06)`;
+    return `  get shadow${k}() { return this.css({ boxShadow: "${shadow1}, ${shadow2};" }); }`;
+  })
+  .join('\n');
+Gwen.push(shadows);
 
 const fws = weights.map(k => `  get fw${k}00() { return this.css({ fontWeight: ${k} })}`).join('\n');
 Gwen.push(fws);
@@ -248,8 +271,8 @@ const mxws = base25.map(k => `  get mxw${k}() { return this.css({ maxWidth: "${k
 Gwen.push(mxws);
 
 // op: opacity
-const alphas = list100.map(k => `  get alpha${k}() { return this.css({ opacity: ${k / 100} }) }`).join('\n');
-Gwen.push(alphas);
+const opacities = list100.map(k => `  get op${k}() { return this.css({ opacity: ${k / 100} }) }`).join('\n');
+Gwen.push(opacities);
 
 // TODO: border radius
 // op: opacity
