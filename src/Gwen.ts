@@ -1,9 +1,6 @@
 import { GwenBase } from './GwenBase';
 export class Gwen extends GwenBase {
 
-  static make = (...args:Gwen[])=>{
-    return new Gwen().mix(...args);
-  }
   get f0() { return this.css({ flex: 0 })}
   get f1() { return this.css({ flex: 1 })}
   get f2() { return this.css({ flex: 2 })}
