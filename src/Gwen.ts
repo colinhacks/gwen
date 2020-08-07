@@ -385,6 +385,10 @@ export class Gwen extends GwenBase {
   get h90() { return this.css({ height: "90px" })}
   get h95() { return this.css({ height: "95px" })}
   get h100() { return this.css({ height: "100px" })}
+  get h105() { return this.css({ height: "105px" })}
+  get h110() { return this.css({ height: "110px" })}
+  get h115() { return this.css({ height: "115px" })}
+  get h120() { return this.css({ height: "120px" })}
   get h125() { return this.css({ height: "125px" })}
   get h150() { return this.css({ height: "150px" })}
   get h175() { return this.css({ height: "175px" })}
@@ -472,6 +476,10 @@ export class Gwen extends GwenBase {
   get w90() { return this.css({ width: "90px" })}
   get w95() { return this.css({ width: "95px" })}
   get w100() { return this.css({ width: "100px" })}
+  get w105() { return this.css({ width: "105px" })}
+  get w110() { return this.css({ width: "110px" })}
+  get w115() { return this.css({ width: "115px" })}
+  get w120() { return this.css({ width: "120px" })}
   get w125() { return this.css({ width: "125px" })}
   get w150() { return this.css({ width: "150px" })}
   get w175() { return this.css({ width: "175px" })}
@@ -559,6 +567,10 @@ export class Gwen extends GwenBase {
   get l90() { return this.css({ left: "90px" })}
   get l95() { return this.css({ left: "95px" })}
   get l100() { return this.css({ left: "100px" })}
+  get l105() { return this.css({ left: "105px" })}
+  get l110() { return this.css({ left: "110px" })}
+  get l115() { return this.css({ left: "115px" })}
+  get l120() { return this.css({ left: "120px" })}
   get l125() { return this.css({ left: "125px" })}
   get l150() { return this.css({ left: "150px" })}
   get l175() { return this.css({ left: "175px" })}
@@ -646,6 +658,10 @@ export class Gwen extends GwenBase {
   get r90() { return this.css({ right: "90px" })}
   get r95() { return this.css({ right: "95px" })}
   get r100() { return this.css({ right: "100px" })}
+  get r105() { return this.css({ right: "105px" })}
+  get r110() { return this.css({ right: "110px" })}
+  get r115() { return this.css({ right: "115px" })}
+  get r120() { return this.css({ right: "120px" })}
   get r125() { return this.css({ right: "125px" })}
   get r150() { return this.css({ right: "150px" })}
   get r175() { return this.css({ right: "175px" })}
@@ -733,6 +749,10 @@ export class Gwen extends GwenBase {
   get t90() { return this.css({ top: "90px" })}
   get t95() { return this.css({ top: "95px" })}
   get t100() { return this.css({ top: "100px" })}
+  get t105() { return this.css({ top: "105px" })}
+  get t110() { return this.css({ top: "110px" })}
+  get t115() { return this.css({ top: "115px" })}
+  get t120() { return this.css({ top: "120px" })}
   get t125() { return this.css({ top: "125px" })}
   get t150() { return this.css({ top: "150px" })}
   get t175() { return this.css({ top: "175px" })}
@@ -820,6 +840,10 @@ export class Gwen extends GwenBase {
   get b90() { return this.css({ bottom: "90px" })}
   get b95() { return this.css({ bottom: "95px" })}
   get b100() { return this.css({ bottom: "100px" })}
+  get b105() { return this.css({ bottom: "105px" })}
+  get b110() { return this.css({ bottom: "110px" })}
+  get b115() { return this.css({ bottom: "115px" })}
+  get b120() { return this.css({ bottom: "120px" })}
   get b125() { return this.css({ bottom: "125px" })}
   get b150() { return this.css({ bottom: "150px" })}
   get b175() { return this.css({ bottom: "175px" })}
@@ -907,6 +931,10 @@ export class Gwen extends GwenBase {
   get p90() { return this.css({ padding: "90px" })}
   get p95() { return this.css({ padding: "95px" })}
   get p100() { return this.css({ padding: "100px" })}
+  get p105() { return this.css({ padding: "105px" })}
+  get p110() { return this.css({ padding: "110px" })}
+  get p115() { return this.css({ padding: "115px" })}
+  get p120() { return this.css({ padding: "120px" })}
   get p125() { return this.css({ padding: "125px" })}
   get p150() { return this.css({ padding: "150px" })}
   get p175() { return this.css({ padding: "175px" })}
@@ -994,6 +1022,10 @@ export class Gwen extends GwenBase {
   get pt90() { return this.css({ paddingTop: "90px" })}
   get pt95() { return this.css({ paddingTop: "95px" })}
   get pt100() { return this.css({ paddingTop: "100px" })}
+  get pt105() { return this.css({ paddingTop: "105px" })}
+  get pt110() { return this.css({ paddingTop: "110px" })}
+  get pt115() { return this.css({ paddingTop: "115px" })}
+  get pt120() { return this.css({ paddingTop: "120px" })}
   get pt125() { return this.css({ paddingTop: "125px" })}
   get pt150() { return this.css({ paddingTop: "150px" })}
   get pt175() { return this.css({ paddingTop: "175px" })}
@@ -1081,6 +1113,10 @@ export class Gwen extends GwenBase {
   get pr90() { return this.css({ paddingRight: "90px" })}
   get pr95() { return this.css({ paddingRight: "95px" })}
   get pr100() { return this.css({ paddingRight: "100px" })}
+  get pr105() { return this.css({ paddingRight: "105px" })}
+  get pr110() { return this.css({ paddingRight: "110px" })}
+  get pr115() { return this.css({ paddingRight: "115px" })}
+  get pr120() { return this.css({ paddingRight: "120px" })}
   get pr125() { return this.css({ paddingRight: "125px" })}
   get pr150() { return this.css({ paddingRight: "150px" })}
   get pr175() { return this.css({ paddingRight: "175px" })}
@@ -1168,6 +1204,10 @@ export class Gwen extends GwenBase {
   get pb90() { return this.css({ paddingBottom: "90px" })}
   get pb95() { return this.css({ paddingBottom: "95px" })}
   get pb100() { return this.css({ paddingBottom: "100px" })}
+  get pb105() { return this.css({ paddingBottom: "105px" })}
+  get pb110() { return this.css({ paddingBottom: "110px" })}
+  get pb115() { return this.css({ paddingBottom: "115px" })}
+  get pb120() { return this.css({ paddingBottom: "120px" })}
   get pb125() { return this.css({ paddingBottom: "125px" })}
   get pb150() { return this.css({ paddingBottom: "150px" })}
   get pb175() { return this.css({ paddingBottom: "175px" })}
@@ -1255,6 +1295,10 @@ export class Gwen extends GwenBase {
   get pl90() { return this.css({ paddingLeft: "90px" })}
   get pl95() { return this.css({ paddingLeft: "95px" })}
   get pl100() { return this.css({ paddingLeft: "100px" })}
+  get pl105() { return this.css({ paddingLeft: "105px" })}
+  get pl110() { return this.css({ paddingLeft: "110px" })}
+  get pl115() { return this.css({ paddingLeft: "115px" })}
+  get pl120() { return this.css({ paddingLeft: "120px" })}
   get pl125() { return this.css({ paddingLeft: "125px" })}
   get pl150() { return this.css({ paddingLeft: "150px" })}
   get pl175() { return this.css({ paddingLeft: "175px" })}
@@ -1342,6 +1386,10 @@ export class Gwen extends GwenBase {
   get pv90() { return this.css({ paddingTop: "90px", paddingBottom: "90px" })}
   get pv95() { return this.css({ paddingTop: "95px", paddingBottom: "95px" })}
   get pv100() { return this.css({ paddingTop: "100px", paddingBottom: "100px" })}
+  get pv105() { return this.css({ paddingTop: "105px", paddingBottom: "105px" })}
+  get pv110() { return this.css({ paddingTop: "110px", paddingBottom: "110px" })}
+  get pv115() { return this.css({ paddingTop: "115px", paddingBottom: "115px" })}
+  get pv120() { return this.css({ paddingTop: "120px", paddingBottom: "120px" })}
   get pv125() { return this.css({ paddingTop: "125px", paddingBottom: "125px" })}
   get pv150() { return this.css({ paddingTop: "150px", paddingBottom: "150px" })}
   get pv175() { return this.css({ paddingTop: "175px", paddingBottom: "175px" })}
@@ -1429,6 +1477,10 @@ export class Gwen extends GwenBase {
   get ph90() { return this.css({ paddingLeft: "90px", paddingRight: "90px" })}
   get ph95() { return this.css({ paddingLeft: "95px", paddingRight: "95px" })}
   get ph100() { return this.css({ paddingLeft: "100px", paddingRight: "100px" })}
+  get ph105() { return this.css({ paddingLeft: "105px", paddingRight: "105px" })}
+  get ph110() { return this.css({ paddingLeft: "110px", paddingRight: "110px" })}
+  get ph115() { return this.css({ paddingLeft: "115px", paddingRight: "115px" })}
+  get ph120() { return this.css({ paddingLeft: "120px", paddingRight: "120px" })}
   get ph125() { return this.css({ paddingLeft: "125px", paddingRight: "125px" })}
   get ph150() { return this.css({ paddingLeft: "150px", paddingRight: "150px" })}
   get ph175() { return this.css({ paddingLeft: "175px", paddingRight: "175px" })}
@@ -1516,6 +1568,10 @@ export class Gwen extends GwenBase {
   get m90() { return this.css({ margin: "90px" })}
   get m95() { return this.css({ margin: "95px" })}
   get m100() { return this.css({ margin: "100px" })}
+  get m105() { return this.css({ margin: "105px" })}
+  get m110() { return this.css({ margin: "110px" })}
+  get m115() { return this.css({ margin: "115px" })}
+  get m120() { return this.css({ margin: "120px" })}
   get m125() { return this.css({ margin: "125px" })}
   get m150() { return this.css({ margin: "150px" })}
   get m175() { return this.css({ margin: "175px" })}
@@ -1603,6 +1659,10 @@ export class Gwen extends GwenBase {
   get mt90() { return this.css({ marginTop: "90px" })}
   get mt95() { return this.css({ marginTop: "95px" })}
   get mt100() { return this.css({ marginTop: "100px" })}
+  get mt105() { return this.css({ marginTop: "105px" })}
+  get mt110() { return this.css({ marginTop: "110px" })}
+  get mt115() { return this.css({ marginTop: "115px" })}
+  get mt120() { return this.css({ marginTop: "120px" })}
   get mt125() { return this.css({ marginTop: "125px" })}
   get mt150() { return this.css({ marginTop: "150px" })}
   get mt175() { return this.css({ marginTop: "175px" })}
@@ -1690,6 +1750,10 @@ export class Gwen extends GwenBase {
   get mr90() { return this.css({ marginRight: "90px" })}
   get mr95() { return this.css({ marginRight: "95px" })}
   get mr100() { return this.css({ marginRight: "100px" })}
+  get mr105() { return this.css({ marginRight: "105px" })}
+  get mr110() { return this.css({ marginRight: "110px" })}
+  get mr115() { return this.css({ marginRight: "115px" })}
+  get mr120() { return this.css({ marginRight: "120px" })}
   get mr125() { return this.css({ marginRight: "125px" })}
   get mr150() { return this.css({ marginRight: "150px" })}
   get mr175() { return this.css({ marginRight: "175px" })}
@@ -1777,6 +1841,10 @@ export class Gwen extends GwenBase {
   get mb90() { return this.css({ marginBottom: "90px" })}
   get mb95() { return this.css({ marginBottom: "95px" })}
   get mb100() { return this.css({ marginBottom: "100px" })}
+  get mb105() { return this.css({ marginBottom: "105px" })}
+  get mb110() { return this.css({ marginBottom: "110px" })}
+  get mb115() { return this.css({ marginBottom: "115px" })}
+  get mb120() { return this.css({ marginBottom: "120px" })}
   get mb125() { return this.css({ marginBottom: "125px" })}
   get mb150() { return this.css({ marginBottom: "150px" })}
   get mb175() { return this.css({ marginBottom: "175px" })}
@@ -1864,6 +1932,10 @@ export class Gwen extends GwenBase {
   get ml90() { return this.css({ marginLeft: "90px" })}
   get ml95() { return this.css({ marginLeft: "95px" })}
   get ml100() { return this.css({ marginLeft: "100px" })}
+  get ml105() { return this.css({ marginLeft: "105px" })}
+  get ml110() { return this.css({ marginLeft: "110px" })}
+  get ml115() { return this.css({ marginLeft: "115px" })}
+  get ml120() { return this.css({ marginLeft: "120px" })}
   get ml125() { return this.css({ marginLeft: "125px" })}
   get ml150() { return this.css({ marginLeft: "150px" })}
   get ml175() { return this.css({ marginLeft: "175px" })}
@@ -1951,6 +2023,10 @@ export class Gwen extends GwenBase {
   get mv90() { return this.css({ marginTop: "90px", marginBottom: "90px" })}
   get mv95() { return this.css({ marginTop: "95px", marginBottom: "95px" })}
   get mv100() { return this.css({ marginTop: "100px", marginBottom: "100px" })}
+  get mv105() { return this.css({ marginTop: "105px", marginBottom: "105px" })}
+  get mv110() { return this.css({ marginTop: "110px", marginBottom: "110px" })}
+  get mv115() { return this.css({ marginTop: "115px", marginBottom: "115px" })}
+  get mv120() { return this.css({ marginTop: "120px", marginBottom: "120px" })}
   get mv125() { return this.css({ marginTop: "125px", marginBottom: "125px" })}
   get mv150() { return this.css({ marginTop: "150px", marginBottom: "150px" })}
   get mv175() { return this.css({ marginTop: "175px", marginBottom: "175px" })}
@@ -2038,6 +2114,10 @@ export class Gwen extends GwenBase {
   get mh90() { return this.css({ marginLeft: "90px", marginRight: "90px" })}
   get mh95() { return this.css({ marginLeft: "95px", marginRight: "95px" })}
   get mh100() { return this.css({ marginLeft: "100px", marginRight: "100px" })}
+  get mh105() { return this.css({ marginLeft: "105px", marginRight: "105px" })}
+  get mh110() { return this.css({ marginLeft: "110px", marginRight: "110px" })}
+  get mh115() { return this.css({ marginLeft: "115px", marginRight: "115px" })}
+  get mh120() { return this.css({ marginLeft: "120px", marginRight: "120px" })}
   get mh125() { return this.css({ marginLeft: "125px", marginRight: "125px" })}
   get mh150() { return this.css({ marginLeft: "150px", marginRight: "150px" })}
   get mh175() { return this.css({ marginLeft: "175px", marginRight: "175px" })}
@@ -2125,6 +2205,10 @@ export class Gwen extends GwenBase {
   get mnh90() { return this.css({ minHeight: "90px" })}
   get mnh95() { return this.css({ minHeight: "95px" })}
   get mnh100() { return this.css({ minHeight: "100px" })}
+  get mnh105() { return this.css({ minHeight: "105px" })}
+  get mnh110() { return this.css({ minHeight: "110px" })}
+  get mnh115() { return this.css({ minHeight: "115px" })}
+  get mnh120() { return this.css({ minHeight: "120px" })}
   get mnh125() { return this.css({ minHeight: "125px" })}
   get mnh150() { return this.css({ minHeight: "150px" })}
   get mnh175() { return this.css({ minHeight: "175px" })}
@@ -2212,6 +2296,10 @@ export class Gwen extends GwenBase {
   get mnw90() { return this.css({ minWidth: "90px" })}
   get mnw95() { return this.css({ minWidth: "95px" })}
   get mnw100() { return this.css({ minWidth: "100px" })}
+  get mnw105() { return this.css({ minWidth: "105px" })}
+  get mnw110() { return this.css({ minWidth: "110px" })}
+  get mnw115() { return this.css({ minWidth: "115px" })}
+  get mnw120() { return this.css({ minWidth: "120px" })}
   get mnw125() { return this.css({ minWidth: "125px" })}
   get mnw150() { return this.css({ minWidth: "150px" })}
   get mnw175() { return this.css({ minWidth: "175px" })}
@@ -2299,6 +2387,10 @@ export class Gwen extends GwenBase {
   get mxh90() { return this.css({ maxHeight: "90px" })}
   get mxh95() { return this.css({ maxHeight: "95px" })}
   get mxh100() { return this.css({ maxHeight: "100px" })}
+  get mxh105() { return this.css({ maxHeight: "105px" })}
+  get mxh110() { return this.css({ maxHeight: "110px" })}
+  get mxh115() { return this.css({ maxHeight: "115px" })}
+  get mxh120() { return this.css({ maxHeight: "120px" })}
   get mxh125() { return this.css({ maxHeight: "125px" })}
   get mxh150() { return this.css({ maxHeight: "150px" })}
   get mxh175() { return this.css({ maxHeight: "175px" })}
@@ -2386,6 +2478,10 @@ export class Gwen extends GwenBase {
   get mxw90() { return this.css({ maxWidth: "90px" })}
   get mxw95() { return this.css({ maxWidth: "95px" })}
   get mxw100() { return this.css({ maxWidth: "100px" })}
+  get mxw105() { return this.css({ maxWidth: "105px" })}
+  get mxw110() { return this.css({ maxWidth: "110px" })}
+  get mxw115() { return this.css({ maxWidth: "115px" })}
+  get mxw120() { return this.css({ maxWidth: "120px" })}
   get mxw125() { return this.css({ maxWidth: "125px" })}
   get mxw150() { return this.css({ maxWidth: "150px" })}
   get mxw175() { return this.css({ maxWidth: "175px" })}
