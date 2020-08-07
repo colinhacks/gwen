@@ -109,23 +109,23 @@ const base25 = [
 ];
 // const list256 = range(0, 255);
 
-const Gwen: string[] = [];
-Gwen.push(`import { GwenBase } from './GwenBase';`);
-Gwen.push('export class Gwen extends GwenBase {\n');
-Gwen.push(`  static make = (...args:Gwen[])=>{
+const Definition: string[] = [];
+Definition.push(`import { GwenBase } from './GwenBase';`);
+Definition.push('export class Gwen extends GwenBase {\n');
+Definition.push(`  static make = (...args:Gwen[])=>{
     return new Gwen().mix(...args);
   }`);
 
 // const myArr = new Array(100);
 
 const flexs = list25.map(k => `  get f${k}() { return this.css({ flex: ${k} })}`).join('\n');
-Gwen.push(flexs);
+Definition.push(flexs);
 
 const wpcts = list25.map(k => `  get w${k * 5}pct() { return this.css({ width: "${5 * k}%" })}`).join('\n');
-Gwen.push(wpcts);
+Definition.push(wpcts);
 
 const hpcts = list25.map(k => `  get h${k * 5}pct() { return this.css({ height: "${5 * k}%" })}`).join('\n');
-Gwen.push(hpcts);
+Definition.push(hpcts);
 
 const cgs = list100
   .map(
@@ -135,7 +135,7 @@ const cgs = list100
         .hex()}" }); }`,
   )
   .join('\n');
-Gwen.push(cgs);
+Definition.push(cgs);
 
 const cgos = list100
   .map(
@@ -145,7 +145,7 @@ const cgos = list100
         .hex()}" }); }`,
   )
   .join('\n');
-Gwen.push(cgos);
+Definition.push(cgos);
 
 const shadows = list10
   .map(k => {
@@ -157,133 +157,133 @@ const shadows = list10
     return `  get shadow${k}() { return this.css({ boxShadow: "${shadow1}, ${shadow2};" }); }`;
   })
   .join('\n');
-Gwen.push(shadows);
+Definition.push(shadows);
 
 const fws = weights.map(k => `  get fw${k}00() { return this.css({ fontWeight: ${k} })}`).join('\n');
-Gwen.push(fws);
+Definition.push(fws);
 
 const fss = base25
   .slice(0, 40)
   .map(k => `  get fs${k}() { return this.css({ fontSize: "${k}pt" })}`)
   .join('\n');
-Gwen.push(fss);
+Definition.push(fss);
 
 // .w80p
 
 // h: height
 const hs = base25.map(k => `  get h${k}() { return this.css({ height: "${k}px" })}`).join('\n');
-Gwen.push(hs);
+Definition.push(hs);
 
 // w: width
 const ws = base25.map(k => `  get w${k}() { return this.css({ width: "${k}px" })}`).join('\n');
-Gwen.push(ws);
+Definition.push(ws);
 
 // l: left
 const ls = base25.map(k => `  get l${k}() { return this.css({ left: "${k}px" })}`).join('\n');
-Gwen.push(ls);
+Definition.push(ls);
 
 // r: right
 const rs = base25.map(k => `  get r${k}() { return this.css({ right: "${k}px" })}`).join('\n');
-Gwen.push(rs);
+Definition.push(rs);
 
 // t: top
 const ts = base25.map(k => `  get t${k}() { return this.css({ top: "${k}px" })}`).join('\n');
-Gwen.push(ts);
+Definition.push(ts);
 
 // b: bottom
 const bs = base25.map(k => `  get b${k}() { return this.css({ bottom: "${k}px" })}`).join('\n');
-Gwen.push(bs);
+Definition.push(bs);
 
 // p: padding
 const ps = base25.map(k => `  get p${k}() { return this.css({ padding: "${k}px" })}`).join('\n');
-Gwen.push(ps);
+Definition.push(ps);
 
 // pt: paddingTop
 const pts = base25.map(k => `  get pt${k}() { return this.css({ paddingTop: "${k}px" })}`).join('\n');
-Gwen.push(pts);
+Definition.push(pts);
 
 // pr: paddingRight
 const prs = base25.map(k => `  get pr${k}() { return this.css({ paddingRight: "${k}px" })}`).join('\n');
-Gwen.push(prs);
+Definition.push(prs);
 
 // pb: paddingBottom
 const pbs = base25.map(k => `  get pb${k}() { return this.css({ paddingBottom: "${k}px" })}`).join('\n');
-Gwen.push(pbs);
+Definition.push(pbs);
 
 // pl: paddingLeft
 const pls = base25.map(k => `  get pl${k}() { return this.css({ paddingLeft: "${k}px" })}`).join('\n');
-Gwen.push(pls);
+Definition.push(pls);
 
 // pv: paddingLeft
 const pvs = base25
   .map(k => `  get pv${k}() { return this.css({ paddingTop: "${k}px", paddingBottom: "${k}px" })}`)
   .join('\n');
-Gwen.push(pvs);
+Definition.push(pvs);
 
 // ph: paddingLeft
 const phs = base25
   .map(k => `  get ph${k}() { return this.css({ paddingLeft: "${k}px", paddingRight: "${k}px" })}`)
   .join('\n');
-Gwen.push(phs);
+Definition.push(phs);
 
 // m: margin
 const ms = base25.map(k => `  get m${k}() { return this.css({ margin: "${k}px" })}`).join('\n');
-Gwen.push(ms);
+Definition.push(ms);
 
 // mt: marginTop
 const mts = base25.map(k => `  get mt${k}() { return this.css({ marginTop: "${k}px" })}`).join('\n');
-Gwen.push(mts);
+Definition.push(mts);
 
 // mr: marginRight
 const mrs = base25.map(k => `  get mr${k}() { return this.css({ marginRight: "${k}px" })}`).join('\n');
-Gwen.push(mrs);
+Definition.push(mrs);
 
 // mb: marginBottom
 const mbs = base25.map(k => `  get mb${k}() { return this.css({ marginBottom: "${k}px" })}`).join('\n');
-Gwen.push(mbs);
+Definition.push(mbs);
 
 // ml: marginLeft
 const mls = base25.map(k => `  get ml${k}() { return this.css({ marginLeft: "${k}px" })}`).join('\n');
-Gwen.push(mls);
+Definition.push(mls);
 
 // mv: marginTop
 const mvs = base25
   .map(k => `  get mv${k}() { return this.css({ marginTop: "${k}px", marginBottom: "${k}px" })}`)
   .join('\n');
-Gwen.push(mvs);
+Definition.push(mvs);
 
 // mh: marginTop
 const mhs = base25
   .map(k => `  get mh${k}() { return this.css({ marginLeft: "${k}px", marginRight: "${k}px" })}`)
   .join('\n');
-Gwen.push(mhs);
+Definition.push(mhs);
 
 // mnh: minHeight
 const mnhs = base25.map(k => `  get mnh${k}() { return this.css({ minHeight: "${k}px" })}`).join('\n');
-Gwen.push(mnhs);
+Definition.push(mnhs);
 
 // mnw: minWidth
 const mnws = base25.map(k => `  get mnw${k}() { return this.css({ minWidth: "${k}px" })}`).join('\n');
-Gwen.push(mnws);
+Definition.push(mnws);
 
 // mxh: maxHeight
 const mxhs = base25.map(k => `  get mxh${k}() { return this.css({ maxHeight: "${k}px" })}`).join('\n');
-Gwen.push(mxhs);
+Definition.push(mxhs);
 
 // mxw: maxWidth
 const mxws = base25.map(k => `  get mxw${k}() { return this.css({ maxWidth: "${k}px" })}`).join('\n');
-Gwen.push(mxws);
+Definition.push(mxws);
 
 // op: opacity
 const opacities = list100.map(k => `  get op${k}() { return this.css({ opacity: ${k / 100} }) }`).join('\n');
-Gwen.push(opacities);
+Definition.push(opacities);
 
 // TODO: border radius
 // op: opacity
 const brs = list100.map(k => `  get br${k}() { return this.css({ borderRadius: "${k}px" }) }`).join('\n');
-Gwen.push(brs);
+Definition.push(brs);
 
-Gwen.push(`\n}`);
+Definition.push(`\n}`);
 
 console.log(`${__dirname}/src/Gwen.ts`);
-fs.writeFileSync(`${__dirname}/src/Gwen.ts`, Gwen.join('\n'), 'utf8');
+fs.writeFileSync(`${__dirname}/src/Gwen.ts`, Definition.join('\n'), 'utf8');

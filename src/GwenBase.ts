@@ -1,5 +1,6 @@
 import { GwenBaseBase } from './GwenBaseBase';
 import { Gwen } from './external';
+
 export class GwenBase extends GwenBaseBase {
   get row() {
     return this.css({
@@ -180,6 +181,13 @@ export class GwenBase extends GwenBaseBase {
     return this.css({ border: 'none' });
   }
 
+  get sans() {
+    return this.css({ fontSize: this.theme.sansFont });
+  }
+  get serif() {
+    return this.css({ fontSize: this.theme.serifFont });
+  }
+
   // TODO: cursors
 
   hover = (delta: (t: this) => this) => {
@@ -208,19 +216,20 @@ export class GwenBase extends GwenBaseBase {
       [cond]: delta(newInst).class,
     });
   };
-  smup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.sm }, delta);
-  mdup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.md }, delta);
-  lgup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.lg }, delta);
-  xlup = (delta: (t: this) => this) => this.media({ min: this.finalTheme.xl }, delta);
-  xsdown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.sm }, delta);
-  smdown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.md }, delta);
-  mddown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.lg }, delta);
-  lgdown = (delta: (t: this) => this) => this.media({ max: this.finalTheme.xl }, delta);
-  xsonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.xs, max: this.finalTheme.sm }, delta);
-  smonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.sm, max: this.finalTheme.md }, delta);
-  mdonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.md, max: this.finalTheme.lg }, delta);
-  lgonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.lg, max: this.finalTheme.xl }, delta);
-  xlonly = (delta: (t: this) => this) => this.media({ min: this.finalTheme.xl }, delta);
+
+  smup = (delta: (t: this) => this) => this.media({ min: this.theme.sm }, delta);
+  mdup = (delta: (t: this) => this) => this.media({ min: this.theme.md }, delta);
+  lgup = (delta: (t: this) => this) => this.media({ min: this.theme.lg }, delta);
+  xlup = (delta: (t: this) => this) => this.media({ min: this.theme.xl }, delta);
+  xsdown = (delta: (t: this) => this) => this.media({ max: this.theme.sm }, delta);
+  smdown = (delta: (t: this) => this) => this.media({ max: this.theme.md }, delta);
+  mddown = (delta: (t: this) => this) => this.media({ max: this.theme.lg }, delta);
+  lgdown = (delta: (t: this) => this) => this.media({ max: this.theme.xl }, delta);
+  xsonly = (delta: (t: this) => this) => this.media({ min: this.theme.xs, max: this.theme.sm }, delta);
+  smonly = (delta: (t: this) => this) => this.media({ min: this.theme.sm, max: this.theme.md }, delta);
+  mdonly = (delta: (t: this) => this) => this.media({ min: this.theme.md, max: this.theme.lg }, delta);
+  lgonly = (delta: (t: this) => this) => this.media({ min: this.theme.lg, max: this.theme.xl }, delta);
+  xlonly = (delta: (t: this) => this) => this.media({ min: this.theme.xl }, delta);
   checked = (delta: (t: this) => this) => this.pseudo(`:checked`, delta);
   focus = (delta: (t: this) => this) => this.pseudo(`:focus`, delta);
   focusWithin = (delta: (t: this) => this) => this.pseudo(`:focus-within`, delta);

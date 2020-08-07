@@ -1,4 +1,8 @@
 import { Gwen } from './Gwen';
-const gwen = Gwen.make;
 
-export { Gwen, gwen };
+export const gwen = () =>
+  new Gwen({
+    sansFont: '',
+  });
+
+export { Gwen };

@@ -4,7 +4,7 @@ type CssArgs = Parameters<typeof css>;
 type CSS = ObjectInterpolation<undefined>;
 type CxArgs = Parameters<typeof cx>;
 
-type GwenTheme = {
+export type GwenTheme = {
   xs: string;
   sm: string;
   md: string;
@@ -47,22 +47,21 @@ export class GwenBaseBase {
     sansFont: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
     serifFont: `Georgia, Cambria, "Times New Roman", Times, serif`,
   };
-  theme: Partial<GwenTheme> = {};
+  // theme: Partial<GwenTheme> = {};
 
-  protected finalTheme: GwenTheme;
+  protected theme: GwenTheme;
   protected params: GwenParams;
 
-  constructor(params: GwenParams = { cxArray: [] }) {
+  constructor(theme: Partial<GwenTheme> = {}, params: GwenParams = { cxArray: [] }) {
     this.params = params;
-    this.finalTheme = {
+    this.theme = {
       ...this.defaultTheme,
-      ...this.theme,
+      ...theme,
+      sansFont: `"${theme.sansFont}", ${this.defaultTheme.sansFont}`,
+      serifFont: `"${theme.serifFont}", ${this.defaultTheme.serifFont}`,
     };
   }
 
-  get name() {
-    return cx(...this.params.cxArray);
-  }
   get class() {
     return cx(...this.params.cxArray);
   }
@@ -90,16 +89,16 @@ export class GwenBaseBase {
     // return this._update(cx(...args));
   };
 
-  mix = (...args: any[]): this => {
+  mix = (...args: (GwenBaseBase | GwenBaseBase[])[]): this => {
     let allArgs: any = [];
     for (const arg of args) {
       if (arg instanceof GwenBaseBase) {
         allArgs.push(arg);
       } else if (Array.isArray(arg)) {
-        allArgs = [...allArgs];
+        allArgs = [...allArgs, ...arg];
       }
     }
-    return this.cx(...flattenArg(args).map(x => x.name));
+    return this.cx(...flattenArg(args).map(x => x.class));
   };
 
   alignContent = (arg: CSS['alignContent']) => this.css({ alignContent: arg });
