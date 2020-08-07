@@ -15,6 +15,7 @@ export type GwenTheme = {
 };
 
 type GwenParams = {
+  theme: GwenTheme;
   cxArray: CxArgs;
 };
 
@@ -37,28 +38,37 @@ const flattenArg = (arg: any) => {
   return allArgs;
 };
 
-export class GwenBaseBase {
-  protected defaultTheme: GwenTheme = {
-    xs: '420px',
-    sm: '640px',
-    md: '768px',
-    lg: '1024px',
-    xl: '1280px',
-    sansFont: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
-    serifFont: `Georgia, Cambria, "Times New Roman", Times, serif`,
-  };
-  // theme: Partial<GwenTheme> = {};
+const DEFAULT_THEME: GwenTheme = {
+  xs: '420px',
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  sansFont: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+  serifFont: `Georgia, Cambria, "Times New Roman", Times, serif`,
+};
 
-  protected theme: GwenTheme;
+export class GwenBaseBase {
+  // theme: Partial<GwenTheme> = {};
   protected params: GwenParams;
 
-  constructor(theme: Partial<GwenTheme> = {}, params: GwenParams = { cxArray: [] }) {
-    this.params = params;
-    this.theme = {
-      ...this.defaultTheme,
+  get theme() {
+    return this.params.theme;
+  }
+
+  constructor(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
+    const finalTheme: GwenTheme = {
+      ...DEFAULT_THEME,
       ...theme,
-      sansFont: `"${theme.sansFont}", ${this.defaultTheme.sansFont}`,
-      serifFont: `"${theme.serifFont}", ${this.defaultTheme.serifFont}`,
+    };
+    if (theme) {
+      if (theme.sansFont) theme.sansFont = `"${theme.sansFont}", ${DEFAULT_THEME.sansFont}`;
+      if (theme.serifFont) theme.serifFont = `"${theme.serifFont}", ${DEFAULT_THEME.serifFont}`;
+    }
+
+    this.params = {
+      cxArray: params.cxArray || [],
+      theme: finalTheme,
     };
   }
 
@@ -75,14 +85,14 @@ export class GwenBaseBase {
   // };
 
   css = (...args: CssArgs): this => {
-    return new (this as any).constructor({
+    return new (this as any).constructor(this.theme, {
       ...this.params,
       cxArray: [...this.params.cxArray, css(...args)],
     });
   };
 
   cx = (...args: CxArgs): this => {
-    return new (this as any).constructor({
+    return new (this as any).constructor(this.theme, {
       ...this.params,
       cxArray: [...this.params.cxArray, ...args],
     });
