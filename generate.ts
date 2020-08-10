@@ -159,7 +159,7 @@ const shadows = list10
   .join('\n');
 Definition.push(shadows);
 
-const fws = weights.map(k => `  get fw${k}() { return this.css({ fontWeight: ${k} })}`).join('\n');
+const fws = weights.map(k => `  get fw${k}() { return this.css({ fontWeight: ${k}00 })}`).join('\n');
 Definition.push(fws);
 
 const fss = base25
