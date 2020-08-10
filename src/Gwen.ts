@@ -292,15 +292,15 @@ export class Gwen extends GwenBase {
   get shadow8() { return this.css({ boxShadow: "0 26px 38px 0 rgba(0, 0, 0, 0.1), 0 17px 17px 0 rgba(0, 0, 0, 0.06);" }); }
   get shadow9() { return this.css({ boxShadow: "0 38px 58px 0 rgba(0, 0, 0, 0.1), 0 26px 26px 0 rgba(0, 0, 0, 0.06);" }); }
   get shadow10() { return this.css({ boxShadow: "0 58px 86px 0 rgba(0, 0, 0, 0.1), 0 38px 38px 0 rgba(0, 0, 0, 0.06);" }); }
-  get fw100() { return this.css({ fontWeight: 1 })}
-  get fw200() { return this.css({ fontWeight: 2 })}
-  get fw300() { return this.css({ fontWeight: 3 })}
-  get fw400() { return this.css({ fontWeight: 4 })}
-  get fw500() { return this.css({ fontWeight: 5 })}
-  get fw600() { return this.css({ fontWeight: 6 })}
-  get fw700() { return this.css({ fontWeight: 7 })}
-  get fw800() { return this.css({ fontWeight: 8 })}
-  get fw900() { return this.css({ fontWeight: 9 })}
+  get fw1() { return this.css({ fontWeight: 1 })}
+  get fw2() { return this.css({ fontWeight: 2 })}
+  get fw3() { return this.css({ fontWeight: 3 })}
+  get fw4() { return this.css({ fontWeight: 4 })}
+  get fw5() { return this.css({ fontWeight: 5 })}
+  get fw6() { return this.css({ fontWeight: 6 })}
+  get fw7() { return this.css({ fontWeight: 7 })}
+  get fw8() { return this.css({ fontWeight: 8 })}
+  get fw9() { return this.css({ fontWeight: 9 })}
   get fs0() { return this.css({ fontSize: "0pt" })}
   get fs1() { return this.css({ fontSize: "1pt" })}
   get fs2() { return this.css({ fontSize: "2pt" })}
