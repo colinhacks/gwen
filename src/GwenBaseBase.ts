@@ -89,7 +89,7 @@ export class GwenBaseBase {
   css = (...args: CssArgs): this => {
     const hashKey = JSON.stringify(args);
     if (this._cache[hashKey]) {
-      console.log(`cache hit`);
+      // console.log(`cache hit`);
       return this._cache[hashKey] as any;
     }
     // this.params.cssArray = [...this.params.cssArray, ...args];
