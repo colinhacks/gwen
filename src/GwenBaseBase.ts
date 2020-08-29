@@ -84,7 +84,7 @@ export class GwenBaseBase {
   //   return this;
   // };
 
-  _cache: { [k: string]: GwenBaseBase };
+  _cache: { [k: string]: GwenBaseBase } = {};
 
   css = (...args: CssArgs): this => {
     const hashKey = JSON.stringify(args);
