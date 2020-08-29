@@ -85,10 +85,12 @@ export class GwenBaseBase {
   // };
 
   css = (...args: CssArgs): this => {
-    return new (this as any).constructor(this.theme, {
-      ...this.params,
-      cssArray: [...this.params.cssArray, ...args],
-    });
+    this.params.cssArray = [...this.params.cssArray, ...args];
+    // return new (this as any).constructor(this.theme, {
+    //   ...this.params,
+    //   cssArray: [. ..this.params.cssArray, ...args],
+    // });
+    return this;
   };
 
   // cx = (...args: CxArgs): this => {
