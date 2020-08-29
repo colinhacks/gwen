@@ -84,13 +84,21 @@ export class GwenBaseBase {
   //   return this;
   // };
 
+  _cache: { [k: string]: GwenBaseBase };
+
   css = (...args: CssArgs): this => {
-    this.params.cssArray = [...this.params.cssArray, ...args];
-    // return new (this as any).constructor(this.theme, {
-    //   ...this.params,
-    //   cssArray: [. ..this.params.cssArray, ...args],
-    // });
-    return this;
+    const hashKey = JSON.stringify(args);
+    if (this._cache[hashKey]) {
+      console.log(`cache hit`);
+      return this._cache[hashKey] as any;
+    }
+    // this.params.cssArray = [...this.params.cssArray, ...args];
+    const newInstance = new (this as any).constructor(this.theme, {
+      ...this.params,
+      cssArray: [...this.params.cssArray, ...args],
+    });
+    this._cache[hashKey] = newInstance;
+    return newInstance;
   };
 
   // cx = (...args: CxArgs): this => {
