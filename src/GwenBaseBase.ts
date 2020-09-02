@@ -85,16 +85,30 @@ export class GwenBaseBase {
   // };
 
   _cache: { [k: string]: GwenBaseBase } = {};
+  _hashcache: { obj: any; hash: string }[] = [];
 
-  css = (...args: CssArgs): this => {
-    const hashKey = hash(args);
+  _gethash = (obj: any) => {
+    const itemIndex = this._hashcache.indexOf(obj);
+    if (itemIndex !== -1) {
+      console.log('hashcache hit!');
+      return this._hashcache[itemIndex].hash;
+    } else {
+      console.log(`computing hash`);
+      const newhash = hash(obj);
+      this._hashcache.push({ obj, hash: newhash });
+      return newhash;
+    }
+  };
+
+  css = (arg: CssArgs[number]): this => {
+    const hashKey = this._gethash(arg);
     if (this._cache[hashKey]) {
       return this._cache[hashKey] as any;
     }
     // this.params.cssArray = [...this.params.cssArray, ...args];
     const newInstance = new (this as any).constructor(this.theme, {
       ...this.params,
-      cssArray: [...this.params.cssArray, ...args],
+      cssArray: [...this.params.cssArray, arg],
     });
     this._cache[hashKey] = newInstance;
     return newInstance;
