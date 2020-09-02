@@ -101,28 +101,33 @@ export class GwenBaseBase {
   };
 
   css = (...args: CSS[]): this => {
-    let inst = this;
-    // const hashKey = this._gethash(arg);
-    // if (this._cache[hashKey]) {
-    //   return this._cache[hashKey] as any;
+    // _css implementation
+    // let inst = this;
+
+    // for (const arg of args) {
+    //   if (arg) {
+    //     const keys = Object.keys(arg).sort();
+    //     for (const key of keys) {
+    //       inst = inst._css(key, arg[key]);
+    //     }
+    //   }
     // }
-    for (const arg of args) {
-      if (arg) {
-        const keys = Object.keys(arg).sort();
-        for (const key of keys) {
-          inst = inst._css(key, arg[key]);
-        }
-      }
+
+    // return inst;
+
+    // non_css implementation
+    const hashKey = this._gethash(args);
+    if (this._cache[hashKey]) {
+      return this._cache[hashKey] as any;
     }
 
-    return inst;
-    // this.params.cssArray = [...this.params.cssArray, ...args];
-    // const newInstance = new (this as any).constructor(this.theme, {
-    //   ...this.params,
-    //   cssArray: [...this.params.cssArray, ...args],
-    // });
-    // this._cache[hashKey] = newInstance;
-    // return newInstance;
+    this.params.cssArray = [...this.params.cssArray, ...args];
+    const newInstance = new (this as any).constructor(this.theme, {
+      ...this.params,
+      cssArray: [...this.params.cssArray, ...args],
+    });
+    this._cache[hashKey] = newInstance;
+    return newInstance;
   };
 
   _css = <T extends keyof CSS>(key: T, arg: CSS[T]) => {
