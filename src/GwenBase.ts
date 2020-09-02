@@ -1,5 +1,4 @@
 import { GwenBaseBase } from './GwenBaseBase';
-import { Gwen } from './external';
 
 export class GwenBase extends GwenBaseBase {
   get row() {
@@ -211,7 +210,7 @@ export class GwenBase extends GwenBaseBase {
     });
   };
 
-  selector = (cond: string, delta: (t: this) => Gwen) => {
+  selector = (cond: string, delta: (t: this) => this) => {
     // const newInst: Gwen = new (this as any).constructor(this.theme);
     return this.css({
       [cond]: delta(this).class,
