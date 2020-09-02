@@ -57,7 +57,7 @@ export class GwenBaseBase {
   }
 
   constructor(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
-    // console.log(`new gwen`);
+    console.log(`new gwen`);
     const finalTheme: GwenTheme = {
       ...DEFAULT_THEME,
       ...theme,
@@ -104,8 +104,10 @@ export class GwenBaseBase {
   css = (...args: CssArgs): this => {
     const hashKey = this._gethash(args);
     if (this._cache[hashKey]) {
+      // console.log(`returning cached`);
       return this._cache[hashKey] as any;
     }
+
     // this.params.cssArray = [...this.params.cssArray, ...args];
     const newInstance = new (this as any).constructor(this.theme, {
       ...this.params,
