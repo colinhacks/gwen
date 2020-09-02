@@ -1,6 +1,6 @@
 import { css, ObjectInterpolation } from 'emotion';
 import hash from 'object-hash';
-// type CssArgs = Parameters<typeof css>;
+type CssArgs = Parameters<typeof css>;
 type CSS = ObjectInterpolation<undefined>;
 // type CxArgs = Parameters<typeof cx>;
 
@@ -16,7 +16,7 @@ export type GwenTheme = {
 
 type GwenParams = {
   theme: GwenTheme;
-  cssArray: CSS[];
+  cssArray: CssArgs;
 };
 
 const flattenArg = (arg: any) => {
@@ -57,7 +57,7 @@ export class GwenBaseBase {
   }
 
   constructor(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
-    console.log(`creating new gwen`);
+    console.log(`new gwen`);
     const finalTheme: GwenTheme = {
       ...DEFAULT_THEME,
       ...theme,
@@ -101,28 +101,12 @@ export class GwenBaseBase {
     }
   };
 
-  css = (...args: CSS[]): this => {
-    // _css implementation
-    // let inst = this;
-
-    // for (const arg of args) {
-    //   if (arg) {
-    //     const keys = Object.keys(arg).sort();
-    //     for (const key of keys) {
-    //       inst = inst._css(key, arg[key]);
-    //     }
-    //   }
-    // }
-
-    // return inst;
-
-    // non_css implementation
+  css = (...args: CssArgs): this => {
     const hashKey = this._gethash(args);
     if (this._cache[hashKey]) {
       return this._cache[hashKey] as any;
     }
-
-    this.params.cssArray = [...this.params.cssArray, ...args];
+    // this.params.cssArray = [...this.params.cssArray, ...args];
     const newInstance = new (this as any).constructor(this.theme, {
       ...this.params,
       cssArray: [...this.params.cssArray, ...args],
@@ -131,24 +115,20 @@ export class GwenBaseBase {
     return newInstance;
   };
 
-  _css = <T extends keyof CSS>(key: T, arg: CSS[T]) => {
-    const hashKey = `${key}__${arg}`;
-    //  if (this._cache[hashKey]) {
-    //    return this._cache[hashKey] as any;
-    //  }
-    // const hashKey = JSON.stringify(args);
-    if (this._cache[hashKey]) {
-      // console.log(`cache hit`);
-      return this._cache[hashKey] as any;
-    }
-    // this.params.cssArray = [...this.params.cssArray, ...args];
-    const newInstance = new (this as any).constructor(this.theme, {
-      ...this.params,
-      cssArray: [...this.params.cssArray, { [key]: arg }],
-    });
-    this._cache[hashKey] = newInstance;
-    return newInstance;
-  };
+  //  _css = <T extends keyof ObjectInterpolation<undefined>>(key: T, arg: ObjectInterpolation<undefined>[T]) => {
+  //    // const hashKey = JSON.stringify(args);
+  //    if (this._cache[hashKey]) {
+  //      // console.log(`cache hit`);
+  //      return this._cache[hashKey] as any;
+  //    }
+  //    // this.params.cssArray = [...this.params.cssArray, ...args];
+  //    const newInstance = new (this as any).constructor(this.theme, {
+  //      ...this.params,
+  //      cssArray: [...this.params.cssArray, ...args],
+  //    });
+  //    this._cache[hashKey] = newInstance;
+  //    return newInstance;
+  //  };
 
   // cx = (...args: CxArgs): this => {
   //   return new (this as any).constructor(this.theme, {
@@ -159,7 +139,7 @@ export class GwenBaseBase {
   // };
 
   mix = (...args: GwenBaseBase[]): this => {
-    let mixedCss: CSS[] = [];
+    let mixedCss: CssArgs = [];
     for (const arg of args) {
       mixedCss = [...mixedCss, ...arg.params.cssArray];
       // if (arg instanceof GwenBaseBase) {
@@ -168,7 +148,7 @@ export class GwenBaseBase {
       //   allArgs = [...allArgs, ...arg];
       // }
     }
-    return this.css(...mixedCss);
+    return this.css(mixedCss);
     // return this.cx(...flattenArg(args).map(x => x.class));
   };
 
