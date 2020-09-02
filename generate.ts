@@ -138,12 +138,7 @@ const cgs = list100
 Definition.push(cgs);
 
 const cgos = list100
-  .map(
-    k =>
-      `  get cgo${k}() { return this.css({ color: "${Color(`#000000`)
-        .fade(k / 100)
-        .hex()}" }); }`,
-  )
+  .map(k => `  get cgo${k}() { return this.css({ color: "rgba(0, 0, 0, ${(k / 100.0).toFixed(2)})" }); }`)
   .join('\n');
 Definition.push(cgos);
 

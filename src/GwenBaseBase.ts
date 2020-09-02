@@ -57,6 +57,7 @@ export class GwenBaseBase {
   }
 
   constructor(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
+    console.log(`creating new gwen`);
     const finalTheme: GwenTheme = {
       ...DEFAULT_THEME,
       ...theme,

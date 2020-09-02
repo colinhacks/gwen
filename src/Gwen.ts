@@ -180,107 +180,107 @@ export class Gwen extends GwenBase {
   get cg98() { return this.css({ color: "#050505" }); }
   get cg99() { return this.css({ color: "#030303" }); }
   get cg100() { return this.css({ color: "#000000" }); }
-  get cgo0() { return this.css({ color: "#000000" }); }
-  get cgo1() { return this.css({ color: "#000000" }); }
-  get cgo2() { return this.css({ color: "#000000" }); }
-  get cgo3() { return this.css({ color: "#000000" }); }
-  get cgo4() { return this.css({ color: "#000000" }); }
-  get cgo5() { return this.css({ color: "#000000" }); }
-  get cgo6() { return this.css({ color: "#000000" }); }
-  get cgo7() { return this.css({ color: "#000000" }); }
-  get cgo8() { return this.css({ color: "#000000" }); }
-  get cgo9() { return this.css({ color: "#000000" }); }
-  get cgo10() { return this.css({ color: "#000000" }); }
-  get cgo11() { return this.css({ color: "#000000" }); }
-  get cgo12() { return this.css({ color: "#000000" }); }
-  get cgo13() { return this.css({ color: "#000000" }); }
-  get cgo14() { return this.css({ color: "#000000" }); }
-  get cgo15() { return this.css({ color: "#000000" }); }
-  get cgo16() { return this.css({ color: "#000000" }); }
-  get cgo17() { return this.css({ color: "#000000" }); }
-  get cgo18() { return this.css({ color: "#000000" }); }
-  get cgo19() { return this.css({ color: "#000000" }); }
-  get cgo20() { return this.css({ color: "#000000" }); }
-  get cgo21() { return this.css({ color: "#000000" }); }
-  get cgo22() { return this.css({ color: "#000000" }); }
-  get cgo23() { return this.css({ color: "#000000" }); }
-  get cgo24() { return this.css({ color: "#000000" }); }
-  get cgo25() { return this.css({ color: "#000000" }); }
-  get cgo26() { return this.css({ color: "#000000" }); }
-  get cgo27() { return this.css({ color: "#000000" }); }
-  get cgo28() { return this.css({ color: "#000000" }); }
-  get cgo29() { return this.css({ color: "#000000" }); }
-  get cgo30() { return this.css({ color: "#000000" }); }
-  get cgo31() { return this.css({ color: "#000000" }); }
-  get cgo32() { return this.css({ color: "#000000" }); }
-  get cgo33() { return this.css({ color: "#000000" }); }
-  get cgo34() { return this.css({ color: "#000000" }); }
-  get cgo35() { return this.css({ color: "#000000" }); }
-  get cgo36() { return this.css({ color: "#000000" }); }
-  get cgo37() { return this.css({ color: "#000000" }); }
-  get cgo38() { return this.css({ color: "#000000" }); }
-  get cgo39() { return this.css({ color: "#000000" }); }
-  get cgo40() { return this.css({ color: "#000000" }); }
-  get cgo41() { return this.css({ color: "#000000" }); }
-  get cgo42() { return this.css({ color: "#000000" }); }
-  get cgo43() { return this.css({ color: "#000000" }); }
-  get cgo44() { return this.css({ color: "#000000" }); }
-  get cgo45() { return this.css({ color: "#000000" }); }
-  get cgo46() { return this.css({ color: "#000000" }); }
-  get cgo47() { return this.css({ color: "#000000" }); }
-  get cgo48() { return this.css({ color: "#000000" }); }
-  get cgo49() { return this.css({ color: "#000000" }); }
-  get cgo50() { return this.css({ color: "#000000" }); }
-  get cgo51() { return this.css({ color: "#000000" }); }
-  get cgo52() { return this.css({ color: "#000000" }); }
-  get cgo53() { return this.css({ color: "#000000" }); }
-  get cgo54() { return this.css({ color: "#000000" }); }
-  get cgo55() { return this.css({ color: "#000000" }); }
-  get cgo56() { return this.css({ color: "#000000" }); }
-  get cgo57() { return this.css({ color: "#000000" }); }
-  get cgo58() { return this.css({ color: "#000000" }); }
-  get cgo59() { return this.css({ color: "#000000" }); }
-  get cgo60() { return this.css({ color: "#000000" }); }
-  get cgo61() { return this.css({ color: "#000000" }); }
-  get cgo62() { return this.css({ color: "#000000" }); }
-  get cgo63() { return this.css({ color: "#000000" }); }
-  get cgo64() { return this.css({ color: "#000000" }); }
-  get cgo65() { return this.css({ color: "#000000" }); }
-  get cgo66() { return this.css({ color: "#000000" }); }
-  get cgo67() { return this.css({ color: "#000000" }); }
-  get cgo68() { return this.css({ color: "#000000" }); }
-  get cgo69() { return this.css({ color: "#000000" }); }
-  get cgo70() { return this.css({ color: "#000000" }); }
-  get cgo71() { return this.css({ color: "#000000" }); }
-  get cgo72() { return this.css({ color: "#000000" }); }
-  get cgo73() { return this.css({ color: "#000000" }); }
-  get cgo74() { return this.css({ color: "#000000" }); }
-  get cgo75() { return this.css({ color: "#000000" }); }
-  get cgo76() { return this.css({ color: "#000000" }); }
-  get cgo77() { return this.css({ color: "#000000" }); }
-  get cgo78() { return this.css({ color: "#000000" }); }
-  get cgo79() { return this.css({ color: "#000000" }); }
-  get cgo80() { return this.css({ color: "#000000" }); }
-  get cgo81() { return this.css({ color: "#000000" }); }
-  get cgo82() { return this.css({ color: "#000000" }); }
-  get cgo83() { return this.css({ color: "#000000" }); }
-  get cgo84() { return this.css({ color: "#000000" }); }
-  get cgo85() { return this.css({ color: "#000000" }); }
-  get cgo86() { return this.css({ color: "#000000" }); }
-  get cgo87() { return this.css({ color: "#000000" }); }
-  get cgo88() { return this.css({ color: "#000000" }); }
-  get cgo89() { return this.css({ color: "#000000" }); }
-  get cgo90() { return this.css({ color: "#000000" }); }
-  get cgo91() { return this.css({ color: "#000000" }); }
-  get cgo92() { return this.css({ color: "#000000" }); }
-  get cgo93() { return this.css({ color: "#000000" }); }
-  get cgo94() { return this.css({ color: "#000000" }); }
-  get cgo95() { return this.css({ color: "#000000" }); }
-  get cgo96() { return this.css({ color: "#000000" }); }
-  get cgo97() { return this.css({ color: "#000000" }); }
-  get cgo98() { return this.css({ color: "#000000" }); }
-  get cgo99() { return this.css({ color: "#000000" }); }
-  get cgo100() { return this.css({ color: "#000000" }); }
+  get cgo0() { return this.css({ color: "rgba(0, 0, 0, 0.00)" }); }
+  get cgo1() { return this.css({ color: "rgba(0, 0, 0, 0.01)" }); }
+  get cgo2() { return this.css({ color: "rgba(0, 0, 0, 0.02)" }); }
+  get cgo3() { return this.css({ color: "rgba(0, 0, 0, 0.03)" }); }
+  get cgo4() { return this.css({ color: "rgba(0, 0, 0, 0.04)" }); }
+  get cgo5() { return this.css({ color: "rgba(0, 0, 0, 0.05)" }); }
+  get cgo6() { return this.css({ color: "rgba(0, 0, 0, 0.06)" }); }
+  get cgo7() { return this.css({ color: "rgba(0, 0, 0, 0.07)" }); }
+  get cgo8() { return this.css({ color: "rgba(0, 0, 0, 0.08)" }); }
+  get cgo9() { return this.css({ color: "rgba(0, 0, 0, 0.09)" }); }
+  get cgo10() { return this.css({ color: "rgba(0, 0, 0, 0.10)" }); }
+  get cgo11() { return this.css({ color: "rgba(0, 0, 0, 0.11)" }); }
+  get cgo12() { return this.css({ color: "rgba(0, 0, 0, 0.12)" }); }
+  get cgo13() { return this.css({ color: "rgba(0, 0, 0, 0.13)" }); }
+  get cgo14() { return this.css({ color: "rgba(0, 0, 0, 0.14)" }); }
+  get cgo15() { return this.css({ color: "rgba(0, 0, 0, 0.15)" }); }
+  get cgo16() { return this.css({ color: "rgba(0, 0, 0, 0.16)" }); }
+  get cgo17() { return this.css({ color: "rgba(0, 0, 0, 0.17)" }); }
+  get cgo18() { return this.css({ color: "rgba(0, 0, 0, 0.18)" }); }
+  get cgo19() { return this.css({ color: "rgba(0, 0, 0, 0.19)" }); }
+  get cgo20() { return this.css({ color: "rgba(0, 0, 0, 0.20)" }); }
+  get cgo21() { return this.css({ color: "rgba(0, 0, 0, 0.21)" }); }
+  get cgo22() { return this.css({ color: "rgba(0, 0, 0, 0.22)" }); }
+  get cgo23() { return this.css({ color: "rgba(0, 0, 0, 0.23)" }); }
+  get cgo24() { return this.css({ color: "rgba(0, 0, 0, 0.24)" }); }
+  get cgo25() { return this.css({ color: "rgba(0, 0, 0, 0.25)" }); }
+  get cgo26() { return this.css({ color: "rgba(0, 0, 0, 0.26)" }); }
+  get cgo27() { return this.css({ color: "rgba(0, 0, 0, 0.27)" }); }
+  get cgo28() { return this.css({ color: "rgba(0, 0, 0, 0.28)" }); }
+  get cgo29() { return this.css({ color: "rgba(0, 0, 0, 0.29)" }); }
+  get cgo30() { return this.css({ color: "rgba(0, 0, 0, 0.30)" }); }
+  get cgo31() { return this.css({ color: "rgba(0, 0, 0, 0.31)" }); }
+  get cgo32() { return this.css({ color: "rgba(0, 0, 0, 0.32)" }); }
+  get cgo33() { return this.css({ color: "rgba(0, 0, 0, 0.33)" }); }
+  get cgo34() { return this.css({ color: "rgba(0, 0, 0, 0.34)" }); }
+  get cgo35() { return this.css({ color: "rgba(0, 0, 0, 0.35)" }); }
+  get cgo36() { return this.css({ color: "rgba(0, 0, 0, 0.36)" }); }
+  get cgo37() { return this.css({ color: "rgba(0, 0, 0, 0.37)" }); }
+  get cgo38() { return this.css({ color: "rgba(0, 0, 0, 0.38)" }); }
+  get cgo39() { return this.css({ color: "rgba(0, 0, 0, 0.39)" }); }
+  get cgo40() { return this.css({ color: "rgba(0, 0, 0, 0.40)" }); }
+  get cgo41() { return this.css({ color: "rgba(0, 0, 0, 0.41)" }); }
+  get cgo42() { return this.css({ color: "rgba(0, 0, 0, 0.42)" }); }
+  get cgo43() { return this.css({ color: "rgba(0, 0, 0, 0.43)" }); }
+  get cgo44() { return this.css({ color: "rgba(0, 0, 0, 0.44)" }); }
+  get cgo45() { return this.css({ color: "rgba(0, 0, 0, 0.45)" }); }
+  get cgo46() { return this.css({ color: "rgba(0, 0, 0, 0.46)" }); }
+  get cgo47() { return this.css({ color: "rgba(0, 0, 0, 0.47)" }); }
+  get cgo48() { return this.css({ color: "rgba(0, 0, 0, 0.48)" }); }
+  get cgo49() { return this.css({ color: "rgba(0, 0, 0, 0.49)" }); }
+  get cgo50() { return this.css({ color: "rgba(0, 0, 0, 0.50)" }); }
+  get cgo51() { return this.css({ color: "rgba(0, 0, 0, 0.51)" }); }
+  get cgo52() { return this.css({ color: "rgba(0, 0, 0, 0.52)" }); }
+  get cgo53() { return this.css({ color: "rgba(0, 0, 0, 0.53)" }); }
+  get cgo54() { return this.css({ color: "rgba(0, 0, 0, 0.54)" }); }
+  get cgo55() { return this.css({ color: "rgba(0, 0, 0, 0.55)" }); }
+  get cgo56() { return this.css({ color: "rgba(0, 0, 0, 0.56)" }); }
+  get cgo57() { return this.css({ color: "rgba(0, 0, 0, 0.57)" }); }
+  get cgo58() { return this.css({ color: "rgba(0, 0, 0, 0.58)" }); }
+  get cgo59() { return this.css({ color: "rgba(0, 0, 0, 0.59)" }); }
+  get cgo60() { return this.css({ color: "rgba(0, 0, 0, 0.60)" }); }
+  get cgo61() { return this.css({ color: "rgba(0, 0, 0, 0.61)" }); }
+  get cgo62() { return this.css({ color: "rgba(0, 0, 0, 0.62)" }); }
+  get cgo63() { return this.css({ color: "rgba(0, 0, 0, 0.63)" }); }
+  get cgo64() { return this.css({ color: "rgba(0, 0, 0, 0.64)" }); }
+  get cgo65() { return this.css({ color: "rgba(0, 0, 0, 0.65)" }); }
+  get cgo66() { return this.css({ color: "rgba(0, 0, 0, 0.66)" }); }
+  get cgo67() { return this.css({ color: "rgba(0, 0, 0, 0.67)" }); }
+  get cgo68() { return this.css({ color: "rgba(0, 0, 0, 0.68)" }); }
+  get cgo69() { return this.css({ color: "rgba(0, 0, 0, 0.69)" }); }
+  get cgo70() { return this.css({ color: "rgba(0, 0, 0, 0.70)" }); }
+  get cgo71() { return this.css({ color: "rgba(0, 0, 0, 0.71)" }); }
+  get cgo72() { return this.css({ color: "rgba(0, 0, 0, 0.72)" }); }
+  get cgo73() { return this.css({ color: "rgba(0, 0, 0, 0.73)" }); }
+  get cgo74() { return this.css({ color: "rgba(0, 0, 0, 0.74)" }); }
+  get cgo75() { return this.css({ color: "rgba(0, 0, 0, 0.75)" }); }
+  get cgo76() { return this.css({ color: "rgba(0, 0, 0, 0.76)" }); }
+  get cgo77() { return this.css({ color: "rgba(0, 0, 0, 0.77)" }); }
+  get cgo78() { return this.css({ color: "rgba(0, 0, 0, 0.78)" }); }
+  get cgo79() { return this.css({ color: "rgba(0, 0, 0, 0.79)" }); }
+  get cgo80() { return this.css({ color: "rgba(0, 0, 0, 0.80)" }); }
+  get cgo81() { return this.css({ color: "rgba(0, 0, 0, 0.81)" }); }
+  get cgo82() { return this.css({ color: "rgba(0, 0, 0, 0.82)" }); }
+  get cgo83() { return this.css({ color: "rgba(0, 0, 0, 0.83)" }); }
+  get cgo84() { return this.css({ color: "rgba(0, 0, 0, 0.84)" }); }
+  get cgo85() { return this.css({ color: "rgba(0, 0, 0, 0.85)" }); }
+  get cgo86() { return this.css({ color: "rgba(0, 0, 0, 0.86)" }); }
+  get cgo87() { return this.css({ color: "rgba(0, 0, 0, 0.87)" }); }
+  get cgo88() { return this.css({ color: "rgba(0, 0, 0, 0.88)" }); }
+  get cgo89() { return this.css({ color: "rgba(0, 0, 0, 0.89)" }); }
+  get cgo90() { return this.css({ color: "rgba(0, 0, 0, 0.90)" }); }
+  get cgo91() { return this.css({ color: "rgba(0, 0, 0, 0.91)" }); }
+  get cgo92() { return this.css({ color: "rgba(0, 0, 0, 0.92)" }); }
+  get cgo93() { return this.css({ color: "rgba(0, 0, 0, 0.93)" }); }
+  get cgo94() { return this.css({ color: "rgba(0, 0, 0, 0.94)" }); }
+  get cgo95() { return this.css({ color: "rgba(0, 0, 0, 0.95)" }); }
+  get cgo96() { return this.css({ color: "rgba(0, 0, 0, 0.96)" }); }
+  get cgo97() { return this.css({ color: "rgba(0, 0, 0, 0.97)" }); }
+  get cgo98() { return this.css({ color: "rgba(0, 0, 0, 0.98)" }); }
+  get cgo99() { return this.css({ color: "rgba(0, 0, 0, 0.99)" }); }
+  get cgo100() { return this.css({ color: "rgba(0, 0, 0, 1.00)" }); }
   get shadow0() { return this.css({ boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.06);" }); }
   get shadow1() { return this.css({ boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.06);" }); }
   get shadow2() { return this.css({ boxShadow: "0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.06);" }); }
