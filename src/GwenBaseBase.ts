@@ -1,5 +1,5 @@
 import { css, ObjectInterpolation } from 'emotion';
-
+import hash from 'object-hash';
 type CssArgs = Parameters<typeof css>;
 type CSS = ObjectInterpolation<undefined>;
 // type CxArgs = Parameters<typeof cx>;
@@ -87,9 +87,8 @@ export class GwenBaseBase {
   _cache: { [k: string]: GwenBaseBase } = {};
 
   css = (...args: CssArgs): this => {
-    const hashKey = JSON.stringify(args);
+    const hashKey = hash(args);
     if (this._cache[hashKey]) {
-      // console.log(`cache hit`);
       return this._cache[hashKey] as any;
     }
     // this.params.cssArray = [...this.params.cssArray, ...args];
@@ -100,6 +99,21 @@ export class GwenBaseBase {
     this._cache[hashKey] = newInstance;
     return newInstance;
   };
+
+  //  _css = <T extends keyof ObjectInterpolation<undefined>>(key: T, arg: ObjectInterpolation<undefined>[T]) => {
+  //    // const hashKey = JSON.stringify(args);
+  //    if (this._cache[hashKey]) {
+  //      // console.log(`cache hit`);
+  //      return this._cache[hashKey] as any;
+  //    }
+  //    // this.params.cssArray = [...this.params.cssArray, ...args];
+  //    const newInstance = new (this as any).constructor(this.theme, {
+  //      ...this.params,
+  //      cssArray: [...this.params.cssArray, ...args],
+  //    });
+  //    this._cache[hashKey] = newInstance;
+  //    return newInstance;
+  //  };
 
   // cx = (...args: CxArgs): this => {
   //   return new (this as any).constructor(this.theme, {
