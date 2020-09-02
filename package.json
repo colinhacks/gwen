@@ -1,6 +1,6 @@
 {
   "name": "gwen",
-  "version": "0.8.5",
+  "version": "0.8.6",
   "description": "A utility-first CSS library designed for brevity",
   "main": "./lib/src/index.js",
   "types": "./lib/src/index.d.ts",
