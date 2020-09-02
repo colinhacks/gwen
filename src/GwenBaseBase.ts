@@ -1,6 +1,6 @@
 import { css, ObjectInterpolation } from 'emotion';
 import hash from 'object-hash';
-type CssArgs = Parameters<typeof css>;
+// type CssArgs = Parameters<typeof css>;
 type CSS = ObjectInterpolation<undefined>;
 // type CxArgs = Parameters<typeof cx>;
 
@@ -16,7 +16,7 @@ export type GwenTheme = {
 
 type GwenParams = {
   theme: GwenTheme;
-  cssArray: CssArgs;
+  cssArray: CSS[];
 };
 
 const flattenArg = (arg: any) => {
@@ -100,34 +100,49 @@ export class GwenBaseBase {
     }
   };
 
-  css = (arg: CssArgs[number]): this => {
-    const hashKey = this._gethash(arg);
+  css = (...args: CSS[]): this => {
+    let inst = this;
+    // const hashKey = this._gethash(arg);
+    // if (this._cache[hashKey]) {
+    //   return this._cache[hashKey] as any;
+    // }
+    for (const arg of args) {
+      if (arg) {
+        const keys = Object.keys(arg).sort();
+        for (const key of keys) {
+          inst = inst._css(key, arg[key]);
+        }
+      }
+    }
+
+    return inst;
+    // this.params.cssArray = [...this.params.cssArray, ...args];
+    // const newInstance = new (this as any).constructor(this.theme, {
+    //   ...this.params,
+    //   cssArray: [...this.params.cssArray, ...args],
+    // });
+    // this._cache[hashKey] = newInstance;
+    // return newInstance;
+  };
+
+  _css = <T extends keyof CSS>(key: T, arg: CSS[T]) => {
+    const hashKey = `${key}__${arg}`;
+    //  if (this._cache[hashKey]) {
+    //    return this._cache[hashKey] as any;
+    //  }
+    // const hashKey = JSON.stringify(args);
     if (this._cache[hashKey]) {
+      // console.log(`cache hit`);
       return this._cache[hashKey] as any;
     }
     // this.params.cssArray = [...this.params.cssArray, ...args];
     const newInstance = new (this as any).constructor(this.theme, {
       ...this.params,
-      cssArray: [...this.params.cssArray, arg],
+      cssArray: [...this.params.cssArray, { [key]: arg }],
     });
     this._cache[hashKey] = newInstance;
     return newInstance;
   };
-
-  //  _css = <T extends keyof ObjectInterpolation<undefined>>(key: T, arg: ObjectInterpolation<undefined>[T]) => {
-  //    // const hashKey = JSON.stringify(args);
-  //    if (this._cache[hashKey]) {
-  //      // console.log(`cache hit`);
-  //      return this._cache[hashKey] as any;
-  //    }
-  //    // this.params.cssArray = [...this.params.cssArray, ...args];
-  //    const newInstance = new (this as any).constructor(this.theme, {
-  //      ...this.params,
-  //      cssArray: [...this.params.cssArray, ...args],
-  //    });
-  //    this._cache[hashKey] = newInstance;
-  //    return newInstance;
-  //  };
 
   // cx = (...args: CxArgs): this => {
   //   return new (this as any).constructor(this.theme, {
@@ -138,7 +153,7 @@ export class GwenBaseBase {
   // };
 
   mix = (...args: GwenBaseBase[]): this => {
-    let mixedCss: CssArgs = [];
+    let mixedCss: CSS[] = [];
     for (const arg of args) {
       mixedCss = [...mixedCss, ...arg.params.cssArray];
       // if (arg instanceof GwenBaseBase) {
@@ -147,7 +162,7 @@ export class GwenBaseBase {
       //   allArgs = [...allArgs, ...arg];
       // }
     }
-    return this.css(mixedCss);
+    return this.css(...mixedCss);
     // return this.cx(...flattenArg(args).map(x => x.class));
   };
 
