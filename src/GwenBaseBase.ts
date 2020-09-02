@@ -57,7 +57,7 @@ export class GwenBaseBase {
   }
 
   constructor(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
-    console.log(`new gwen`);
+    // console.log(`new gwen`);
     const finalTheme: GwenTheme = {
       ...DEFAULT_THEME,
       ...theme,
@@ -91,10 +91,10 @@ export class GwenBaseBase {
   _gethash = (obj: any) => {
     const itemIndex = this._hashcache.indexOf(obj);
     if (itemIndex !== -1) {
-      console.log('hashcache hit!');
+      // console.log('hashcache hit!');
       return this._hashcache[itemIndex].hash;
     } else {
-      console.log(`computing hash`);
+      // console.log(`computing hash`);
       const newhash = hash(obj);
       this._hashcache.push({ obj, hash: newhash });
       return newhash;
