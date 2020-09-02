@@ -1,4 +1,6 @@
 import { GwenBaseBase } from './GwenBaseBase';
+import { ObjectInterpolation } from 'emotion';
+type CSS = ObjectInterpolation<undefined>;
 
 export class GwenBase extends GwenBaseBase {
   get row() {
@@ -246,4 +248,10 @@ export class GwenBase extends GwenBaseBase {
     if (condition) return delta(this);
     return this;
   };
+
+  bgc = (arg: CSS['backgroundColor']) => this.css({ backgroundColor: arg });
+  bb = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
+  bt = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
+  bl = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
+  br = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
 }

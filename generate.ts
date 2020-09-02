@@ -113,7 +113,7 @@ const Definition: string[] = [];
 Definition.push(`import { GwenBase } from './GwenBase';`);
 Definition.push('export class Gwen extends GwenBase {\n');
 // Definition.push(`  static make = (...args:Gwen[])=>{
-//     return new Gwen().mix(...args);
+//     return new gwen.mix(...args);
 //   }`);
 
 // const myArr = new Array(100);

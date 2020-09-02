@@ -2,7 +2,10 @@ import { css, ObjectInterpolation } from 'emotion';
 import hash from 'object-hash';
 type CssArgs = Parameters<typeof css>;
 type CSS = ObjectInterpolation<undefined>;
-// type CxArgs = Parameters<typeof cx>;
+
+if (typeof window !== 'undefined') {
+  (window as any).hash = hash;
+}
 
 export type GwenTheme = {
   xs: string;
@@ -28,7 +31,6 @@ const flattenArg = (arg: any) => {
     for (const item of arg) {
       allArgs = [...allArgs, ...flattenArg(item)];
     }
-    // allArgs = [...allArgs, ...flattenArgs(arg)];
   } else if (typeof arg === 'object') {
     for (const k in arg) {
       allArgs = [...allArgs, ...flattenArg(arg[k])];
@@ -49,7 +51,6 @@ const DEFAULT_THEME: GwenTheme = {
 };
 
 export class GwenBaseBase {
-  // theme: Partial<GwenTheme> = {};
   protected params: GwenParams;
 
   get theme() {
@@ -57,7 +58,6 @@ export class GwenBaseBase {
   }
 
   constructor(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
-    console.log(`new gwen`);
     const finalTheme: GwenTheme = {
       ...DEFAULT_THEME,
       ...theme,
@@ -89,22 +89,27 @@ export class GwenBaseBase {
   _hashcache: { obj: any; hash: string }[] = [];
 
   _gethash = (obj: any) => {
-    const itemIndex = this._hashcache.indexOf(obj);
-    if (itemIndex !== -1) {
-      // console.log('hashcache hit!');
-      return this._hashcache[itemIndex].hash;
-    } else {
-      // console.log(`computing hash`);
-      const newhash = hash(obj);
-      this._hashcache.push({ obj, hash: newhash });
-      return newhash;
-    }
+    // const itemIndex = this._hashcache.indexOf(obj);
+    // if (itemIndex !== -1) {
+    //   // console.log('hashcache hit!');
+    //   return this._hashcache[itemIndex].hash;
+    // } else {
+    //   // console.log(`computing hash`);
+    // console.log(obj);
+    // console.log(`hash: ${hash}`);
+    const newhash = hash(obj);
+    //   this._hashcache.push({ obj, hash: newhash });
+    return newhash;
+    // }
   };
 
   css = (...args: CssArgs): this => {
     const hashKey = this._gethash(args);
+    // console.log(`hash: ${hashKey}`);
+
+    // console.log(`items in cache: ${Object.keys(this._cache).length}`);
     if (this._cache[hashKey]) {
-      // console.log(`returning cached`);
+      // console.log(`cache hit!!!`);
       return this._cache[hashKey] as any;
     }
 
@@ -114,44 +119,16 @@ export class GwenBaseBase {
       cssArray: [...this.params.cssArray, ...args],
     });
     this._cache[hashKey] = newInstance;
+
     return newInstance;
   };
-
-  //  _css = <T extends keyof ObjectInterpolation<undefined>>(key: T, arg: ObjectInterpolation<undefined>[T]) => {
-  //    // const hashKey = JSON.stringify(args);
-  //    if (this._cache[hashKey]) {
-  //      // console.log(`cache hit`);
-  //      return this._cache[hashKey] as any;
-  //    }
-  //    // this.params.cssArray = [...this.params.cssArray, ...args];
-  //    const newInstance = new (this as any).constructor(this.theme, {
-  //      ...this.params,
-  //      cssArray: [...this.params.cssArray, ...args],
-  //    });
-  //    this._cache[hashKey] = newInstance;
-  //    return newInstance;
-  //  };
-
-  // cx = (...args: CxArgs): this => {
-  //   return new (this as any).constructor(this.theme, {
-  //     ...this.params,
-  //     cxArray: [...this.params.cxArray, ...args],
-  //   });
-  //   // return this._update(cx(...args));
-  // };
 
   mix = (...args: GwenBaseBase[]): this => {
     let mixedCss: CssArgs = [];
     for (const arg of args) {
       mixedCss = [...mixedCss, ...arg.params.cssArray];
-      // if (arg instanceof GwenBaseBase) {
-      //   allArgs.push(arg);
-      // } else if (Array.isArray(arg)) {
-      //   allArgs = [...allArgs, ...arg];
-      // }
     }
     return this.css(mixedCss);
-    // return this.cx(...flattenArg(args).map(x => x.class));
   };
 
   alignContent = (arg: CSS['alignContent']) => this.css({ alignContent: arg });
@@ -364,10 +341,4 @@ export class GwenBaseBase {
   wordWrap = (arg: CSS['wordWrap']) => this.css({ wordWrap: arg });
   writingMode = (arg: CSS['writingMode']) => this.css({ writingMode: arg });
   zIndex = (arg: CSS['zIndex']) => this.css({ zIndex: arg });
-
-  bgc = (arg: CSS['backgroundColor']) => this.css({ backgroundColor: arg });
-  bb = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
-  bt = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
-  bl = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
-  br = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
 }
