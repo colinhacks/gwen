@@ -191,29 +191,30 @@ export class GwenBase extends GwenBaseBase {
   // TODO: cursors
 
   hover = (delta: (t: this) => this) => {
-    const newInst: this = new (this as any).constructor(this.theme);
-    return this.css({ [`&:hover`]: delta(newInst).class });
+    // const newInst: this = new (this as any).constructor(this.theme);
+    return this.css({ [`&:hover`]: delta(this).class });
   };
 
   pseudo = (cond: string, delta: (t: this) => this) => {
-    const newInst: this = new (this as any).constructor(this.theme);
+    // const newInst: this = new (this as any).constructor(this.theme);
     return this.css({
-      [`&${cond}`]: delta(newInst).class,
+      [`&${cond}`]: delta(this).class,
     });
   };
 
   media = (conditions: { min?: string; max?: string }, delta: (t: this) => this) => {
-    const newInst: this = new (this as any).constructor(this.theme);
+    // const newInst: this = new (this as any).constructor(this.theme);
     return this.css({
       [`@media only screen ${conditions.min ? ` and (min-width: ${conditions.min})` : ``} ${
         conditions.max ? ` and (max-width: ${conditions.max})` : ''
-      }`]: delta(newInst).class,
+      }`]: delta(this).class,
     });
   };
-  selector = (cond: string, delta: (t: Gwen) => Gwen) => {
-    const newInst: Gwen = new (this as any).constructor(this.theme);
+
+  selector = (cond: string, delta: (t: this) => Gwen) => {
+    // const newInst: Gwen = new (this as any).constructor(this.theme);
     return this.css({
-      [cond]: delta(newInst).class,
+      [cond]: delta(this).class,
     });
   };
 
