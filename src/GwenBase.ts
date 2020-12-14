@@ -1,8 +1,8 @@
-import { GwenBaseBase } from './GwenBaseBase';
+import { GwenBaseBase, GwenParams } from './GwenBaseBase';
 import { ObjectInterpolation } from 'emotion';
 type CSS = ObjectInterpolation<undefined>;
 
-export class GwenBase extends GwenBaseBase {
+export class GwenBase<Params extends GwenParams> extends GwenBaseBase<Params> {
   get row() {
     return this.css({
       display: 'flex',
@@ -198,6 +198,7 @@ export class GwenBase extends GwenBaseBase {
 
   pseudo = (cond: string, delta: (t: this) => this) => {
     // const newInst: this = new (this as any).constructor(this.theme);
+
     return this.css({
       [`&${cond}`]: delta(this).class,
     });
@@ -244,8 +245,9 @@ export class GwenBase extends GwenBaseBase {
   firstChild = (delta: (t: this) => this) => this.pseudo(`:first-child`, delta);
   lastChild = (delta: (t: this) => this) => this.pseudo(`:last-child`, delta);
   nthChild = (n: number | string, delta: (t: this) => this) => this.pseudo(`:nth-child(${n})`, delta);
-  if = (condition: any, delta: (t: this) => this) => {
-    if (condition) return delta(this);
+  if = (condition: any, ifDelta: (t: this) => this, elseDelta?: (t: this) => this) => {
+    if (condition) return ifDelta(this);
+    if (elseDelta) return elseDelta(this);
     return this;
   };
 

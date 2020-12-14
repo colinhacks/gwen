@@ -17,10 +17,10 @@ export type GwenTheme = {
   serifFont: string;
 };
 
-type GwenParams = {
-  theme: GwenTheme;
-  cssArray: CssArgs;
-};
+export interface GwenParams {
+  theme?: Partial<GwenTheme>;
+  cssArray?: CssArgs;
+}
 
 const flattenArg = (arg: any) => {
   let allArgs: GwenBaseBase[] = [];
@@ -50,31 +50,45 @@ const DEFAULT_THEME: GwenTheme = {
   serifFont: `Georgia, Cambria, "Times New Roman", Times, serif`,
 };
 
-export class GwenBaseBase {
-  protected params: GwenParams;
+export class GwenBaseBase<Params extends GwenParams = GwenParams> {
+  protected params: Params;
 
   get theme() {
-    return this.params.theme;
-  }
-
-  constructor(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
     const finalTheme: GwenTheme = {
       ...DEFAULT_THEME,
-      ...theme,
+      ...this.params.theme,
     };
-    if (theme) {
-      if (theme.sansFont) theme.sansFont = `"${theme.sansFont}", ${DEFAULT_THEME.sansFont}`;
-      if (theme.serifFont) theme.serifFont = `"${theme.serifFont}", ${DEFAULT_THEME.serifFont}`;
-    }
+    if (this.params.theme?.sansFont) finalTheme.sansFont = `"${this.params.theme.sansFont}", ${DEFAULT_THEME.sansFont}`;
+    if (this.params.theme?.serifFont)
+      finalTheme.serifFont = `"${this.params.theme.serifFont}", ${DEFAULT_THEME.serifFont}`;
+    return finalTheme;
+  }
 
-    this.params = {
-      cssArray: params.cssArray || [],
-      theme: finalTheme,
-    };
+  get cssArray() {
+    return this.params.cssArray || [];
+  }
+
+  // static create(theme: Partial<GwenTheme> = {}, params: Partial<Omit<GwenParams, 'theme'>> = {}) {
+  //   const finalTheme: GwenTheme = {
+  //     ...DEFAULT_THEME,
+  //     ...theme,
+  //   };
+  //   if (theme?.sansFont) finalTheme.sansFont = `"${theme?.sansFont}", ${DEFAULT_THEME.sansFont}`;
+  //   if (theme?.serifFont) finalTheme.serifFont = `"${theme?.serifFont}", ${DEFAULT_THEME.serifFont}`;
+
+  //   const finalParams = {
+  //     cssArray: params.cssArray || [],
+  //     theme: finalTheme,
+  //   };
+  //   return new GwenBaseBase(finalParams);
+  // }
+
+  constructor(params: Params) {
+    this.params = params;
   }
 
   get class() {
-    return css(...this.params.cssArray);
+    return css(...this.cssArray);
   }
 
   static css = css;
@@ -114,9 +128,9 @@ export class GwenBaseBase {
     }
 
     // this.params.cssArray = [...this.params.cssArray, ...args];
-    const newInstance = new (this as any).constructor(this.theme, {
+    const newInstance = new (this as any).constructor({
       ...this.params,
-      cssArray: [...this.params.cssArray, ...args],
+      cssArray: [...this.cssArray, ...args],
     });
     this._cache[hashKey] = newInstance;
 
@@ -126,7 +140,7 @@ export class GwenBaseBase {
   mix = (...args: GwenBaseBase[]): this => {
     let mixedCss: CssArgs = [];
     for (const arg of args) {
-      mixedCss = [...mixedCss, ...arg.params.cssArray];
+      mixedCss = [...mixedCss, ...arg.cssArray];
     }
     return this.css(mixedCss);
   };
