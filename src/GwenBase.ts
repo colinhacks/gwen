@@ -341,6 +341,11 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBaseBase<P
   mv = (arg: CSS['marginTop']) => this.mt(arg).mb(arg);
   mh = (arg: CSS['marginRight']) => this.ml(arg).mr(arg);
 
+  mxh = this.maxHeight;
+  mnh = this.minHeight;
+  mxw = this.maxWidth;
+  mnw = this.minWidth;
+
   f = this.flex;
 
   cg = (k: number) =>
