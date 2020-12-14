@@ -3,7 +3,7 @@ import { ObjectInterpolation } from 'emotion';
 import Color from 'color';
 type CSS = ObjectInterpolation<undefined>;
 
-export class Gwen<Params extends GwenParams> extends GwenBaseBase<Params> {
+export class Gwen<Params extends GwenParams = GwenParams> extends GwenBaseBase<Params> {
   get row() {
     return this.css({
       display: 'flex',
