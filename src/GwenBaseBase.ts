@@ -117,17 +117,24 @@ export class GwenBaseBase<Params extends GwenParams = GwenParams> {
     // }
   };
 
+  reset = (): this => {
+    if (this._cache['__clear']) {
+      return this._cache['__clear'] as any;
+    }
+    const newInstance = new (this as any).constructor({
+      ...this.params,
+      cssArray: [],
+    });
+    this._cache['__clear'] = newInstance;
+    return newInstance;
+  };
+
   css = (...args: CssArgs): this => {
     const hashKey = this._gethash(args);
-    // console.log(`hash: ${hashKey}`);
-
-    // console.log(`items in cache: ${Object.keys(this._cache).length}`);
     if (this._cache[hashKey]) {
-      // console.log(`cache hit!!!`);
       return this._cache[hashKey] as any;
     }
 
-    // this.params.cssArray = [...this.params.cssArray, ...args];
     const newInstance = new (this as any).constructor({
       ...this.params,
       cssArray: [...this.cssArray, ...args],

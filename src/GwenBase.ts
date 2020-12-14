@@ -1,8 +1,9 @@
 import { GwenBaseBase, GwenParams } from './GwenBaseBase';
 import { ObjectInterpolation } from 'emotion';
+import Color from 'color';
 type CSS = ObjectInterpolation<undefined>;
 
-export class GwenBase<Params extends GwenParams> extends GwenBaseBase<Params> {
+export class Gwen<Params extends GwenParams> extends GwenBaseBase<Params> {
   get row() {
     return this.css({
       display: 'flex',
@@ -192,31 +193,27 @@ export class GwenBase<Params extends GwenParams> extends GwenBaseBase<Params> {
   // TODO: cursors
 
   hover = (delta: (t: this) => this) => {
-    // const newInst: this = new (this as any).constructor(this.theme);
-    return this.css({ [`&:hover`]: delta(this).class });
+    return this.css({ [`&:hover`]: delta(this.reset()).class });
   };
 
   pseudo = (cond: string, delta: (t: this) => this) => {
-    // const newInst: this = new (this as any).constructor(this.theme);
-
     return this.css({
-      [`&${cond}`]: delta(this).class,
+      [`&${cond}`]: delta(this.reset()).class,
     });
   };
 
   media = (conditions: { min?: string; max?: string }, delta: (t: this) => this) => {
-    // const newInst: this = new (this as any).constructor(this.theme);
     return this.css({
       [`@media only screen ${conditions.min ? ` and (min-width: ${conditions.min})` : ``} ${
         conditions.max ? ` and (max-width: ${conditions.max})` : ''
-      }`]: delta(this).class,
+      }`]: delta(this.reset()).class,
     });
   };
 
   selector = (cond: string, delta: (t: this) => this) => {
     // const newInst: Gwen = new (this as any).constructor(this.theme);
     return this.css({
-      [cond]: delta(this).class,
+      [cond]: delta(this.reset()).class,
     });
   };
 
@@ -252,8 +249,110 @@ export class GwenBase<Params extends GwenParams> extends GwenBaseBase<Params> {
   };
 
   bgc = (arg: CSS['backgroundColor']) => this.css({ backgroundColor: arg });
-  bb = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
-  bt = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
-  bl = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
-  br = (arg: CSS['borderTop']) => this.css({ borderTop: arg });
+
+  get shadow0() {
+    return this.css({ boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow1() {
+    return this.css({ boxShadow: '0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow2() {
+    return this.css({ boxShadow: '0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow3() {
+    return this.css({ boxShadow: '0 3px 5px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow4() {
+    return this.css({ boxShadow: '0 5px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 3px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow5() {
+    return this.css({ boxShadow: '0 8px 11px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow6() {
+    return this.css({ boxShadow: '0 11px 17px 0 rgba(0, 0, 0, 0.1), 0 8px 8px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow7() {
+    return this.css({ boxShadow: '0 17px 26px 0 rgba(0, 0, 0, 0.1), 0 11px 11px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow8() {
+    return this.css({ boxShadow: '0 26px 38px 0 rgba(0, 0, 0, 0.1), 0 17px 17px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow9() {
+    return this.css({ boxShadow: '0 38px 58px 0 rgba(0, 0, 0, 0.1), 0 26px 26px 0 rgba(0, 0, 0, 0.06);' });
+  }
+  get shadow10() {
+    return this.css({ boxShadow: '0 58px 86px 0 rgba(0, 0, 0, 0.1), 0 38px 38px 0 rgba(0, 0, 0, 0.06);' });
+  }
+
+  get fw1() {
+    return this.css({ fontWeight: 100 });
+  }
+  get fw2() {
+    return this.css({ fontWeight: 200 });
+  }
+  get fw3() {
+    return this.css({ fontWeight: 300 });
+  }
+  get fw4() {
+    return this.css({ fontWeight: 400 });
+  }
+  get fw5() {
+    return this.css({ fontWeight: 500 });
+  }
+  get fw6() {
+    return this.css({ fontWeight: 600 });
+  }
+  get fw7() {
+    return this.css({ fontWeight: 700 });
+  }
+  get fw8() {
+    return this.css({ fontWeight: 800 });
+  }
+  get fw9() {
+    return this.css({ fontWeight: 900 });
+  }
+  fs = (size: number) => this.css({ fontSize: `${size}pt` });
+
+  h = this.height;
+  w = this.width;
+  l = this.left;
+  r = this.right;
+  t = this.top;
+  b = this.bottom;
+
+  // bb = this.borderBottom;
+  // bt = this.borderTop;
+  // bl = this.borderLeft;
+  // br = this.borderRight;
+
+  pb = this.paddingBottom;
+  pt = this.paddingTop;
+  pl = this.paddingLeft;
+  pr = this.paddingRight;
+  pv = (arg: CSS['paddingTop']) => this.pt(arg).pb(arg);
+  ph = (arg: CSS['paddingRight']) => this.pl(arg).pr(arg);
+
+  mb = this.marginBottom;
+  mt = this.marginTop;
+  ml = this.marginLeft;
+  mr = this.marginRight;
+  mv = (arg: CSS['marginTop']) => this.mt(arg).mb(arg);
+  mh = (arg: CSS['marginRight']) => this.ml(arg).mr(arg);
+
+  f = this.flex;
+
+  cg = (k: number) =>
+    this.css({
+      color: Color('#ffffff')
+        .darken(k / 100)
+        .toString(),
+    });
+
+  cgo = (k: number) =>
+    this.css({
+      color: `rgba(0, 0, 0, ${(k / 100.0).toFixed(2)}`,
+    });
+
+  op = this.opacity;
+  br = this.borderRadius;
 }

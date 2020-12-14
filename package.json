@@ -40,7 +40,7 @@
     "lint": "tslint -p tsconfig.json",
     "test": "jest --config jestconfig.json --coverage && yarn run badge",
     "badge": "make-coverage-badge --output-path ./coverage.svg",
-    "prepublishOnly": "npm run generate && npm run build",
+    "prepublishOnly": "npm run build",
     "play": "nodemon -e ts -w . -x ts-node playground.ts",
     "generate": "ts-node generate.ts"
   },
