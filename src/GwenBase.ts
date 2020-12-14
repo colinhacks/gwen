@@ -325,6 +325,7 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBaseBase<P
   // bl = this.borderLeft;
   // br = this.borderRight;
 
+  p = this.padding;
   pb = this.paddingBottom;
   pt = this.paddingTop;
   pl = this.paddingLeft;
@@ -332,6 +333,7 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBaseBase<P
   pv = (arg: CSS['paddingTop']) => this.pt(arg).pb(arg);
   ph = (arg: CSS['paddingRight']) => this.pl(arg).pr(arg);
 
+  m = this.margin;
   mb = this.marginBottom;
   mt = this.marginTop;
   ml = this.marginLeft;
