@@ -192,63 +192,115 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Param
 
   // TODO: cursors
 
-  hover = (delta: (t: this) => this) => {
+  hover(delta: (t: this) => this) {
     return this.css({ [`&:hover`]: delta(this.reset()).class });
-  };
+  }
 
-  pseudo = (cond: string, delta: (t: this) => this) => {
+  pseudo(cond: string, delta: (t: this) => this) {
     return this.css({
       [`&${cond}`]: delta(this.reset()).class,
     });
-  };
+  }
 
-  media = (conditions: { min?: string; max?: string }, delta: (t: this) => this) => {
+  media(conditions: { min?: string; max?: string }, delta: (t: this) => this) {
     return this.css({
       [`@media only screen ${conditions.min ? ` and (min-width: ${conditions.min})` : ``} ${
         conditions.max ? ` and (max-width: ${conditions.max})` : ''
       }`]: delta(this.reset()).class,
     });
-  };
+  }
 
-  selector = (cond: string, delta: (t: this) => this) => {
+  selector(cond: string, delta: (t: this) => this) {
     // const newInst: Gwen = new (this as any).constructor(this.theme);
     return this.css({
       [cond]: delta(this.reset()).class,
     });
-  };
+  }
 
-  smup = (delta: (t: this) => this) => this.media({ min: this.theme.sm }, delta);
-  mdup = (delta: (t: this) => this) => this.media({ min: this.theme.md }, delta);
-  lgup = (delta: (t: this) => this) => this.media({ min: this.theme.lg }, delta);
-  xlup = (delta: (t: this) => this) => this.media({ min: this.theme.xl }, delta);
-  xsdown = (delta: (t: this) => this) => this.media({ max: this.theme.sm }, delta);
-  smdown = (delta: (t: this) => this) => this.media({ max: this.theme.md }, delta);
-  mddown = (delta: (t: this) => this) => this.media({ max: this.theme.lg }, delta);
-  lgdown = (delta: (t: this) => this) => this.media({ max: this.theme.xl }, delta);
-  xsonly = (delta: (t: this) => this) => this.media({ min: this.theme.xs, max: this.theme.sm }, delta);
-  smonly = (delta: (t: this) => this) => this.media({ min: this.theme.sm, max: this.theme.md }, delta);
-  mdonly = (delta: (t: this) => this) => this.media({ min: this.theme.md, max: this.theme.lg }, delta);
-  lgonly = (delta: (t: this) => this) => this.media({ min: this.theme.lg, max: this.theme.xl }, delta);
-  xlonly = (delta: (t: this) => this) => this.media({ min: this.theme.xl }, delta);
-  checked = (delta: (t: this) => this) => this.pseudo(`:checked`, delta);
-  focus = (delta: (t: this) => this) => this.pseudo(`:focus`, delta);
-  focusWithin = (delta: (t: this) => this) => this.pseudo(`:focus-within`, delta);
-  visited = (delta: (t: this) => this) => this.pseudo(`:visited`, delta);
-  active = (delta: (t: this) => this) => this.pseudo(`:active`, delta);
-  empty = (delta: (t: this) => this) => this.pseudo(`:empty`, delta);
-  enabled = (delta: (t: this) => this) => this.pseudo(`:enabled`, delta);
-  firstOfType = (delta: (t: this) => this) => this.pseudo(`:first-of-type`, delta);
-  lastOfType = (delta: (t: this) => this) => this.pseudo(`:last-of-type`, delta);
-  firstChild = (delta: (t: this) => this) => this.pseudo(`:first-child`, delta);
-  lastChild = (delta: (t: this) => this) => this.pseudo(`:last-child`, delta);
-  nthChild = (n: number | string, delta: (t: this) => this) => this.pseudo(`:nth-child(${n})`, delta);
-  if = (condition: any, ifDelta: (t: this) => this, elseDelta?: (t: this) => this) => {
+  smup(delta: (t: this) => this) {
+    return this.media({ min: this.theme.sm }, delta);
+  }
+  mdup(delta: (t: this) => this) {
+    return this.media({ min: this.theme.md }, delta);
+  }
+  lgup(delta: (t: this) => this) {
+    return this.media({ min: this.theme.lg }, delta);
+  }
+  xlup(delta: (t: this) => this) {
+    return this.media({ min: this.theme.xl }, delta);
+  }
+  xsdown(delta: (t: this) => this) {
+    return this.media({ max: this.theme.sm }, delta);
+  }
+  smdown(delta: (t: this) => this) {
+    return this.media({ max: this.theme.md }, delta);
+  }
+  mddown(delta: (t: this) => this) {
+    return this.media({ max: this.theme.lg }, delta);
+  }
+  lgdown(delta: (t: this) => this) {
+    return this.media({ max: this.theme.xl }, delta);
+  }
+  xsonly(delta: (t: this) => this) {
+    return this.media({ min: this.theme.xs, max: this.theme.sm }, delta);
+  }
+  smonly(delta: (t: this) => this) {
+    return this.media({ min: this.theme.sm, max: this.theme.md }, delta);
+  }
+  mdonly(delta: (t: this) => this) {
+    return this.media({ min: this.theme.md, max: this.theme.lg }, delta);
+  }
+  lgonly(delta: (t: this) => this) {
+    return this.media({ min: this.theme.lg, max: this.theme.xl }, delta);
+  }
+  xlonly(delta: (t: this) => this) {
+    return this.media({ min: this.theme.xl }, delta);
+  }
+  checked(delta: (t: this) => this) {
+    return this.pseudo(`:checked`, delta);
+  }
+  focus(delta: (t: this) => this) {
+    return this.pseudo(`:focus`, delta);
+  }
+  focusWithin(delta: (t: this) => this) {
+    return this.pseudo(`:focus-within`, delta);
+  }
+  visited(delta: (t: this) => this) {
+    return this.pseudo(`:visited`, delta);
+  }
+  active(delta: (t: this) => this) {
+    return this.pseudo(`:active`, delta);
+  }
+  empty(delta: (t: this) => this) {
+    return this.pseudo(`:empty`, delta);
+  }
+  enabled(delta: (t: this) => this) {
+    return this.pseudo(`:enabled`, delta);
+  }
+  firstOfType(delta: (t: this) => this) {
+    return this.pseudo(`:first-of-type`, delta);
+  }
+  lastOfType(delta: (t: this) => this) {
+    return this.pseudo(`:last-of-type`, delta);
+  }
+  firstChild(delta: (t: this) => this) {
+    return this.pseudo(`:first-child`, delta);
+  }
+  lastChild(delta: (t: this) => this) {
+    return this.pseudo(`:last-child`, delta);
+  }
+  nthChild(n: number | string, delta: (t: this) => this) {
+    return this.pseudo(`:nth-child(${n})`, delta);
+  }
+  if(condition: any, ifDelta: (t: this) => this, elseDelta?: (t: this) => this) {
     if (condition) return ifDelta(this);
     if (elseDelta) return elseDelta(this);
     return this;
-  };
+  }
 
-  bgc = (arg: CSS['backgroundColor']) => this.css({ backgroundColor: arg });
+  bgc(arg: CSS['backgroundColor']) {
+    return this.css({ backgroundColor: arg });
+  }
 
   get shadow0() {
     return this.css({ boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.06);' });
@@ -311,55 +363,108 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Param
   get fw9() {
     return this.css({ fontWeight: 900 });
   }
-  fs = (size: number) => this.css({ fontSize: `${size}pt` });
+  fs(size: number) {
+    return this.css({ fontSize: `${size}pt` });
+  }
 
-  h = this.height;
-  w = this.width;
-  l = this.left;
-  r = this.right;
-  t = this.top;
-  b = this.bottom;
+  h(...args: Parameters<GwenBase['height']>) {
+    return this.height(...args);
+  }
+  w(...args: Parameters<GwenBase['width']>) {
+    return this.width(...args);
+  }
+  l(...args: Parameters<GwenBase['left']>) {
+    return this.left(...args);
+  }
+  r(...args: Parameters<GwenBase['right']>) {
+    return this.right(...args);
+  }
+  t(...args: Parameters<GwenBase['top']>) {
+    return this.top(...args);
+  }
+  b(...args: Parameters<GwenBase['bottom']>) {
+    return this.bottom(...args);
+  }
 
-  // bb = this.borderBottom;
-  // bt = this.borderTop;
-  // bl = this.borderLeft;
-  // br = this.borderRight;
+  p(...args: Parameters<GwenBase['padding']>) {
+    return this.padding(...args);
+  }
+  pb(...args: Parameters<GwenBase['paddingBottom']>) {
+    return this.paddingBottom(...args);
+  }
+  pt(...args: Parameters<GwenBase['paddingTop']>) {
+    return this.paddingTop(...args);
+  }
+  pl(...args: Parameters<GwenBase['paddingLeft']>) {
+    return this.paddingLeft(...args);
+  }
+  pr(...args: Parameters<GwenBase['paddingRight']>) {
+    return this.paddingRight(...args);
+  }
+  pv(arg: CSS['paddingTop']) {
+    return this.pt(arg).pb(arg);
+  }
+  ph(arg: CSS['paddingRight']) {
+    return this.pl(arg).pr(arg);
+  }
 
-  p = this.padding;
-  pb = this.paddingBottom;
-  pt = this.paddingTop;
-  pl = this.paddingLeft;
-  pr = this.paddingRight;
-  pv = (arg: CSS['paddingTop']) => this.pt(arg).pb(arg);
-  ph = (arg: CSS['paddingRight']) => this.pl(arg).pr(arg);
+  m(...args: Parameters<GwenBase['margin']>) {
+    return this.margin(...args);
+  }
+  mb(...args: Parameters<GwenBase['marginBottom']>) {
+    return this.marginBottom(...args);
+  }
+  mt(...args: Parameters<GwenBase['marginTop']>) {
+    return this.marginTop(...args);
+  }
+  ml(...args: Parameters<GwenBase['marginLeft']>) {
+    return this.marginLeft(...args);
+  }
+  mr(...args: Parameters<GwenBase['marginRight']>) {
+    return this.marginRight(...args);
+  }
+  mv(arg: CSS['marginTop']) {
+    return this.mt(arg).mb(arg);
+  }
+  mh(arg: CSS['marginRight']) {
+    return this.ml(arg).mr(arg);
+  }
 
-  m = this.margin;
-  mb = this.marginBottom;
-  mt = this.marginTop;
-  ml = this.marginLeft;
-  mr = this.marginRight;
-  mv = (arg: CSS['marginTop']) => this.mt(arg).mb(arg);
-  mh = (arg: CSS['marginRight']) => this.ml(arg).mr(arg);
+  mxh(...args: Parameters<GwenBase['maxHeight']>) {
+    return this.maxHeight(...args);
+  }
+  mnh(...args: Parameters<GwenBase['minHeight']>) {
+    return this.minHeight(...args);
+  }
+  mxw(...args: Parameters<GwenBase['maxWidth']>) {
+    return this.maxWidth(...args);
+  }
+  mnw(...args: Parameters<GwenBase['minWidth']>) {
+    return this.minWidth(...args);
+  }
 
-  mxh = this.maxHeight;
-  mnh = this.minHeight;
-  mxw = this.maxWidth;
-  mnw = this.minWidth;
+  f(...args: Parameters<GwenBase['flex']>) {
+    return this.flex(...args);
+  }
 
-  f = this.flex;
-
-  cg = (k: number) =>
-    this.css({
+  cg(k: number) {
+    return this.css({
       color: Color('#ffffff')
         .darken(k / 100)
         .toString(),
     });
+  }
 
-  cgo = (k: number) =>
-    this.css({
+  cgo(k: number) {
+    return this.css({
       color: `rgba(0, 0, 0, ${(k / 100.0).toFixed(2)}`,
     });
+  }
 
-  op = this.opacity;
-  br = this.borderRadius;
+  op(...args: Parameters<GwenBase['opacity']>) {
+    return this.opacity(...args);
+  }
+  br(...args: Parameters<GwenBase['borderRadius']>) {
+    return this.borderRadius(...args);
+  }
 }
