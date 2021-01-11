@@ -111,7 +111,7 @@ const base25 = [
 
 const Definition: string[] = [];
 Definition.push(`import { GwenBase } from './GwenBase';`);
-Definition.push(`import { GwenParams } from './GwenBaseBase';`);
+Definition.push(`import { GwenParams } from './GwenBase';`);
 Definition.push('export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Params> {\n');
 // Definition.push(`  static make = (...args:Gwen[])=>{
 //     return new gwen.mix(...args);

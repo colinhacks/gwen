@@ -1,3 +1,4 @@
-import { Gwen } from './GwenBase';
-import { GwenParams } from './GwenBaseBase';
-export { Gwen, GwenParams };
+import { GwenBase, GwenParams } from './GwenBase';
+import { Gwen } from './Gwen';
+
+export { GwenBase, GwenParams, Gwen };
