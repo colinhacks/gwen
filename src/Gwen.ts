@@ -1,7 +1,8 @@
 import { GwenBase, GwenParams } from './GwenBase';
-import { ObjectInterpolation } from 'emotion';
+import { CSSObject } from '@emotion/css';
+
 import Color from 'color';
-type CSS = ObjectInterpolation<undefined>;
+// type CSS = ObjectInterpolation<undefined>;
 
 export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Params> {
   get row() {
@@ -298,7 +299,7 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Param
     return this;
   }
 
-  bgc(arg: CSS['backgroundColor']) {
+  bgc(arg: CSSObject['backgroundColor']) {
     return this.css({ backgroundColor: arg });
   }
 
@@ -401,10 +402,10 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Param
   pr(...args: Parameters<GwenBase['paddingRight']>) {
     return this.paddingRight(...args);
   }
-  pv(arg: CSS['paddingTop']) {
+  pv(arg: CSSObject['paddingTop']) {
     return this.pt(arg).pb(arg);
   }
-  ph(arg: CSS['paddingRight']) {
+  ph(arg: CSSObject['paddingRight']) {
     return this.pl(arg).pr(arg);
   }
 
@@ -423,10 +424,10 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Param
   mr(...args: Parameters<GwenBase['marginRight']>) {
     return this.marginRight(...args);
   }
-  mv(arg: CSS['marginTop']) {
+  mv(arg: CSSObject['marginTop']) {
     return this.mt(arg).mb(arg);
   }
-  mh(arg: CSS['marginRight']) {
+  mh(arg: CSSObject['marginRight']) {
     return this.ml(arg).mr(arg);
   }
 

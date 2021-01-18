@@ -1,7 +1,6 @@
-import { css, ObjectInterpolation } from 'emotion';
+import { css, CSSObject } from '@emotion/css';
 import hash from 'object-hash';
 type CssArgs = Parameters<typeof css>;
-type CSS = ObjectInterpolation<undefined>;
 
 if (typeof window !== 'undefined') {
   (window as any).hash = hash;
@@ -151,634 +150,634 @@ export class GwenBase<Params extends GwenParams = GwenParams> {
     }
     return this.css(mixedCss);
   }
-  alignContent(arg: CSS['alignContent']) {
+  alignContent(arg: CSSObject['alignContent']) {
     return this.css({ alignContent: arg });
   }
-  alignItems(arg: CSS['alignItems']) {
+  alignItems(arg: CSSObject['alignItems']) {
     return this.css({ alignItems: arg });
   }
-  alignSelf(arg: CSS['alignSelf']) {
+  alignSelf(arg: CSSObject['alignSelf']) {
     return this.css({ alignSelf: arg });
   }
-  all(arg: CSS['all']) {
+  all(arg: CSSObject['all']) {
     return this.css({ all: arg });
   }
-  animation(arg: CSS['animation']) {
+  animation(arg: CSSObject['animation']) {
     return this.css({ animation: arg });
   }
-  animationDelay(arg: CSS['animationDelay']) {
+  animationDelay(arg: CSSObject['animationDelay']) {
     return this.css({ animationDelay: arg });
   }
-  animationDirection(arg: CSS['animationDirection']) {
+  animationDirection(arg: CSSObject['animationDirection']) {
     return this.css({ animationDirection: arg });
   }
-  animationDuration(arg: CSS['animationDuration']) {
+  animationDuration(arg: CSSObject['animationDuration']) {
     return this.css({ animationDuration: arg });
   }
-  animationFillMode(arg: CSS['animationFillMode']) {
+  animationFillMode(arg: CSSObject['animationFillMode']) {
     return this.css({ animationFillMode: arg });
   }
-  animationIterationCount(arg: CSS['animationIterationCount']) {
+  animationIterationCount(arg: CSSObject['animationIterationCount']) {
     return this.css({ animationIterationCount: arg });
   }
-  animationName(arg: CSS['animationName']) {
+  animationName(arg: CSSObject['animationName']) {
     return this.css({ animationName: arg });
   }
-  animationPlayState(arg: CSS['animationPlayState']) {
+  animationPlayState(arg: CSSObject['animationPlayState']) {
     return this.css({ animationPlayState: arg });
   }
-  animationTimingFunction(arg: CSS['animationTimingFunction']) {
+  animationTimingFunction(arg: CSSObject['animationTimingFunction']) {
     return this.css({ animationTimingFunction: arg });
   }
-  backfaceVisibility(arg: CSS['backfaceVisibility']) {
+  backfaceVisibility(arg: CSSObject['backfaceVisibility']) {
     return this.css({ backfaceVisibility: arg });
   }
-  background(arg: CSS['background']) {
+  background(arg: CSSObject['background']) {
     return this.css({ background: arg });
   }
-  backgroundAttachment(arg: CSS['backgroundAttachment']) {
+  backgroundAttachment(arg: CSSObject['backgroundAttachment']) {
     return this.css({ backgroundAttachment: arg });
   }
-  backgroundBlendMode(arg: CSS['backgroundBlendMode']) {
+  backgroundBlendMode(arg: CSSObject['backgroundBlendMode']) {
     return this.css({ backgroundBlendMode: arg });
   }
-  backgroundClip(arg: CSS['backgroundClip']) {
+  backgroundClip(arg: CSSObject['backgroundClip']) {
     return this.css({ backgroundClip: arg });
   }
-  backgroundColor(arg: CSS['backgroundColor']) {
+  backgroundColor(arg: CSSObject['backgroundColor']) {
     return this.css({ backgroundColor: arg });
   }
-  backgroundImage(arg: CSS['backgroundImage']) {
+  backgroundImage(arg: CSSObject['backgroundImage']) {
     return this.css({ backgroundImage: arg });
   }
-  backgroundOrigin(arg: CSS['backgroundOrigin']) {
+  backgroundOrigin(arg: CSSObject['backgroundOrigin']) {
     return this.css({ backgroundOrigin: arg });
   }
-  backgroundPosition(arg: CSS['backgroundPosition']) {
+  backgroundPosition(arg: CSSObject['backgroundPosition']) {
     return this.css({ backgroundPosition: arg });
   }
-  backgroundRepeat(arg: CSS['backgroundRepeat']) {
+  backgroundRepeat(arg: CSSObject['backgroundRepeat']) {
     return this.css({ backgroundRepeat: arg });
   }
-  backgroundSize(arg: CSS['backgroundSize']) {
+  backgroundSize(arg: CSSObject['backgroundSize']) {
     return this.css({ backgroundSize: arg });
   }
-  border(arg: CSS['border']) {
+  border(arg: CSSObject['border']) {
     return this.css({ border: arg });
   }
-  borderBottom(arg: CSS['borderBottom']) {
+  borderBottom(arg: CSSObject['borderBottom']) {
     return this.css({ borderBottom: arg });
   }
-  borderBottomColor(arg: CSS['borderBottomColor']) {
+  borderBottomColor(arg: CSSObject['borderBottomColor']) {
     return this.css({ borderBottomColor: arg });
   }
-  borderBottomLeftRadius(arg: CSS['borderBottomLeftRadius']) {
+  borderBottomLeftRadius(arg: CSSObject['borderBottomLeftRadius']) {
     return this.css({ borderBottomLeftRadius: arg });
   }
-  borderBottomRightRadius(arg: CSS['borderBottomRightRadius']) {
+  borderBottomRightRadius(arg: CSSObject['borderBottomRightRadius']) {
     return this.css({ borderBottomRightRadius: arg });
   }
-  borderBottomStyle(arg: CSS['borderBottomStyle']) {
+  borderBottomStyle(arg: CSSObject['borderBottomStyle']) {
     return this.css({ borderBottomStyle: arg });
   }
-  borderBottomWidth(arg: CSS['borderBottomWidth']) {
+  borderBottomWidth(arg: CSSObject['borderBottomWidth']) {
     return this.css({ borderBottomWidth: arg });
   }
-  borderCollapse(arg: CSS['borderCollapse']) {
+  borderCollapse(arg: CSSObject['borderCollapse']) {
     return this.css({ borderCollapse: arg });
   }
-  borderColor(arg: CSS['borderColor']) {
+  borderColor(arg: CSSObject['borderColor']) {
     return this.css({ borderColor: arg });
   }
-  borderImage(arg: CSS['borderImage']) {
+  borderImage(arg: CSSObject['borderImage']) {
     return this.css({ borderImage: arg });
   }
-  borderImageOutset(arg: CSS['borderImageOutset']) {
+  borderImageOutset(arg: CSSObject['borderImageOutset']) {
     return this.css({ borderImageOutset: arg });
   }
-  borderImageRepeat(arg: CSS['borderImageRepeat']) {
+  borderImageRepeat(arg: CSSObject['borderImageRepeat']) {
     return this.css({ borderImageRepeat: arg });
   }
-  borderImageSlice(arg: CSS['borderImageSlice']) {
+  borderImageSlice(arg: CSSObject['borderImageSlice']) {
     return this.css({ borderImageSlice: arg });
   }
-  borderImageSource(arg: CSS['borderImageSource']) {
+  borderImageSource(arg: CSSObject['borderImageSource']) {
     return this.css({ borderImageSource: arg });
   }
-  borderImageWidth(arg: CSS['borderImageWidth']) {
+  borderImageWidth(arg: CSSObject['borderImageWidth']) {
     return this.css({ borderImageWidth: arg });
   }
-  borderLeft(arg: CSS['borderLeft']) {
+  borderLeft(arg: CSSObject['borderLeft']) {
     return this.css({ borderLeft: arg });
   }
-  borderLeftColor(arg: CSS['borderLeftColor']) {
+  borderLeftColor(arg: CSSObject['borderLeftColor']) {
     return this.css({ borderLeftColor: arg });
   }
-  borderLeftStyle(arg: CSS['borderLeftStyle']) {
+  borderLeftStyle(arg: CSSObject['borderLeftStyle']) {
     return this.css({ borderLeftStyle: arg });
   }
-  borderLeftWidth(arg: CSS['borderLeftWidth']) {
+  borderLeftWidth(arg: CSSObject['borderLeftWidth']) {
     return this.css({ borderLeftWidth: arg });
   }
-  borderRadius(arg: CSS['borderRadius']) {
+  borderRadius(arg: CSSObject['borderRadius']) {
     return this.css({ borderRadius: arg });
   }
-  borderRight(arg: CSS['borderRight']) {
+  borderRight(arg: CSSObject['borderRight']) {
     return this.css({ borderRight: arg });
   }
-  borderRightColor(arg: CSS['borderRightColor']) {
+  borderRightColor(arg: CSSObject['borderRightColor']) {
     return this.css({ borderRightColor: arg });
   }
-  borderRightStyle(arg: CSS['borderRightStyle']) {
+  borderRightStyle(arg: CSSObject['borderRightStyle']) {
     return this.css({ borderRightStyle: arg });
   }
-  borderRightWidth(arg: CSS['borderRightWidth']) {
+  borderRightWidth(arg: CSSObject['borderRightWidth']) {
     return this.css({ borderRightWidth: arg });
   }
-  borderSpacing(arg: CSS['borderSpacing']) {
+  borderSpacing(arg: CSSObject['borderSpacing']) {
     return this.css({ borderSpacing: arg });
   }
-  borderStyle(arg: CSS['borderStyle']) {
+  borderStyle(arg: CSSObject['borderStyle']) {
     return this.css({ borderStyle: arg });
   }
-  borderTop(arg: CSS['borderTop']) {
+  borderTop(arg: CSSObject['borderTop']) {
     return this.css({ borderTop: arg });
   }
-  borderTopColor(arg: CSS['borderTopColor']) {
+  borderTopColor(arg: CSSObject['borderTopColor']) {
     return this.css({ borderTopColor: arg });
   }
-  borderTopLeftRadius(arg: CSS['borderTopLeftRadius']) {
+  borderTopLeftRadius(arg: CSSObject['borderTopLeftRadius']) {
     return this.css({ borderTopLeftRadius: arg });
   }
-  borderTopRightRadius(arg: CSS['borderTopRightRadius']) {
+  borderTopRightRadius(arg: CSSObject['borderTopRightRadius']) {
     return this.css({ borderTopRightRadius: arg });
   }
-  borderTopStyle(arg: CSS['borderTopStyle']) {
+  borderTopStyle(arg: CSSObject['borderTopStyle']) {
     return this.css({ borderTopStyle: arg });
   }
-  borderTopWidth(arg: CSS['borderTopWidth']) {
+  borderTopWidth(arg: CSSObject['borderTopWidth']) {
     return this.css({ borderTopWidth: arg });
   }
-  borderWidth(arg: CSS['borderWidth']) {
+  borderWidth(arg: CSSObject['borderWidth']) {
     return this.css({ borderWidth: arg });
   }
-  bottom(arg: CSS['bottom']) {
+  bottom(arg: CSSObject['bottom']) {
     return this.css({ bottom: arg });
   }
-  boxDecorationBreak(arg: CSS['boxDecorationBreak']) {
+  boxDecorationBreak(arg: CSSObject['boxDecorationBreak']) {
     return this.css({ boxDecorationBreak: arg });
   }
-  boxShadow(arg: CSS['boxShadow']) {
+  boxShadow(arg: CSSObject['boxShadow']) {
     return this.css({ boxShadow: arg });
   }
-  boxSizing(arg: CSS['boxSizing']) {
+  boxSizing(arg: CSSObject['boxSizing']) {
     return this.css({ boxSizing: arg });
   }
-  breakAfter(arg: CSS['breakAfter']) {
+  breakAfter(arg: CSSObject['breakAfter']) {
     return this.css({ breakAfter: arg });
   }
-  breakBefore(arg: CSS['breakBefore']) {
+  breakBefore(arg: CSSObject['breakBefore']) {
     return this.css({ breakBefore: arg });
   }
-  breakInside(arg: CSS['breakInside']) {
+  breakInside(arg: CSSObject['breakInside']) {
     return this.css({ breakInside: arg });
   }
-  captionSide(arg: CSS['captionSide']) {
+  captionSide(arg: CSSObject['captionSide']) {
     return this.css({ captionSide: arg });
   }
-  caretColor(arg: CSS['caretColor']) {
+  caretColor(arg: CSSObject['caretColor']) {
     return this.css({ caretColor: arg });
   }
-  cha(arg: CSS['charSet']) {
+  cha(arg: CSSObject['charSet']) {
     return this.css({ cha: arg });
   }
-  clear(arg: CSS['clear']) {
+  clear(arg: CSSObject['clear']) {
     return this.css({ clear: arg });
   }
-  clip(arg: CSS['clip']) {
+  clip(arg: CSSObject['clip']) {
     return this.css({ clip: arg });
   }
-  clipPath(arg: CSS['clipPath']) {
+  clipPath(arg: CSSObject['clipPath']) {
     return this.css({ clipPath: arg });
   }
-  color(arg: CSS['color']) {
+  color(arg: CSSObject['color']) {
     return this.css({ color: arg });
   }
-  columnCount(arg: CSS['columnCount']) {
+  columnCount(arg: CSSObject['columnCount']) {
     return this.css({ columnCount: arg });
   }
-  columnFill(arg: CSS['columnFill']) {
+  columnFill(arg: CSSObject['columnFill']) {
     return this.css({ columnFill: arg });
   }
-  columnGap(arg: CSS['columnGap']) {
+  columnGap(arg: CSSObject['columnGap']) {
     return this.css({ columnGap: arg });
   }
-  columnRule(arg: CSS['columnRule']) {
+  columnRule(arg: CSSObject['columnRule']) {
     return this.css({ columnRule: arg });
   }
-  columnRuleColor(arg: CSS['columnRuleColor']) {
+  columnRuleColor(arg: CSSObject['columnRuleColor']) {
     return this.css({ columnRuleColor: arg });
   }
-  columnRuleStyle(arg: CSS['columnRuleStyle']) {
+  columnRuleStyle(arg: CSSObject['columnRuleStyle']) {
     return this.css({ columnRuleStyle: arg });
   }
-  columnRuleWidth(arg: CSS['columnRuleWidth']) {
+  columnRuleWidth(arg: CSSObject['columnRuleWidth']) {
     return this.css({ columnRuleWidth: arg });
   }
-  columnSpan(arg: CSS['columnSpan']) {
+  columnSpan(arg: CSSObject['columnSpan']) {
     return this.css({ columnSpan: arg });
   }
-  columnWidth(arg: CSS['columnWidth']) {
+  columnWidth(arg: CSSObject['columnWidth']) {
     return this.css({ columnWidth: arg });
   }
-  columns(arg: CSS['columns']) {
+  columns(arg: CSSObject['columns']) {
     return this.css({ columns: arg });
   }
-  content(arg: CSS['content']) {
+  content(arg: CSSObject['content']) {
     return this.css({ content: arg });
   }
-  counterIncrement(arg: CSS['counterIncrement']) {
+  counterIncrement(arg: CSSObject['counterIncrement']) {
     return this.css({ counterIncrement: arg });
   }
-  counterReset(arg: CSS['counterReset']) {
+  counterReset(arg: CSSObject['counterReset']) {
     return this.css({ counterReset: arg });
   }
-  cursor(arg: CSS['cursor']) {
+  cursor(arg: CSSObject['cursor']) {
     return this.css({ cursor: arg });
   }
-  direction(arg: CSS['direction']) {
+  direction(arg: CSSObject['direction']) {
     return this.css({ direction: arg });
   }
-  display(arg: CSS['display']) {
+  display(arg: CSSObject['display']) {
     return this.css({ display: arg });
   }
-  emptyCells(arg: CSS['emptyCells']) {
+  emptyCells(arg: CSSObject['emptyCells']) {
     return this.css({ emptyCells: arg });
   }
-  filter(arg: CSS['filter']) {
+  filter(arg: CSSObject['filter']) {
     return this.css({ filter: arg });
   }
-  flex(arg: CSS['flex']) {
+  flex(arg: CSSObject['flex']) {
     return this.css({ flex: arg });
   }
-  flexBasis(arg: CSS['flexBasis']) {
+  flexBasis(arg: CSSObject['flexBasis']) {
     return this.css({ flexBasis: arg });
   }
-  flexDirection(arg: CSS['flexDirection']) {
+  flexDirection(arg: CSSObject['flexDirection']) {
     return this.css({ flexDirection: arg });
   }
-  flexFlow(arg: CSS['flexFlow']) {
+  flexFlow(arg: CSSObject['flexFlow']) {
     return this.css({ flexFlow: arg });
   }
-  flexGrow(arg: CSS['flexGrow']) {
+  flexGrow(arg: CSSObject['flexGrow']) {
     return this.css({ flexGrow: arg });
   }
-  flexShrink(arg: CSS['flexShrink']) {
+  flexShrink(arg: CSSObject['flexShrink']) {
     return this.css({ flexShrink: arg });
   }
-  flexWrap(arg: CSS['flexWrap']) {
+  flexWrap(arg: CSSObject['flexWrap']) {
     return this.css({ flexWrap: arg });
   }
-  float(arg: CSS['float']) {
+  float(arg: CSSObject['float']) {
     return this.css({ float: arg });
   }
-  font(arg: CSS['font']) {
+  font(arg: CSSObject['font']) {
     return this.css({ font: arg });
   }
-  fontFace(arg: CSS['fontFace']) {
+  fontFace(arg: CSSObject['fontFace']) {
     return this.css({ fontFace: arg });
   }
-  fontFamily(arg: CSS['fontFamily']) {
+  fontFamily(arg: CSSObject['fontFamily']) {
     return this.css({ fontFamily: arg });
   }
-  fontFeatureSettings(arg: CSS['fontFeatureSettings']) {
+  fontFeatureSettings(arg: CSSObject['fontFeatureSettings']) {
     return this.css({ fontFeatureSettings: arg });
   }
-  fontKerning(arg: CSS['fontKerning']) {
+  fontKerning(arg: CSSObject['fontKerning']) {
     return this.css({ fontKerning: arg });
   }
-  fontSize(arg: CSS['fontSize']) {
+  fontSize(arg: CSSObject['fontSize']) {
     return this.css({ fontSize: arg });
   }
-  fontSizeAdjust(arg: CSS['fontSizeAdjust']) {
+  fontSizeAdjust(arg: CSSObject['fontSizeAdjust']) {
     return this.css({ fontSizeAdjust: arg });
   }
-  fontStretch(arg: CSS['fontStretch']) {
+  fontStretch(arg: CSSObject['fontStretch']) {
     return this.css({ fontStretch: arg });
   }
-  fontStyle(arg: CSS['fontStyle']) {
+  fontStyle(arg: CSSObject['fontStyle']) {
     return this.css({ fontStyle: arg });
   }
-  fontVariant(arg: CSS['fontVariant']) {
+  fontVariant(arg: CSSObject['fontVariant']) {
     return this.css({ fontVariant: arg });
   }
-  fontVariantCaps(arg: CSS['fontVariantCaps']) {
+  fontVariantCaps(arg: CSSObject['fontVariantCaps']) {
     return this.css({ fontVariantCaps: arg });
   }
-  fontWeight(arg: CSS['fontWeight']) {
+  fontWeight(arg: CSSObject['fontWeight']) {
     return this.css({ fontWeight: arg });
   }
-  grid(arg: CSS['grid']) {
+  grid(arg: CSSObject['grid']) {
     return this.css({ grid: arg });
   }
-  gridArea(arg: CSS['gridArea']) {
+  gridArea(arg: CSSObject['gridArea']) {
     return this.css({ gridArea: arg });
   }
-  gridAutoColumns(arg: CSS['gridAutoColumns']) {
+  gridAutoColumns(arg: CSSObject['gridAutoColumns']) {
     return this.css({ gridAutoColumns: arg });
   }
-  gridAutoFlow(arg: CSS['gridAutoFlow']) {
+  gridAutoFlow(arg: CSSObject['gridAutoFlow']) {
     return this.css({ gridAutoFlow: arg });
   }
-  gridAutoRows(arg: CSS['gridAutoRows']) {
+  gridAutoRows(arg: CSSObject['gridAutoRows']) {
     return this.css({ gridAutoRows: arg });
   }
-  gridColumn(arg: CSS['gridColumn']) {
+  gridColumn(arg: CSSObject['gridColumn']) {
     return this.css({ gridColumn: arg });
   }
-  gridColumnEnd(arg: CSS['gridColumnEnd']) {
+  gridColumnEnd(arg: CSSObject['gridColumnEnd']) {
     return this.css({ gridColumnEnd: arg });
   }
-  gridColumnGap(arg: CSS['gridColumnGap']) {
+  gridColumnGap(arg: CSSObject['gridColumnGap']) {
     return this.css({ gridColumnGap: arg });
   }
-  gridColumnStart(arg: CSS['gridColumnStart']) {
+  gridColumnStart(arg: CSSObject['gridColumnStart']) {
     return this.css({ gridColumnStart: arg });
   }
-  gridGap(arg: CSS['gridGap']) {
+  gridGap(arg: CSSObject['gridGap']) {
     return this.css({ gridGap: arg });
   }
-  gridRow(arg: CSS['gridRow']) {
+  gridRow(arg: CSSObject['gridRow']) {
     return this.css({ gridRow: arg });
   }
-  gridRowEnd(arg: CSS['gridRowEnd']) {
+  gridRowEnd(arg: CSSObject['gridRowEnd']) {
     return this.css({ gridRowEnd: arg });
   }
-  gridRowGap(arg: CSS['gridRowGap']) {
+  gridRowGap(arg: CSSObject['gridRowGap']) {
     return this.css({ gridRowGap: arg });
   }
-  gridRowStart(arg: CSS['gridRowStart']) {
+  gridRowStart(arg: CSSObject['gridRowStart']) {
     return this.css({ gridRowStart: arg });
   }
-  gridTemplate(arg: CSS['gridTemplate']) {
+  gridTemplate(arg: CSSObject['gridTemplate']) {
     return this.css({ gridTemplate: arg });
   }
-  gridTemplateAreas(arg: CSS['gridTemplateAreas']) {
+  gridTemplateAreas(arg: CSSObject['gridTemplateAreas']) {
     return this.css({ gridTemplateAreas: arg });
   }
-  gridTemplateColumns(arg: CSS['gridTemplateColumns']) {
+  gridTemplateColumns(arg: CSSObject['gridTemplateColumns']) {
     return this.css({ gridTemplateColumns: arg });
   }
-  gridTemplateRows(arg: CSS['gridTemplateRows']) {
+  gridTemplateRows(arg: CSSObject['gridTemplateRows']) {
     return this.css({ gridTemplateRows: arg });
   }
-  hangingPunctuation(arg: CSS['hangingPunctuation']) {
+  hangingPunctuation(arg: CSSObject['hangingPunctuation']) {
     return this.css({ hangingPunctuation: arg });
   }
-  height(arg: CSS['height']) {
+  height(arg: CSSObject['height']) {
     return this.css({ height: arg });
   }
-  hyphens(arg: CSS['hyphens']) {
+  hyphens(arg: CSSObject['hyphens']) {
     return this.css({ hyphens: arg });
   }
-  isolation(arg: CSS['isolation']) {
+  isolation(arg: CSSObject['isolation']) {
     return this.css({ isolation: arg });
   }
-  justifyContent(arg: CSS['justifyContent']) {
+  justifyContent(arg: CSSObject['justifyContent']) {
     return this.css({ justifyContent: arg });
   }
-  left(arg: CSS['left']) {
+  left(arg: CSSObject['left']) {
     return this.css({ left: arg });
   }
-  letterSpacing(arg: CSS['letterSpacing']) {
+  letterSpacing(arg: CSSObject['letterSpacing']) {
     return this.css({ letterSpacing: arg });
   }
-  lineHeight(arg: CSS['lineHeight']) {
+  lineHeight(arg: CSSObject['lineHeight']) {
     return this.css({ lineHeight: arg });
   }
-  listStyle(arg: CSS['listStyle']) {
+  listStyle(arg: CSSObject['listStyle']) {
     return this.css({ listStyle: arg });
   }
-  listStyleImage(arg: CSS['listStyleImage']) {
+  listStyleImage(arg: CSSObject['listStyleImage']) {
     return this.css({ listStyleImage: arg });
   }
-  listStylePosition(arg: CSS['listStylePosition']) {
+  listStylePosition(arg: CSSObject['listStylePosition']) {
     return this.css({ listStylePosition: arg });
   }
-  listStyleType(arg: CSS['listStyleType']) {
+  listStyleType(arg: CSSObject['listStyleType']) {
     return this.css({ listStyleType: arg });
   }
-  margin(arg: CSS['margin']) {
+  margin(arg: CSSObject['margin']) {
     return this.css({ margin: arg });
   }
-  marginBottom(arg: CSS['marginBottom']) {
+  marginBottom(arg: CSSObject['marginBottom']) {
     return this.css({ marginBottom: arg });
   }
-  marginLeft(arg: CSS['marginLeft']) {
+  marginLeft(arg: CSSObject['marginLeft']) {
     return this.css({ marginLeft: arg });
   }
-  marginRight(arg: CSS['marginRight']) {
+  marginRight(arg: CSSObject['marginRight']) {
     return this.css({ marginRight: arg });
   }
-  marginTop(arg: CSS['marginTop']) {
+  marginTop(arg: CSSObject['marginTop']) {
     return this.css({ marginTop: arg });
   }
-  maxHeight(arg: CSS['maxHeight']) {
+  maxHeight(arg: CSSObject['maxHeight']) {
     return this.css({ maxHeight: arg });
   }
-  maxWidth(arg: CSS['maxWidth']) {
+  maxWidth(arg: CSSObject['maxWidth']) {
     return this.css({ maxWidth: arg });
   }
-  minHeight(arg: CSS['minHeight']) {
+  minHeight(arg: CSSObject['minHeight']) {
     return this.css({ minHeight: arg });
   }
-  minWidth(arg: CSS['minWidth']) {
+  minWidth(arg: CSSObject['minWidth']) {
     return this.css({ minWidth: arg });
   }
-  mixBlendMode(arg: CSS['mixBlendMode']) {
+  mixBlendMode(arg: CSSObject['mixBlendMode']) {
     return this.css({ mixBlendMode: arg });
   }
-  objectFit(arg: CSS['objectFit']) {
+  objectFit(arg: CSSObject['objectFit']) {
     return this.css({ objectFit: arg });
   }
-  objectPosition(arg: CSS['objectPosition']) {
+  objectPosition(arg: CSSObject['objectPosition']) {
     return this.css({ objectPosition: arg });
   }
-  opacity(arg: CSS['opacity']) {
+  opacity(arg: CSSObject['opacity']) {
     return this.css({ opacity: arg });
   }
-  order(arg: CSS['order']) {
+  order(arg: CSSObject['order']) {
     return this.css({ order: arg });
   }
-  outline(arg: CSS['outline']) {
+  outline(arg: CSSObject['outline']) {
     return this.css({ outline: arg });
   }
-  outlineColor(arg: CSS['outlineColor']) {
+  outlineColor(arg: CSSObject['outlineColor']) {
     return this.css({ outlineColor: arg });
   }
-  outlineOffset(arg: CSS['outlineOffset']) {
+  outlineOffset(arg: CSSObject['outlineOffset']) {
     return this.css({ outlineOffset: arg });
   }
-  outlineStyle(arg: CSS['outlineStyle']) {
+  outlineStyle(arg: CSSObject['outlineStyle']) {
     return this.css({ outlineStyle: arg });
   }
-  outlineWidth(arg: CSS['outlineWidth']) {
+  outlineWidth(arg: CSSObject['outlineWidth']) {
     return this.css({ outlineWidth: arg });
   }
-  overflow(arg: CSS['overflow']) {
+  overflow(arg: CSSObject['overflow']) {
     return this.css({ overflow: arg });
   }
-  overflowX(arg: CSS['overflowX']) {
+  overflowX(arg: CSSObject['overflowX']) {
     return this.css({ overflowX: arg });
   }
-  overflowY(arg: CSS['overflowY']) {
+  overflowY(arg: CSSObject['overflowY']) {
     return this.css({ overflowY: arg });
   }
-  padding(arg: CSS['padding']) {
+  padding(arg: CSSObject['padding']) {
     return this.css({ padding: arg });
   }
-  paddingBottom(arg: CSS['paddingBottom']) {
+  paddingBottom(arg: CSSObject['paddingBottom']) {
     return this.css({ paddingBottom: arg });
   }
-  paddingLeft(arg: CSS['paddingLeft']) {
+  paddingLeft(arg: CSSObject['paddingLeft']) {
     return this.css({ paddingLeft: arg });
   }
-  paddingRight(arg: CSS['paddingRight']) {
+  paddingRight(arg: CSSObject['paddingRight']) {
     return this.css({ paddingRight: arg });
   }
-  paddingTop(arg: CSS['paddingTop']) {
+  paddingTop(arg: CSSObject['paddingTop']) {
     return this.css({ paddingTop: arg });
   }
-  pageBreakAfter(arg: CSS['pageBreakAfter']) {
+  pageBreakAfter(arg: CSSObject['pageBreakAfter']) {
     return this.css({ pageBreakAfter: arg });
   }
-  pageBreakBefore(arg: CSS['pageBreakBefore']) {
+  pageBreakBefore(arg: CSSObject['pageBreakBefore']) {
     return this.css({ pageBreakBefore: arg });
   }
-  pageBreakInside(arg: CSS['pageBreakInside']) {
+  pageBreakInside(arg: CSSObject['pageBreakInside']) {
     return this.css({ pageBreakInside: arg });
   }
-  perspective(arg: CSS['perspective']) {
+  perspective(arg: CSSObject['perspective']) {
     return this.css({ perspective: arg });
   }
-  perspectiveOrigin(arg: CSS['perspectiveOrigin']) {
+  perspectiveOrigin(arg: CSSObject['perspectiveOrigin']) {
     return this.css({ perspectiveOrigin: arg });
   }
-  pointerEvents(arg: CSS['pointerEvents']) {
+  pointerEvents(arg: CSSObject['pointerEvents']) {
     return this.css({ pointerEvents: arg });
   }
-  position(arg: CSS['position']) {
+  position(arg: CSSObject['position']) {
     return this.css({ position: arg });
   }
-  quotes(arg: CSS['quotes']) {
+  quotes(arg: CSSObject['quotes']) {
     return this.css({ quotes: arg });
   }
-  resize(arg: CSS['resize']) {
+  resize(arg: CSSObject['resize']) {
     return this.css({ resize: arg });
   }
-  right(arg: CSS['right']) {
+  right(arg: CSSObject['right']) {
     return this.css({ right: arg });
   }
-  scrollBehavior(arg: CSS['scrollBehavior']) {
+  scrollBehavior(arg: CSSObject['scrollBehavior']) {
     return this.css({ scrollBehavior: arg });
   }
-  tabSize(arg: CSS['tabSize']) {
+  tabSize(arg: CSSObject['tabSize']) {
     return this.css({ tabSize: arg });
   }
-  tableLayout(arg: CSS['tableLayout']) {
+  tableLayout(arg: CSSObject['tableLayout']) {
     return this.css({ tableLayout: arg });
   }
-  textAlign(arg: CSS['textAlign']) {
+  textAlign(arg: CSSObject['textAlign']) {
     return this.css({ textAlign: arg });
   }
-  textAlignLast(arg: CSS['textAlignLast']) {
+  textAlignLast(arg: CSSObject['textAlignLast']) {
     return this.css({ textAlignLast: arg });
   }
-  textDecoration(arg: CSS['textDecoration']) {
+  textDecoration(arg: CSSObject['textDecoration']) {
     return this.css({ textDecoration: arg });
   }
-  textDecorationColor(arg: CSS['textDecorationColor']) {
+  textDecorationColor(arg: CSSObject['textDecorationColor']) {
     return this.css({ textDecorationColor: arg });
   }
-  textDecorationLine(arg: CSS['textDecorationLine']) {
+  textDecorationLine(arg: CSSObject['textDecorationLine']) {
     return this.css({ textDecorationLine: arg });
   }
-  textDecorationStyle(arg: CSS['textDecorationStyle']) {
+  textDecorationStyle(arg: CSSObject['textDecorationStyle']) {
     return this.css({ textDecorationStyle: arg });
   }
-  textIndent(arg: CSS['textIndent']) {
+  textIndent(arg: CSSObject['textIndent']) {
     return this.css({ textIndent: arg });
   }
-  textJustify(arg: CSS['textJustify']) {
+  textJustify(arg: CSSObject['textJustify']) {
     return this.css({ textJustify: arg });
   }
-  textOverflow(arg: CSS['textOverflow']) {
+  textOverflow(arg: CSSObject['textOverflow']) {
     return this.css({ textOverflow: arg });
   }
-  textShadow(arg: CSS['textShadow']) {
+  textShadow(arg: CSSObject['textShadow']) {
     return this.css({ textShadow: arg });
   }
-  textTransform(arg: CSS['textTransform']) {
+  textTransform(arg: CSSObject['textTransform']) {
     return this.css({ textTransform: arg });
   }
-  top(arg: CSS['top']) {
+  top(arg: CSSObject['top']) {
     return this.css({ top: arg });
   }
-  transform(arg: CSS['transform']) {
+  transform(arg: CSSObject['transform']) {
     return this.css({ transform: arg });
   }
-  transformOrigin(arg: CSS['transformOrigin']) {
+  transformOrigin(arg: CSSObject['transformOrigin']) {
     return this.css({ transformOrigin: arg });
   }
-  transformStyle(arg: CSS['transformStyle']) {
+  transformStyle(arg: CSSObject['transformStyle']) {
     return this.css({ transformStyle: arg });
   }
-  transition(arg: CSS['transition']) {
+  transition(arg: CSSObject['transition']) {
     return this.css({ transition: arg });
   }
-  transitionDelay(arg: CSS['transitionDelay']) {
+  transitionDelay(arg: CSSObject['transitionDelay']) {
     return this.css({ transitionDelay: arg });
   }
-  transitionDuration(arg: CSS['transitionDuration']) {
+  transitionDuration(arg: CSSObject['transitionDuration']) {
     return this.css({ transitionDuration: arg });
   }
-  transitionProperty(arg: CSS['transitionProperty']) {
+  transitionProperty(arg: CSSObject['transitionProperty']) {
     return this.css({ transitionProperty: arg });
   }
-  transitionTimingFunction(arg: CSS['transitionTimingFunction']) {
+  transitionTimingFunction(arg: CSSObject['transitionTimingFunction']) {
     return this.css({ transitionTimingFunction: arg });
   }
-  unicodeBidi(arg: CSS['unicodeBidi']) {
+  unicodeBidi(arg: CSSObject['unicodeBidi']) {
     return this.css({ unicodeBidi: arg });
   }
-  userSelect(arg: CSS['userSelect']) {
+  userSelect(arg: CSSObject['userSelect']) {
     return this.css({ userSelect: arg });
   }
-  verticalAlign(arg: CSS['verticalAlign']) {
+  verticalAlign(arg: CSSObject['verticalAlign']) {
     return this.css({ verticalAlign: arg });
   }
-  visibility(arg: CSS['visibility']) {
+  visibility(arg: CSSObject['visibility']) {
     return this.css({ visibility: arg });
   }
-  whiteSpace(arg: CSS['whiteSpace']) {
+  whiteSpace(arg: CSSObject['whiteSpace']) {
     return this.css({ whiteSpace: arg });
   }
-  width(arg: CSS['width']) {
+  width(arg: CSSObject['width']) {
     return this.css({ width: arg });
   }
-  wordBreak(arg: CSS['wordBreak']) {
+  wordBreak(arg: CSSObject['wordBreak']) {
     return this.css({ wordBreak: arg });
   }
-  wordSpacing(arg: CSS['wordSpacing']) {
+  wordSpacing(arg: CSSObject['wordSpacing']) {
     return this.css({ wordSpacing: arg });
   }
-  wordWrap(arg: CSS['wordWrap']) {
+  wordWrap(arg: CSSObject['wordWrap']) {
     return this.css({ wordWrap: arg });
   }
-  writingMode(arg: CSS['writingMode']) {
+  writingMode(arg: CSSObject['writingMode']) {
     return this.css({ writingMode: arg });
   }
-  zIndex(arg: CSS['zIndex']) {
+  zIndex(arg: CSSObject['zIndex']) {
     return this.css({ zIndex: arg });
   }
 }
