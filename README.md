@@ -8,7 +8,7 @@
 <p align="center">
 if you're happy and you know it, star this repo ⭐
 <br/>
-created by <a href="https://twitter.com/vriad" target="_blank">@vriad</a> 👋
+a <a href="https://twitter.com/colinhacks" target="_blank">@colinhacks</a> production
 </p>
 
 <br/>
@@ -36,6 +36,16 @@ gwen@0.x is compatible with TypeScript 3.7+.
 You must use `"strict": true` in your `tsconfig.json`! Otherwise you may get unexpected type errors.
 
 # Usage
+
+```ts
+import { Gwen } from 'gwen';
+
+const gwen = new Gwen();
+
+function Component() {
+  return <p className={gwen.fontSize(14).color('blue').class}>Hello there</p>;
+}
+```
 
 # Changelog
 

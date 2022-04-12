@@ -42,20 +42,26 @@
     "badge": "make-coverage-badge --output-path ./coverage.svg",
     "prepublishOnly": "npm run build",
     "play": "nodemon -e ts -w . -x ts-node playground.ts",
-    "generate": "ts-node generate.ts"
+    "generate": "ts-node generate.ts",
+    "generate:abbrs": "ts-node --project tsconfig.json generateAbbrs.ts"
   },
   "devDependencies": {
     "@emotion/css": "^11.1.3",
     "@types/jest": "^25.1.4",
     "@types/node": "^14.0.13",
+    "@types/react": "^18.0.3",
+    "cssdata": "git+https://github.com/mdn/data.git#ff55c39c1da3f1519e3a8f890a7cf6e6339a4b87",
     "jest": "^25.1.0",
     "make-coverage-badge": "^1.2.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "ts-jest": "^25.2.1",
+    "ts-node": "^10.4.0",
     "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "3.7"
+    "typescript": "4.4"
   },
   "peerDependencies": {
     "@emotion/css": "^11.1.3"

@@ -7,7 +7,7 @@
       "esnext",
       "dom"
     ],
-    "target": "es5",
+    "target": "es2020",
     "module": "commonjs",
     "declaration": true,
     // "moduleResolution": "node",
@@ -30,12 +30,13 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "jsx": "preserve"
   },
-  "include": [
-    "src",
-    "tsconfig.json"
-  ],
-  "exclude": [
-    "node_modules",
-  ]
+  // "include": [
+  //   "src",
+  //   "tsconfig.json"
+  // ],
+  // "exclude": [
+  //   "node_modules",
+  // ]
 }

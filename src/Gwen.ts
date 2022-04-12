@@ -4,7 +4,11 @@ import { CSSObject } from '@emotion/css';
 import Color from 'color';
 // type CSS = ObjectInterpolation<undefined>;
 
-export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Params> {
+type noUndefined<T> = T extends undefined ? never : T;
+export class Gwen<Params extends GwenParams | undefined = GwenParams> extends GwenBase<noUndefined<Params>> {
+  constructor(params?: Params) {
+    super((params || {}) as any);
+  }
   get row() {
     return this.css({
       display: 'flex',
@@ -204,6 +208,7 @@ export class Gwen<Params extends GwenParams = GwenParams> extends GwenBase<Param
   }
 
   media(conditions: { min?: string; max?: string }, delta: (t: this) => this) {
+    if (!conditions.min && !conditions.max) return this;
     return this.css({
       [`@media only screen ${conditions.min ? ` and (min-width: ${conditions.min})` : ``} ${
         conditions.max ? ` and (max-width: ${conditions.max})` : ''
